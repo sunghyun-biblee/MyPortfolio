@@ -4,7 +4,7 @@ export const Introduce = () => {
   const [typingText, setTypingText] = useState<string>("");
   const [typingIndex, setTypingIndex] = useState<number>(0);
   const [isComplete, setIsComplete] = useState<boolean>(false);
-  const text = "FrontEnd Developer 조성현의 포트폴리오입니다";
+  const text = `FrontEnd Developer 조성현의 포트폴리오입니다`;
   useEffect(() => {
     const handleTyping = () => {
       if (!isComplete) {
