@@ -31,16 +31,19 @@ function App() {
       <div className="App mx-auto my-0 lg:max-w-[1200px] mysm:w-[100%] relative">
         <div className="fixed top-0 left-0 right-0 bg-[#5ea3ec]/50">
           <div
-            className={`h-[10px] bg-[#5ea3ec] w-[100%] transition-all rounded-r-lg`}
+            className={`h-[10px] bg-[#1f7ee3] w-[100%] transition-all rounded-r-lg`}
             style={{ transform: `translateX(${scrollProgress - 100}%)` }}
             id="progress-bar"
           ></div>
           <Header></Header>
         </div>
-        <div className="min-h-[100dvh] mt-[82px]">
+        <div className="min-h-[100dvh] mt-[82px] flex flex-col items-center">
           <Introduce></Introduce>
-        </div>
-        <div>
+
+          <AboutMe></AboutMe>
+          <AboutMe></AboutMe>
+          <AboutMe></AboutMe>
+          <AboutMe></AboutMe>
           <AboutMe></AboutMe>
         </div>
       </div>
