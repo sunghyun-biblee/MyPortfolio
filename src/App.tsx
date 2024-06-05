@@ -6,6 +6,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Header } from "components/header/Header";
 import { Introduce } from "components/aboutme/Introduce";
 import { AboutMe } from "components/aboutme/AboutMe";
+import { IntroduceTwo } from "components/aboutme/IntroduceTwo";
 
 function App() {
   const [scrollProgress, setScrollProgress] = useState<number>(0);
@@ -13,7 +14,7 @@ function App() {
   useEffect(() => {
     const updateProgress = () => {
       const currentScrollPosition = window.scrollY;
-      const scrollHeight = document.body.scrollHeight - window.innerHeight + 89;
+      const scrollHeight = document.body.scrollHeight - window.innerHeight + 99;
 
       console.log("currentScrollPosition", currentScrollPosition);
       console.log("scrollHeight", scrollHeight);
@@ -28,8 +29,8 @@ function App() {
 
   return (
     <QueryClientProvider client={qeuryClient}>
-      <div className="App mx-auto my-0 lg:max-w-[1200px] mysm:w-[100%] relative">
-        <div className="fixed top-0 left-0 right-0 bg-[#5ea3ec]/50">
+      <div className="App mx-auto my-0  mysm:max-w-[100vw] relative">
+        <div className="fixed top-0 left-0 right-0 bg-[#7db3e9] z-20">
           <div
             className={`h-[10px] bg-[#1f7ee3] w-[100%] transition-all rounded-r-lg`}
             style={{ transform: `translateX(${scrollProgress - 100}%)` }}
@@ -38,13 +39,14 @@ function App() {
           <Header></Header>
         </div>
         <div className="min-h-[100dvh] mt-[82px] flex flex-col items-center">
+          <IntroduceTwo></IntroduceTwo>
           <Introduce></Introduce>
 
+          {/* <AboutMe></AboutMe>
           <AboutMe></AboutMe>
           <AboutMe></AboutMe>
           <AboutMe></AboutMe>
-          <AboutMe></AboutMe>
-          <AboutMe></AboutMe>
+          <AboutMe></AboutMe> */}
         </div>
       </div>
 
