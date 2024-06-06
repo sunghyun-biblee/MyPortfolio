@@ -7,6 +7,7 @@ import { Header } from "components/header/Header";
 import { Introduce } from "components/aboutme/Introduce";
 import { AboutMe } from "components/aboutme/AboutMe";
 import { IntroduceTwo } from "components/aboutme/IntroduceTwo";
+import { SkillPart } from "components/skill/SkillPart";
 
 function App() {
   const [scrollProgress, setScrollProgress] = useState<number>(0);
@@ -38,15 +39,12 @@ function App() {
           ></div>
           <Header></Header>
         </div>
+
         <div className="min-h-[100dvh] mt-[82px] flex flex-col items-center">
           <IntroduceTwo></IntroduceTwo>
-          <Introduce></Introduce>
-
-          {/* <AboutMe></AboutMe>
           <AboutMe></AboutMe>
-          <AboutMe></AboutMe>
-          <AboutMe></AboutMe>
-          <AboutMe></AboutMe> */}
+          {/* <Introduce></Introduce> */}
+          <SkillPart></SkillPart>
         </div>
       </div>
 
