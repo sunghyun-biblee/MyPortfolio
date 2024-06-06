@@ -8,7 +8,7 @@ export const IntroduceTwo = () => {
     const interval = setInterval(() => {
       setIsFlip((prev) => !prev);
     }, 3000);
-    return () => clearTimeout(interval);
+    return () => clearInterval(interval);
   }, [isFlip]);
 
   const handleImgClick = () => {
@@ -17,11 +17,11 @@ export const IntroduceTwo = () => {
   return (
     <div
       className="h-[100dvh] relative  w-[100%]  box-border overflow-hidden 
-    bg-gradient-to-r from-blue-500 to-cyan-500
+    bg-gradient-to-b from-blue-500 to-cyan-500
     "
     >
       <div
-        className="flex h-[100vh] max-w-[1200px] justify-around items-center text-white mx-auto my-0
+        className="flex h-[100vh] lg:max-w-[1200px] w-[100%] justify-around items-center text-white mx-auto my-0
       animate-introExpand-container   relative
       transition ease-in duration-[800ms] transform translate-x-[1400px]"
         id="container"
@@ -82,7 +82,7 @@ export const IntroduceTwo = () => {
                 id="img-inner"
                 onClick={handleImgClick}
               >
-                <FlipBox isFlip={isFlip}>
+                <FlipBox value={isFlip}>
                   <FlipCard className="rounded-lg shadow-2xl  overflow-hidden">
                     <Img src={preview} alt="" id="container_img" />
                   </FlipCard>
@@ -110,8 +110,9 @@ export const IntroduceTwo = () => {
         </div>
       </div>
       <div
-        className="absolute top-0 left-0 right-0 bottom-0 h-[100%] -z-10
-     bg-gradient-to-r from-blue-500 to-cyan-500 "
+        className="absolute top-0 left-0 right-0 bottom-0 
+        h-[100%] -z-30
+     bg-gradient-to-r from-slate-500 to-cyan-500 "
         id="overlay"
       ></div>
     </div>
@@ -123,14 +124,14 @@ const Img = styled.img`
   width: 100%;
   height: 500px;
 `;
-const FlipBox = styled.div<{ isFlip: boolean }>`
+const FlipBox = styled.div<{ value: boolean }>`
   transition: 0.8s;
   transform-style: preserve-3d;
   position: relative;
   min-width: 300px;
   max-width: 500px;
   height: 500px;
-  transform: ${(props) => (props.isFlip ? "rotateY(180deg)" : "")};
+  transform: ${(props) => (props.value ? "rotateY(180deg)" : "rotateY(0deg)")};
 `;
 const FlipCard = styled.div`
   backface-visibility: hidden;
