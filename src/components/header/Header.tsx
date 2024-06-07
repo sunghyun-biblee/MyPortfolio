@@ -15,6 +15,7 @@ export const Header = () => {
   return (
     <header
       className={`flex justify-center lg:py-5 transition-colors lg:px-10 mysm:px-3 h-[72px] mx-auto my-0 w-[100%]
+       
       ${isShow ? "bg-[#AED1F5]" : "bg-[#5ea3ec]/50"}
       `}
     >
