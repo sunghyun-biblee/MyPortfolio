@@ -12,6 +12,11 @@ module.exports = {
           0: { transform: "translateX(500px) scale(.2)" },
           "100%": { transform: "translateX(0px) scale(1)" },
         },
+        introPopUp: {
+          "0%": { opacity: 0, transform: "scale(0)" },
+          "50%": { opacity: 0.5, transform: "scale(1.1)" },
+          "100%": { opacity: 1, transform: "scale(1)" },
+        },
         introSlideUp: {
           0: { transform: "translateY(300px)" },
           "100%": { transform: "translateY(0px)" },
@@ -27,6 +32,7 @@ module.exports = {
         "introSlideUp-description":
           "introSlideUp 0.8s ease-in-out forwards 0.8s",
         "introSlideIn-profileImg": "introSlideIn 1.5s ease-in-out forwards 1s",
+        "introPopUp-profileImg": "introPopUp 0.8s ease-in-out forwards 1s",
         "introExpand-container": "introExpand 0.8s ease forwards",
       },
     },

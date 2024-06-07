@@ -1,6 +1,10 @@
 import React from "react";
 import preview from "assets/img/profileImg.jpg";
 export const AboutMe = () => {
+  const login = () => {
+    window.location.href =
+      "https://api.devproject.store/oauth2/authorization/google";
+  };
   return (
     <div
       className="h-[90vh] w-[100%] flex justify-center items-center
@@ -10,16 +14,23 @@ export const AboutMe = () => {
     >
       <div className="flex flex-col justify-center items-center border-[1px] rounded-2xl h-[50dvh] lg:max-w-[1200px] w-[90%] bg-[#efefee] my-1 hover:border-indigo-300 ">
         <span
-          onClick={() => {
-            window.location.href =
-              "https://devproject.store/oauth2/authorization/google";
-          }}
+          className="cursor-pointer"
+          // onClick={() => {
+          //   window.location.href =
+          //     "https://api.devproject.store/oauth2/authorization/google";
+          //   // "https://localhost:8080/oauth2/authorization/google";
+          // }}
         >
           renderSkill Animation
         </span>
-        <div className="flex py-[80px] items-start">
+        <div className="flex py-[80px] items-start md:flex-row mysm:flex-col">
           <div className="overflow-hidden rounded-[50%] shadow-xl border-[1px] w-[200px] h-[200px]">
-            <img src={preview} alt="myprofile" className="object-cover" />
+            <img
+              src={preview}
+              alt="myprofile"
+              className="object-cover"
+              onClick={login}
+            />
           </div>
           <ul className="flex flex-col items-end px-6 ml-[70px]">
             <li
