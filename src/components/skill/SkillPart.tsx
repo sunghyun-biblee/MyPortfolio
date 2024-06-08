@@ -1,4 +1,5 @@
-import React from "react";
+import { ScrollMoveType } from "components/projects/Projects";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 
 const skillArray = [
@@ -8,12 +9,16 @@ const skillArray = [
   "React-Query",
   "TailwindCSS",
 ];
-export const SkillPart = () => {
+interface ISkill {
+  value: ScrollMoveType;
+}
+export const SkillPart = ({ value }: ISkill) => {
   return (
     <div
       className=" min-h-[100vh] w-[100%] flex justify-center
        bg-gradient-to-b to-[#96EBA0] from-[#20DABF] 
     "
+      ref={value.element}
     >
       <div
         className="max-w-[1200px] flex flex-col justify-center w-[100vw]
@@ -103,6 +108,9 @@ export const SkillPart = () => {
               </li>
               <li className="py-3 font-bold tracking-tight">
                 framer_motion을 사용한 경험이 있습니다
+              </li>
+              <li className="py-3 font-bold tracking-tight">
+                크로스 브라우징을 고려합니다
               </li>
             </ul>
           </article>

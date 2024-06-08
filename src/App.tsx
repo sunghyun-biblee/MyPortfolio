@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import "./App.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -8,14 +8,25 @@ import { Introduce } from "components/aboutme/Introduce";
 import { AboutMe } from "components/aboutme/AboutMe";
 import { IntroduceTwo } from "components/aboutme/IntroduceTwo";
 import { SkillPart } from "components/skill/SkillPart";
+import { Projects } from "components/projects/Projects";
+import { useScrollMove } from "hooks/useScrollMove";
+import { Test } from "Test";
 
 function App() {
+  const nav = [
+    useScrollMove("About Me"),
+    useScrollMove("Skills"),
+    useScrollMove("Projects"),
+    useScrollMove("test"),
+  ];
+
+  const scrollRef = useRef<HTMLDivElement[]>([]);
   const [scrollProgress, setScrollProgress] = useState<number>(0);
   const qeuryClient = new QueryClient();
   useEffect(() => {
     const updateProgress = () => {
       const currentScrollPosition = window.scrollY;
-      const scrollHeight = document.body.scrollHeight - window.innerHeight + 99;
+      const scrollHeight = document.body.scrollHeight - window.innerHeight;
 
       console.log("currentScrollPosition", currentScrollPosition);
       console.log("scrollHeight", scrollHeight);
@@ -27,7 +38,8 @@ function App() {
 
     window.addEventListener("scroll", updateProgress);
   }, []);
-
+  console.log(nav[3].element);
+  console.log(scrollRef.current);
   return (
     <QueryClientProvider client={qeuryClient}>
       <div className="App mx-auto my-0  mysm:max-w-[100vw] relative">
@@ -37,14 +49,16 @@ function App() {
             style={{ transform: `translateX(${scrollProgress - 100}%)` }}
             id="progress-bar"
           ></div>
-          <Header></Header>
+          <Header scrollRef={scrollRef} nav={nav}></Header>
         </div>
 
-        <div className="min-h-[100dvh] mt-[82px] flex flex-col items-center">
+        <div className="min-h-[100dvh] flex flex-col items-center">
           <IntroduceTwo></IntroduceTwo>
-          <AboutMe></AboutMe>
+          <AboutMe value={nav[0]}></AboutMe>
           {/* <Introduce></Introduce> */}
-          <SkillPart></SkillPart>
+          <SkillPart value={nav[1]}></SkillPart>
+          <Projects value={nav[2]}></Projects>
+          <Test value={nav[3]}></Test>
         </div>
       </div>
 

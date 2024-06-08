@@ -1,16 +1,26 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import preview from "assets/img/profileImg.jpg";
-export const AboutMe = () => {
+import { ScrollMoveType } from "components/projects/Projects";
+
+interface AboutMeProps {
+  ref: React.Ref<HTMLDivElement>;
+}
+interface IAboutMe {
+  value: ScrollMoveType;
+}
+export const AboutMe = ({ value }: IAboutMe) => {
   const login = () => {
     window.location.href =
       "https://api.devproject.store/oauth2/authorization/google";
   };
+
   return (
     <div
       className="h-[90vh] w-[100%] flex justify-center items-center
-      bg-gradient-to-b from-cyan-500 to-[#20DABF] 
-    
-    "
+        bg-gradient-to-b from-cyan-500 to-[#20DABF] 
+      
+      "
+      ref={value.element}
     >
       <div className="flex flex-col justify-center items-center border-[1px] rounded-2xl h-[50dvh] lg:max-w-[1200px] w-[90%] bg-[#efefee] my-1 hover:border-indigo-300 ">
         <span
@@ -35,25 +45,25 @@ export const AboutMe = () => {
           <ul className="flex flex-col items-end px-6 ml-[70px]">
             <li
               className="border-[1px] rounded-3xl w-[100%] text-left px-5 py-3
-          hover:bg-[#393E46] hover:text-[#efefef] hover:border-red  font-semibold font-sans border-black hover:border-gray-50 "
+            hover:bg-[#393E46] hover:text-[#efefef] hover:border-red  font-semibold font-sans border-black hover:border-gray-50 "
             >
               <span> sunghyun543@gmail.com</span>
             </li>
             <li
               className="border-[1px] rounded-3xl w-[100%] mt-3 text-left px-5 py-3
-          hover:bg-[#393E46] hover:text-[#efefef] hover:border-red  font-semibold font-sans border-black hover:border-gray-50 "
+            hover:bg-[#393E46] hover:text-[#efefef] hover:border-red  font-semibold font-sans border-black hover:border-gray-50 "
             >
               <span> github</span>
             </li>
             <li
               className="border-[1px] rounded-3xl w-[100%] mt-3 text-left px-5 py-3
-          hover:bg-[#393E46] hover:text-[#efefef] hover:border-red  font-semibold font-sans border-black hover:border-gray-50 "
+            hover:bg-[#393E46] hover:text-[#efefef] hover:border-red  font-semibold font-sans border-black hover:border-gray-50 "
             >
               <span> blog</span>
             </li>
             <li
               className="border-[1px] rounded-3xl w-[100%] mt-3 text-left px-5 py-3
-          hover:bg-[#393E46] hover:text-[#efefef] hover:border-red  font-semibold font-sans border-black hover:border-gray-50 "
+            hover:bg-[#393E46] hover:text-[#efefef] hover:border-red  font-semibold font-sans border-black hover:border-gray-50 "
             >
               <span> KAKAO</span>
             </li>
