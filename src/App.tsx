@@ -14,6 +14,7 @@ import { Test } from "Test";
 
 function App() {
   const nav = [
+    useScrollMove("IntroDuce"),
     useScrollMove("About Me"),
     useScrollMove("Skills"),
     useScrollMove("Projects"),
@@ -28,18 +29,18 @@ function App() {
       const currentScrollPosition = window.scrollY;
       const scrollHeight = document.body.scrollHeight - window.innerHeight;
 
-      console.log("currentScrollPosition", currentScrollPosition);
-      console.log("scrollHeight", scrollHeight);
+      // console.log("currentScrollPosition", currentScrollPosition);
+      // console.log("scrollHeight", scrollHeight);
       const progress =
         Number((currentScrollPosition / scrollHeight).toFixed(2)) * 100;
       setScrollProgress(progress);
-      console.log(progress);
+      // console.log(progress);
     };
 
     window.addEventListener("scroll", updateProgress);
   }, []);
-  console.log(nav[3].element);
-  console.log(scrollRef.current);
+  // console.log(nav[3].element);
+  // console.log(scrollRef.current);
   return (
     <QueryClientProvider client={qeuryClient}>
       <div className="App mx-auto my-0  mysm:max-w-[100vw] relative">
@@ -53,12 +54,12 @@ function App() {
         </div>
 
         <div className="min-h-[100dvh] flex flex-col items-center">
-          <IntroduceTwo></IntroduceTwo>
-          <AboutMe value={nav[0]}></AboutMe>
+          <IntroduceTwo value={nav[0]}></IntroduceTwo>
+          <AboutMe value={nav[1]}></AboutMe>
           {/* <Introduce></Introduce> */}
-          <SkillPart value={nav[1]}></SkillPart>
-          <Projects value={nav[2]}></Projects>
-          <Test value={nav[3]}></Test>
+          <SkillPart value={nav[2]}></SkillPart>
+          <Projects value={nav[3]}></Projects>
+          <Test value={nav[4]}></Test>
         </div>
       </div>
 

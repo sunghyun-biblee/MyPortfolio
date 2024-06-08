@@ -6,5 +6,6 @@ export function useScrollMove(value: string) {
   const onMove = () => {
     element.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
   return { element, onMove, name };
 }

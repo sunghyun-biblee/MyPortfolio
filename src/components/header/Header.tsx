@@ -1,4 +1,10 @@
-import React, { MutableRefObject, RefObject, useEffect, useState } from "react";
+import React, {
+  MutableRefObject,
+  RefObject,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 type ScrollRefType = MutableRefObject<HTMLDivElement[]>;
 
@@ -54,6 +60,7 @@ export const Header = ({ scrollRef, nav }: IHeader) => {
               : "text-[#f2f2f2] hover:text-blue-950"
           }
         `}
+          onClick={nav[0].onMove}
         >
           biblee Portfolio
         </h1>
@@ -63,7 +70,7 @@ export const Header = ({ scrollRef, nav }: IHeader) => {
           }`}
         >
           {nav &&
-            nav.map((item) => (
+            nav.slice(1).map((item) => (
               <li
                 className=" cursor-pointer lg:px-5  mysm:px-3"
                 onClick={item.onMove}

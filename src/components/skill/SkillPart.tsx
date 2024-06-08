@@ -58,13 +58,13 @@ export const SkillPart = ({ value }: ISkill) => {
                 ES6 문법에 익숙합니다
               </li>
               <li className="py-2 font-bold tracking-tight">
-                Javascript 주요 개념을 인지하고
-              </li>
-              <li className="py-2 font-bold tracking-tight">
-                가독성이 좋은 코드 및 클린코드를 만들려고 노력합니다
+                Javascript 주요 개념을 인지하고 있습니다
               </li>
               <li className="py-2 font-bold tracking-tight">
                 typescript를 사용 경험이 있습니다
+              </li>
+              <li className="py-2 font-bold tracking-tight">
+                가독성이 좋은 코드 및 클린코드를 만들려고 노력합니다
               </li>
             </ul>
           </article>

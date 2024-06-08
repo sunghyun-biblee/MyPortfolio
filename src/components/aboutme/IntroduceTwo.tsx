@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 import preview from "assets/img/profileImg.jpg";
 import styled from "styled-components";
-export const IntroduceTwo = () => {
+import { ScrollMoveType } from "components/projects/Projects";
+
+interface IIntroduce {
+  value: ScrollMoveType;
+}
+
+export const IntroduceTwo = ({ value }: IIntroduce) => {
   const [isFlip, setIsFlip] = useState<boolean>(false);
 
   useEffect(() => {
@@ -20,6 +26,7 @@ export const IntroduceTwo = () => {
     bg-gradient-to-b from-blue-500 to-cyan-500
     flex flex-col justify-center items-center
     "
+      ref={value.element}
     >
       <div
         className="flex h-[100vh] lg:max-w-[1200px] w-[100%] justify-around items-center text-white mx-auto my-0
