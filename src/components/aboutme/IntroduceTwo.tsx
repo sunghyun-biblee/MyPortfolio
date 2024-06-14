@@ -74,10 +74,10 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
               </div>
             </div>
           </div>
-          <div className="overflow-hidden h-auto mt-10" id="title">
+          <div className="overflow-hidden h-auto my-10" id="title">
             <h1
-              className="text-[40px] text-white mb-[20px] 
-              transform translate-y-[100px] animate-introSlideIn-title
+              className="text-[40px] text-white 
+              transform translate-y-[110px] animate-introSlideIn-title
               font-mono"
             >
               Frontend_Developer "sungHyun"

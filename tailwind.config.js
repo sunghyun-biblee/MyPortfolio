@@ -12,6 +12,11 @@ module.exports = {
           0: { transform: "translateX(500px) scale(.2)" },
           "100%": { transform: "translateX(0px) scale(1)" },
         },
+        introSlideInTitle: {
+          0: { transform: "translateX(500px) ", opacity: 0 },
+          "50%": { opacity: 0.5 },
+          "100%": { transform: "translateX(0px)", opacity: 1 },
+        },
         introPopUp: {
           "0%": { opacity: 0, transform: "scale(0)" },
           "50%": { opacity: 0.5, transform: "scale(1.1)" },
@@ -27,7 +32,7 @@ module.exports = {
         },
       },
       animation: {
-        "introSlideIn-title": "introSlideIn .5s ease forwards .5s",
+        "introSlideIn-title": "introSlideInTitle .5s ease forwards .5s",
         "introSlideUp-button": "introSlideUp 0.8s ease-in-out forwards 1.5s",
         "introSlideUp-description":
           "introSlideUp 0.8s ease-in-out forwards 0.8s",
