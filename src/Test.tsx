@@ -7,8 +7,11 @@ interface Itest {
 }
 export const Test = ({ value }: Itest) => {
   return (
-    <>
+    <div
+      className="  min-h-[30vh] w-[100%] flex justify-center bg-gradient-to-b to-[#EDFEEE] from-[#D8F9DA] 
+"
+    >
       <div ref={value.element}>123</div>
-    </>
+    </div>
   );
 };

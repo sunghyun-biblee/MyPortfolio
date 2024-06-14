@@ -44,12 +44,14 @@ function App() {
   return (
     <QueryClientProvider client={qeuryClient}>
       <div className="App mx-auto my-0  mysm:max-w-[100vw] relative">
-        <div className="fixed top-0 left-0 right-0 bg-[#7db3e9] z-20">
-          <div
-            className={`h-[10px] bg-[#1f7ee3] w-[100%] transition-all rounded-r-lg`}
-            style={{ transform: `translateX(${scrollProgress - 100}%)` }}
-            id="progress-bar"
-          ></div>
+        <div className="fixed top-0 left-0 right-0 z-20">
+          <div className=" bg-[#7db3e9] ">
+            <div
+              className={`h-[10px] bg-[#1f7ee3] w-[100%] transition-all rounded-r-lg`}
+              style={{ transform: `translateX(${scrollProgress - 100}%)` }}
+              id="progress-bar"
+            ></div>
+          </div>
           <Header scrollRef={scrollRef} nav={nav}></Header>
         </div>
 

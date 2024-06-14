@@ -27,13 +27,13 @@ module.exports = {
         },
       },
       animation: {
-        "introSlideIn-title": "introSlideIn 0.8s ease forwards .5s",
+        "introSlideIn-title": "introSlideIn .5s ease forwards .5s",
         "introSlideUp-button": "introSlideUp 0.8s ease-in-out forwards 1.5s",
         "introSlideUp-description":
           "introSlideUp 0.8s ease-in-out forwards 0.8s",
         "introSlideIn-profileImg": "introSlideIn 1.5s ease-in-out forwards 1s",
         "introPopUp-profileImg": "introPopUp 0.8s ease-in-out forwards 1s",
-        "introExpand-container": "introExpand 0.8s ease forwards",
+        "introExpand-container": "introExpand 0.5s ease forwards",
       },
     },
   },

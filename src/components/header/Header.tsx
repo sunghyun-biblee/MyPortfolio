@@ -49,7 +49,7 @@ export const Header = ({ scrollRef, nav }: IHeader) => {
         md:px-5
         mysm:px-3 h-[72px] mx-auto my-0 w-[100%]
        
-      ${isShow ? "bg-[#AED1F5]" : "bg-[#5ea3ec]/50"}
+      ${isShow ? "bg-[#AED1F5]" : "bg-[#5ea3ec]"}
       `}
     >
       <div className="lg:max-w-[1200px] w-[100%]  flex justify-between items-center">
