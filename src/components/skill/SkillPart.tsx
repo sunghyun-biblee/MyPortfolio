@@ -57,8 +57,14 @@ export const SkillPart = ({ value }: ISkill) => {
               <li className="py-2 font-bold tracking-tight">
                 ES6 문법에 익숙합니다
               </li>
+
               <li className="py-2 font-bold tracking-tight">
-                Javascript 주요 개념을 인지하고 있습니다
+                localStroage로 데이터를 관리할 수 있습니다 <br />
+                {"( 자동로그인 구현 )"}
+              </li>
+              <li className="py-2 font-bold tracking-tight">
+                InsersectionObserver API를 사용해 무한스크롤을 구현해본 경험이
+                있습니다 <br />
               </li>
               <li className="py-2 font-bold tracking-tight">
                 typescript를 사용 경험이 있습니다
