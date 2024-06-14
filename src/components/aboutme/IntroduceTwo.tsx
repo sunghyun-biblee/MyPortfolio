@@ -76,9 +76,9 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
           </div>
           <div className="overflow-hidden h-auto my-10" id="title">
             <h1
-              className="text-[40px] text-white 
+              className="text-5xl text-white py-1
               transform translate-y-[110px] animate-introSlideIn-title
-              font-mono"
+              font-mono [text-shadow:_5px_4px_4px_#335154]"
             >
               Frontend_Developer "sungHyun"
             </h1>
