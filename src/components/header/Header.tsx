@@ -70,10 +70,11 @@ export const Header = ({ scrollRef, nav }: IHeader) => {
           }`}
         >
           {nav &&
-            nav.slice(1).map((item) => (
+            nav.slice(1).map((item, index) => (
               <li
                 className=" cursor-pointer lg:px-5  mysm:px-3"
                 onClick={item.onMove}
+                key={item.name + index}
               >
                 <span
                   className={` border-b-2 pb-[1px] font-semibold transition-colors ${

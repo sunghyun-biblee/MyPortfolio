@@ -31,8 +31,11 @@ export const SkillPart = ({ value }: ISkill) => {
           Skill Stack
         </h1>
         <ul className="md:flex md:flex-row pb-[100px] lg:px-2 md:px-1 mysm:grid mysm:grid-cols-3 md:gap-0 mysm:gap-3">
-          {skillArray.map((item) => (
-            <Li className="px-3 py-[5px] shadow-lg  lg:mr-5 md:mr-2 lg:text-[22px]">
+          {skillArray.map((item, index) => (
+            <Li
+              className="px-3 py-[5px] shadow-lg  lg:mr-5 md:mr-2 lg:text-[22px]"
+              key={item + index}
+            >
               <span>{item}</span>
             </Li>
           ))}
@@ -59,13 +62,14 @@ export const SkillPart = ({ value }: ISkill) => {
               </li>
 
               <li className="py-2 font-bold tracking-tight">
-                localStroage로 데이터를 관리할 수 있습니다 <br />
+                localStroage로 데이터를 관리해본 경험이 있습니다 &nbsp;
                 {"( 자동로그인 구현 )"}
+                <br />
               </li>
-              <li className="py-2 font-bold tracking-tight">
+              {/* <li className="py-2 font-bold tracking-tight">
                 InsersectionObserver API를 사용해 무한스크롤을 구현해본 경험이
                 있습니다 <br />
-              </li>
+              </li> */}
               <li className="py-2 font-bold tracking-tight">
                 typescript를 사용 경험이 있습니다
               </li>
