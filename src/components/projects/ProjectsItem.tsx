@@ -6,7 +6,7 @@ interface IprojectItem {
 }
 export const ProjectsItem = ({ item }: IprojectItem) => {
   return (
-    <article className="bg-[#E2FEF0] p-12 mb-14 rounded-lg shadow-lg">
+    <article className="bg-[#E2FEF0] p-12 mb-20 rounded-lg shadow-2xl">
       <div className="mb-10 flex justify-between items-center lg:flex-row mysm:flex-col">
         <h1 className="text-5xl uppercase font-extrabold">{item.title}</h1>
         <span className="text-2xl text-gray-600/80 font-semibold">

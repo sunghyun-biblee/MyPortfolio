@@ -74,7 +74,7 @@ const projectArray = [
 export const Projects = ({ value }: Itest) => {
   return (
     <div
-      className="  min-h-[100vh] w-[100%] flex justify-center bg-gradient-to-b from-[#96EBA0] to-[#D8F9DA] lg:p-0 md:py-[5rem] mysm:py-[10rem]
+      className="  min-h-[100vh] w-[100%] flex justify-center bg-gradient-to-b from-[#96EBA0] to-[#D8F9DA] lg:pt-[10rem] mysm:pt-[7rem]
 "
       ref={value.element}
     >

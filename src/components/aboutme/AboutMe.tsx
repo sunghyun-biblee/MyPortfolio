@@ -16,7 +16,7 @@ export const AboutMe = ({ value }: IAboutMe) => {
 
   return (
     <div
-      className="h-[90vh] w-[100%] flex justify-center items-center
+      className="h-[100vh] w-[100%] flex justify-center items-center
         bg-gradient-to-b from-cyan-500 to-[#20DABF] 
       
       "

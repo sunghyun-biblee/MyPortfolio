@@ -16,7 +16,7 @@ export const SkillPart = ({ value }: ISkill) => {
   return (
     <div
       className=" min-h-[100vh] w-[100%] flex justify-center
-       bg-gradient-to-b to-[#96EBA0] from-[#20DABF] 
+       bg-gradient-to-b to-[#96EBA0] from-[#20DABF] lg:pt-[5rem] mysm:pt-[8rem]
     "
       ref={value.element}
     >
