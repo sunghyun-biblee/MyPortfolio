@@ -6,6 +6,9 @@ module.exports = {
       screens: {
         mysm: "375px",
       },
+      transitionProperty: {
+        height: "height",
+      },
 
       keyframes: {
         introSlideIn: {
