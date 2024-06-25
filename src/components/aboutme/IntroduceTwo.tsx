@@ -13,7 +13,7 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIsFlip((prev) => !prev);
-    }, 2000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [isFlip]);
 
@@ -45,11 +45,11 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
                 onClick={handleImgClick}
               >
                 <FlipBox value={isFlip}>
-                  <FlipCard className="rounded-lg shadow-2xl  overflow-hidden">
-                    <Img src={preview} alt="" id="container_img" />
-                  </FlipCard>
+                  <FlipCardFront className="rounded-lg shadow-2xl  overflow-hidden">
+                    <Img src={preview} alt="img" id="container_img" />
+                  </FlipCardFront>
 
-                  <FlipCardTwo className="rounded-lg shadow-2xl overflow-hidden">
+                  <FlipCardBack className="rounded-lg shadow-2xl overflow-hidden">
                     <ul className="w-[100%] h-[100%] bg-[#E6F4F1] text-black">
                       <li>
                         <span>조성현</span>
@@ -69,7 +69,7 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
                         <span>2023.08~2024.02</span>
                       </li>
                     </ul>
-                  </FlipCardTwo>
+                  </FlipCardBack>
                 </FlipBox>
               </div>
             </div>
@@ -103,7 +103,7 @@ const FlipBox = styled.div<{ value: boolean }>`
   height: 500px;
   transform: ${(props) => (props.value ? "rotateY(180deg)" : "rotateY(0deg)")};
 `;
-const FlipCard = styled.div`
+const FlipCardFront = styled.div`
   backface-visibility: hidden;
   position: absolute;
   top: 0;
@@ -112,7 +112,7 @@ const FlipCard = styled.div`
   height: 100%;
   border: 1px solid gray;
 `;
-const FlipCardTwo = styled.div`
+const FlipCardBack = styled.div`
   backface-visibility: hidden;
   position: absolute;
   top: 0;
