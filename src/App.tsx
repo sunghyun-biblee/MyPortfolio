@@ -24,23 +24,20 @@ function App() {
   const scrollRef = useRef<HTMLDivElement[]>([]);
   const [scrollProgress, setScrollProgress] = useState<number>(0);
   const qeuryClient = new QueryClient();
+
   useEffect(() => {
-    const updateProgress = () => {
+    const updateProgressBar = () => {
       const currentScrollPosition = window.scrollY;
       const scrollHeight = document.body.scrollHeight - window.innerHeight;
 
-      // console.log("currentScrollPosition", currentScrollPosition);
-      // console.log("scrollHeight", scrollHeight);
       const progress =
         Number((currentScrollPosition / scrollHeight).toFixed(2)) * 100;
       setScrollProgress(progress);
-      // console.log(progress);
     };
 
-    window.addEventListener("scroll", updateProgress);
+    window.addEventListener("scroll", updateProgressBar);
   }, []);
-  // console.log(nav[3].element);
-  // console.log(scrollRef.current);
+
   return (
     <QueryClientProvider client={qeuryClient}>
       <div className="App mx-auto my-0  mysm:max-w-[100vw] relative">
