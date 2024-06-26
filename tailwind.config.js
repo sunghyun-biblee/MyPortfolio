@@ -8,6 +8,10 @@ module.exports = {
       },
       transitionProperty: {
         height: "height",
+        margin: "margin",
+      },
+      transitionDuration: {
+        4000: "4000ms",
       },
 
       keyframes: {
@@ -40,7 +44,7 @@ module.exports = {
         "introSlideUp-description":
           "introSlideUp 0.8s ease-in-out forwards 0.8s",
         "introSlideIn-profileImg": "introSlideIn 1.5s ease-in-out forwards 1s",
-        "introPopUp-profileImg": "introPopUp 0.8s ease-in-out forwards 1s",
+        "introPopUp-profileImg": "introPopUp 0.7s ease-in-out forwards 1s",
         "introExpand-container": "introExpand 0.5s ease forwards",
       },
     },

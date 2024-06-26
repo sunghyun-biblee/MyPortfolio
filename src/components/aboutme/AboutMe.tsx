@@ -1,48 +1,84 @@
 import React, { forwardRef } from "react";
 import preview from "assets/img/profileImg.jpg";
+import preview2 from "assets/img/A1.jpg";
 import { ScrollMoveType } from "components/projects/Projects";
+import styled from "styled-components";
 
-interface AboutMeProps {
-  ref: React.Ref<HTMLDivElement>;
-}
 interface IAboutMe {
   value: ScrollMoveType;
 }
+interface BackGroundProps {
+  img: string;
+}
 export const AboutMe = ({ value }: IAboutMe) => {
-  const login = () => {
-    window.location.href =
-      "https://api.devproject.store/oauth2/authorization/google";
-  };
+  // const login = () => {
+  //   window.location.href =
+  //     "https://api.devproject.store/oauth2/authorization/google";
+  // };
 
   return (
     <div
       className="h-[100vh] w-[100%] flex justify-center items-center
         bg-gradient-to-b from-cyan-500 to-[#20DABF] 
-      
+      pt-[82px]
       "
       ref={value.element}
     >
-      <div className="flex flex-col justify-center items-center border-[1px] rounded-2xl h-[50dvh] lg:max-w-[1200px] w-[90%] bg-[#efefee] my-1 hover:border-indigo-300 ">
-        <span
-          className="cursor-pointer"
-          // onClick={() => {
-          //   window.location.href =
-          //     "https://api.devproject.store/oauth2/authorization/google";
-          //   // "https://localhost:8080/oauth2/authorization/google";
-          // }}
+      <div
+        className="lg:w-[100%] mysm:w-[100vw] lg:max-w-[1200px]  lg:min-h-[90vh] mysm:min-h-[100vh] mx-auto my-0 relative flex flex-col justify-center text-left   box-border lg:p-3 mysm:p-0
+     lg:items-stretch mysm:items-center 
+      "
+      >
+        <BackGroundImg
+          img={preview2}
+          className="lg:w-[500px] mysm:brightness-50   transition-all
+          duration-1000 
+           lg:brightness-90"
+          // onClick={login}
+        />
+
+        <div
+          className="z-10  lg:ml-[10%]  mysm:ml-[0px] 
+         transition-all duration-1000"
         >
-          renderSkill Animation
-        </span>
-        <div className="flex py-[80px] items-start md:flex-row mysm:flex-col">
-          <div className="overflow-hidden rounded-[50%] shadow-xl border-[1px] w-[200px] h-[200px]">
-            <img
-              src={preview}
-              alt="myprofile"
-              className="object-cover"
-              onClick={login}
-            />
+          <h1 className=" inline text-5xl text-white uppercase font-extrabold ">
+            like a turtle
+          </h1>
+        </div>
+        <div
+          className="flex flex-col md:text-base mysm:text-sm z-10  text-white leading-8 tracking-wide font-medium max-w-[650px] lg:mt-[10rem] mysm:mt-[6rem]
+         lg:ml-[auto]   mysm:ml-[0px] 
+          transition-all duration-[1000ms]
+          transfrom lg:-translate-y-[100px] mysm:-translate-y-[0px]
+           lg:px-0 mysm:px-3
+        "
+        >
+          {/* <span className="cursor-pointer ">renderSkill Animation</span> */}
+          <div>
+            꾸준히 우상향할 프론트엔드 개발자 조성현 입니다
+            <br />
+            <p className="py-2">
+              <span className="lg:text-[black] mysm:text-[#ee4949]  font-extrabold text-xl tracking-wide transition-colors duration-700">
+                "중요한건 꺽이지 않는 마음"
+              </span>
+              이 문장은 항상 마음에 두고있는 문장입니다
+            </p>
+            개발자를 준비하면서 처음마주하는 기술들은 시간이 다소 걸리더라도
+            외울려하지않고, 최대한 이해하여 사용하려는 편이며,
+            <br />
+            프로젝트를 진행하며 생기는 트러블<b>(이슈)</b>을 마주쳐도
+            회피하지않고, 팀원들과의 소통으로 일정 및 리소스등을 고려하여 어떤
+            것이 우선순위인지 유연하게 판단하며, 팀원들의 공감을 바탕으로
+            프로젝트를 끝까지 마무리 합니다.
           </div>
-          <ul className="flex flex-col items-end px-6 ml-[70px]">
+          <span className="py-4">
+            인터랙티브한 웹과 제이콥의 법칙을 활용하여 UI/UX 디자인을
+            구현하는것을 좋아합니다
+          </span>
+        </div>
+      </div>
+
+      {/* <ul className="flex flex-col items-end px-6 ml-[70px]">
             <li
               className="border-[1px] rounded-3xl w-[100%] text-left px-5 py-3
             hover:bg-[#393E46] hover:text-[#efefef] hover:border-red  font-semibold font-sans border-black hover:border-gray-50 "
@@ -67,16 +103,33 @@ export const AboutMe = ({ value }: IAboutMe) => {
             >
               <span> KAKAO</span>
             </li>
-          </ul>
-        </div>
-        <div className="flex">
-          <p>overview</p>
-          <details>
-            <summary>요약내용</summary>
-            헤헤
-          </details>
-        </div>
-      </div>
+          </ul> */}
     </div>
   );
 };
+
+const BackGroundImg = styled.div<BackGroundProps>`
+  position: absolute;
+  height: 100%;
+  min-height: 600px;
+
+  background: ${(props) => `url(${props.img})  no-repeat`};
+
+  background-attachment: fixed;
+  /* filter: brightness(50%); */
+  z-index: 0;
+  /* background-repeat: no-repeat;
+  background-size: 450px 100%;
+ 
+   */
+  @media screen and (min-width: 1024px) {
+    background-size: 1000px auto;
+    background-position: 27% 90%;
+  }
+  @media screen and (min-width: 375px) and (max-width: 1023px) {
+    width: 100%;
+    background-size: 1010px auto;
+
+    background-position: 10% 100%;
+  }
+`;
