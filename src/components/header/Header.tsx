@@ -48,7 +48,7 @@ export const Header = ({ scrollRef, nav }: IHeader) => {
       `}
     >
       <div
-        className="lg:max-w-[1200px] w-[100%]  mx-auto my-0   flex justify-between items-center mysm:min-h-[72px] lg:px-10 lg:py-5
+        className="lg:max-w-[1400px] w-[100%]  mx-auto my-0   flex justify-between items-center mysm:min-h-[72px] lg:px-10 lg:py-5
         md:px-5
         mysm:px-3"
       >
@@ -111,30 +111,20 @@ export const Header = ({ scrollRef, nav }: IHeader) => {
         {nav &&
           nav.slice(1).map((item, index) => (
             <li
-              className={`text-left cursor-pointer py-3
-                ${
-                  isScroll
-                    ? "text-blue-950 hover:text-white"
-                    : "text-[#f2f2f2] hover:text-blue-950"
-                }
-                ${
-                  index === 0
-                    ? "mt-[0.5rem]"
-                    : index === nav.length - 2 && "mb-[0.5rem]"
-                }
-               
+              className={`text-left cursor-pointer py-3 ${
+                isScroll
+                  ? "text-blue-950 hover:text-white"
+                  : "text-[#f2f2f2] hover:text-blue-950"
+              } ${
+                index === 0
+                  ? "mt-[0.5rem]"
+                  : index === nav.length - 2 && "mb-[0.5rem]"
+              }
               `}
               onClick={item.onMove}
               key={item.name + index}
             >
-              <span
-                className={` font-semibold transition-colors ${
-                  isScroll
-                    ? "border-blue-950 hover:border-[#efefef] hover:text-[#efefef]"
-                    : "border-[#f2f2f2] hover:border-blue-950 hover:text-blue-950"
-                }
-            `}
-              >
+              <span className={` font-semibold transition-colors `}>
                 {item.name}
               </span>
             </li>
