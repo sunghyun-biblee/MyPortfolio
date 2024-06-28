@@ -25,13 +25,11 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
   const handleImgClick = () => {
     if (isFlip) {
       setIsFlip(false);
-      // setIsClick((prev) => !prev);
     } else {
       setIsFlip(true);
-      // setIsClick((prev) => !prev);
     }
   };
-  console.log(isClick);
+
   return (
     <div
       className="h-[100dvh] relative  w-[100%]  box-border overflow-hidden 
@@ -41,7 +39,7 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
       ref={value.element}
     >
       <div
-        className="flex h-[100vh] lg:max-w-[1200px] w-[100%] justify-around items-center text-white mx-auto lg:mt-[0px] mysm:mt-[100px] transition-all duration-700
+        className="flex h-[100vh] lg:max-w-[1400px] w-[100%] justify-around items-center text-white mx-auto lg:mt-[0px] mysm:mt-[100px] transition-all duration-700
       animate-introExpand-container   relative
       transform translate-x-[1400px]"
         id="container"

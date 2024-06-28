@@ -26,7 +26,7 @@ module.exports = {
         },
         introPopUp: {
           "0%": { opacity: 0, transform: "scale(0)" },
-          "50%": { opacity: 0.5, transform: "scale(1.1)" },
+          "50%": { opacity: 0.5, transform: "scale(1.05)" },
           "100%": { opacity: 1, transform: "scale(1)" },
         },
         introSlideUp: {
