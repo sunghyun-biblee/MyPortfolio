@@ -1,6 +1,7 @@
 import { ScrollMoveType } from "components/projects/Projects";
 import React, { forwardRef } from "react";
 import styled from "styled-components";
+import { SkillItem } from "./SkillItem";
 
 const skillArray = [
   "React",
@@ -12,146 +13,113 @@ const skillArray = [
 interface ISkill {
   value: ScrollMoveType;
 }
+const SkillArray = [
+  {
+    title: "Javascript",
+    text: [
+      "ES6 문법들을 이해하고 활용할 수 있습니다",
+      "localStroage로 데이터를 관리할 수 있습니다 (자동로그인구현,영상이어보기)",
+      "typescript를 사용 경험이 있습니다",
+      "가독성이 좋은 코드 및 클린코드를 만들려고 노력합니다",
+    ],
+  },
+  {
+    title: "React",
+    text: [
+      "React의 작동원리와 라이프사이클을 이해하고 있습니다.",
+      "styled-component ,React-Query,React-router-Dom 활용할 수 있습니다",
+      "테스트 관련 라이브러리의 필요성을 느끼고 학습중 입니다",
+      "재사용 가능한 컴포넌트를 설계하기위해 노력합니다",
+    ],
+  },
+  {
+    title: "HTML/CSS",
+    text: [
+      " 웹 표준을 지킬려고 노력합니다",
+      " div 사용을 줄이며, 시멘틱태그를 이용하여 마크업 합니다",
+      "Keyfram을 활용한 애니메이션을 사용할 수 있습니다",
+      "styled-component,tailwindCSS 를 사용할 수 있습니다",
+      "framer_motion을 사용한 경험이 있습니다",
+      " 크로스 브라우징을 고려합니다",
+    ],
+  },
+  {
+    title: "TOOL",
+    text: [
+      "commit,push,clone,pull을 사용하여 레파지토리를 관리합니다",
+      "get,post,delete 요청을 하여 응답하는지 확인하고 디버깅할 수 있습니다",
+      "주로사용하는 IDE툴이며, 코드작성에 편리한 확장프로그램들을 추가하여 사용합니다",
+    ],
+  },
+];
 export const SkillPart = ({ value }: ISkill) => {
   return (
     <div
       className=" min-h-[100vh] w-[100%] flex justify-center
-       bg-gradient-to-b to-[#96EBA0] from-[#20DABF] lg:pt-[5rem] mysm:pt-[8rem]
+       bg-gradient-to-b to-[#96EBA0] from-[#20DABF] pt-[5rem]
     "
       ref={value.element}
     >
       <div
-        className="max-w-[1200px] flex flex-col justify-center w-[100vw]
+        className="max-w-[1400px] min-h-[100vh] flex flex-col w-[100vw] lg:pt-[100px] mysm:pt-[50px]
       px-3"
       >
-        <h1
-          className="text-left lg:text-6xl md:text-6xl mysm:text-[40px] md:pb-7 mysm:pb-5 text-[#181f1b] font-extrabold
-        [text-shadow:_5px_3px_3px_#3d9ca4]"
+        <div
+          className="lg:pb-[120px]
+        mysm:pb-[100px]"
         >
-          Skill Stack
-        </h1>
-        <ul className="md:flex md:flex-row pb-[100px] lg:px-2 md:px-1 mysm:grid mysm:grid-cols-3 md:gap-0 mysm:gap-3">
-          {skillArray.map((item, index) => (
-            <Li
-              className="px-3 py-[5px] shadow-lg  lg:mr-5 md:mr-2 lg:text-[22px]"
-              key={item + index}
-            >
-              <span>{item}</span>
+          <h1
+            className="text-left lg:text-6xl md:text-6xl mysm:text-[40px] md:pb-10 mysm:pb-5 text-[#181f1b] font-extrabold
+        [text-shadow:_5px_3px_3px_#3d9ca4]"
+          >
+            Skill Stack
+          </h1>
+          <ul
+            className="md:flex md:flex-row 
+        lg:px-2 md:px-1 mysm:grid mysm:grid-cols-3 md:gap-0 mysm:gap-3"
+          >
+            {skillArray.map((item, index) => (
+              <Li
+                className="px-3 py-[5px] shadow-lg  lg:mr-5 md:mr-2 lg:text-[22px]"
+                key={item + index}
+              >
+                <span>{item}</span>
+              </Li>
+            ))}
+            <Li className="px-3 py-[5px] shadow-lg lg:text-[22px] md:text-base ">
+              <span className="mysm:hidden md:block">styled-components</span>
+              <span className="mysm:block md:hidden">styled</span>
             </Li>
-          ))}
-          <Li className="px-3 py-[5px] shadow-lg lg:text-[22px] md:text-base ">
-            <span className="mysm:hidden md:block">styled-components</span>
-            <span className="mysm:block md:hidden">styled</span>
-          </Li>
-        </ul>
+          </ul>
+        </div>
         <section
           className="md:grid md:grid-cols-2 md:gap-y-20 md:gap-x-10 mysm:flex mysm:flex-col gap-16
         mysm:px-4
         "
         >
-          <article
-            className="shadow-xl rounded-3xl relative border-4 border-[#005B43] bg-[#E7FFF4]/95
-          "
-          >
-            <h1 className="font-extrabold absolute bg-[#a0e5d0] -top-8 -left-5 px-3 py-2 border-4 lg:text-3xl border-[#005B43] transform -rotate-12">
-              Javascript
-            </h1>
-            <ul className="text-left px-3 my-10">
-              <li className="py-2 font-bold tracking-tight">
-                ES6 문법에 익숙합니다
-              </li>
+          {SkillArray.map((item) => (
+            <SkillItem item={item}></SkillItem>
+          ))}
+        </section>
+      </div>
+    </div>
+  );
+};
 
-              <li className="py-2 font-bold tracking-tight">
-                localStroage로 데이터를 관리해본 경험이 있습니다 &nbsp;
-                {"( 자동로그인 구현 )"}
-                <br />
-              </li>
-              {/* <li className="py-2 font-bold tracking-tight">
-                InsersectionObserver API를 사용해 무한스크롤을 구현해본 경험이
-                있습니다 <br />
-              </li> */}
-              <li className="py-2 font-bold tracking-tight">
-                typescript를 사용 경험이 있습니다
-              </li>
-              <li className="py-2 font-bold tracking-tight">
-                가독성이 좋은 코드 및 클린코드를 만들려고 노력합니다
-              </li>
-            </ul>
-          </article>
+const Li = styled.li`
+  background-color: #cef3ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #151d18;
+  font-family: sans-serif;
+  font-weight: 600;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+`;
 
-          <article className="shadow-xl rounded-3xl relative border-4 border-[#005B43] bg-[#E7FFF4]/95">
-            <h1 className="font-extrabold absolute bg-[#a0e5d0] -top-8 -left-5 px-3 py-2 border-4 border-[#005B43] lg:text-3xl transform -rotate-12 ">
-              React
-            </h1>
-            <ul className="text-left px-3 my-10">
-              <li className="py-2 font-bold tracking-tight">
-                React의 작동원리와 라이프사이클을 이해하고 있습니다.
-              </li>
-              <li className="py-2 font-bold tracking-tight">
-                styled-component ,React-Query,React-router-Dom 활용할 수
-                있습니다
-              </li>
-              <li className="py-2 font-bold tracking-tight">
-                테스트 관련 라이브러리의 필요성을 느끼고 학습중 입니다
-              </li>
-              <li className="py-2 font-bold tracking-tight">
-                재사용 가능한 컴포넌트를 설계하기위해 노력합니다
-              </li>
-            </ul>
-          </article>
-          <article className="shadow-xl rounded-3xl relative border-4 border-[#005B43] bg-[#E7FFF4]/95 ">
-            <h1 className="font-extrabold absolute bg-[#a0e5d0] -top-8 -left-5 px-3 py-2 border-4 lg:text-3xl border-[#005B43] transform -rotate-12">
-              HTML/CSS
-            </h1>
-            <ul className="text-left px-3 my-10">
-              <li className="py-3 font-bold tracking-tight">
-                웹 표준을 지킬려고 노력합니다
-              </li>
-              <li className="py-3 font-bold tracking-tight">
-                div 사용을 줄이며, 시멘틱태그를 이용하여 마크업 합니다
-              </li>
-              <li className="py-3 font-bold tracking-tight">
-                Keyfram을 활용한 애니메이션을 사용할 수 있습니다
-              </li>
-              <li className="py-3 font-bold tracking-tight">
-                styled-component,tailwindCSS 를 사용할 수 있습니다
-              </li>
-              <li className="py-3 font-bold tracking-tight">
-                framer_motion을 사용한 경험이 있습니다
-              </li>
-              <li className="py-3 font-bold tracking-tight">
-                크로스 브라우징을 고려합니다
-              </li>
-            </ul>
-          </article>
-          <article className="shadow-xl rounded-3xl relative border-4 border-[#005B43] bg-[#E7FFF4]/95">
-            <h1 className="font-extrabold absolute bg-[#a0e5d0] -top-8 -left-5 px-3 py-2 border-4 lg:text-3xl border-[#005B43] transform -rotate-12">
-              TOOL
-            </h1>
-            <ul className="text-left px-3 mt-10">
-              <li className="py-2 font-bold flex flex-col border-b-[1px] border-[#181F1B] border-dashed ">
-                <span className="text-lg text-gray-700">GitHub</span>
-                <span className="py-1">
-                  commit,push,clone,pull을 사용하여 레파지토리를 관리합니다
-                </span>
-              </li>
-              <li className="py-2 font-bold flex flex-col border-b-[1px] border-[#181F1B] border-dashed">
-                <span className="text-orange-700 text-lg">Postman</span>
-                <span className="py-1">
-                  get,post,delete 요청을 하여 응답하는지 확인하고 디버깅할 수
-                  있습니다
-                </span>
-              </li>
-              <li className="py-2 font-bold flex flex-col border-b-[1px] border-[#181F1B] border-dashed">
-                <span className="text-blue-800 text-lg">vscode</span>
-                <span className="py-1">
-                  주로사용하는 IDE툴이며, 코드작성에 편리한 확장프로그램들을
-                  추가하여 사용합니다
-                </span>
-              </li>
-            </ul>
-          </article>
-          {/* <article className="px-2">
+{
+  /* <article className="px-2">
             <ul>
               <h2 className="text-left lg:text-3xl">Front-End</h2>
 
@@ -237,21 +205,112 @@ export const SkillPart = ({ value }: ISkill) => {
                 </span>
               </li>
             </ul>
-          </article> */}
-        </section>
-      </div>
-    </div>
-  );
-};
+          </article> */
+}
+{
+  /*
+  
+  <article
+            className="shadow-xl rounded-3xl relative border-4 border-[#005B43] bg-[#E7FFF4]/95
+          "
+          >
+            <h1 className="font-extrabold absolute bg-[#a0e5d0] -top-8 -left-5 px-3 py-2 border-4 lg:text-3xl md:text-xl mysm:text-lg border-[#005B43] transform -rotate-12">
+              Javascript
+            </h1>
+            <ul className="text-left px-3 my-10">
+              <li className="py-2 font-bold tracking-tight">
+                ES6 문법들을 이해하고 활용할 수 있습니다.
+              </li>
 
-const Li = styled.li`
-  background-color: #cef3ec;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #151d18;
-  font-family: sans-serif;
-  font-weight: 600;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-`;
+              <li className="py-2 font-bold tracking-tight">
+                localStroage로 데이터를 관리할 수 있습니다 &nbsp;
+                {"(자동로그인 구현)"}
+                <br />
+              </li>
+               // <li className="py-2 font-bold tracking-tight">
+                InsersectionObserver API를 사용해 무한스크롤을 구현해본 경험이
+                있습니다 <br />
+              </li> //
+              <li className="py-2 font-bold tracking-tight">
+                typescript를 사용 경험이 있습니다
+              </li>
+              <li className="py-2 font-bold tracking-tight">
+                가독성이 좋은 코드 및 클린코드를 만들려고 노력합니다
+              </li>
+            </ul>
+          </article>
+
+          <article className="shadow-xl rounded-3xl relative border-4 border-[#005B43] bg-[#E7FFF4]/95">
+            <h1 className="font-extrabold absolute bg-[#a0e5d0] -top-8 -left-5 px-3 py-2 border-4 border-[#005B43] lg:text-3xl transform -rotate-12 ">
+              React
+            </h1>
+            <ul className="text-left px-3 my-10">
+              <li className="py-2 font-bold tracking-tight">
+                React의 작동원리와 라이프사이클을 이해하고 있습니다.
+              </li>
+              <li className="py-2 font-bold tracking-tight">
+                styled-component ,React-Query,React-router-Dom 활용할 수
+                있습니다
+              </li>
+              <li className="py-2 font-bold tracking-tight">
+                테스트 관련 라이브러리의 필요성을 느끼고 학습중 입니다
+              </li>
+              <li className="py-2 font-bold tracking-tight">
+                재사용 가능한 컴포넌트를 설계하기위해 노력합니다
+              </li>
+            </ul>
+          </article>
+          <article className="shadow-xl rounded-3xl relative border-4 border-[#005B43] bg-[#E7FFF4]/95 ">
+            <h1 className="font-extrabold absolute bg-[#a0e5d0] -top-8 -left-5 px-3 py-2 border-4 lg:text-3xl border-[#005B43] transform -rotate-12">
+              HTML/CSS
+            </h1>
+            <ul className="text-left px-3 my-10">
+              <li className="py-3 font-bold tracking-tight">
+                웹 표준을 지킬려고 노력합니다
+              </li>
+              <li className="py-3 font-bold tracking-tight">
+                div 사용을 줄이며, 시멘틱태그를 이용하여 마크업 합니다
+              </li>
+              <li className="py-3 font-bold tracking-tight">
+                Keyfram을 활용한 애니메이션을 사용할 수 있습니다
+              </li>
+              <li className="py-3 font-bold tracking-tight">
+                styled-component,tailwindCSS 를 사용할 수 있습니다
+              </li>
+              <li className="py-3 font-bold tracking-tight">
+                framer_motion을 사용한 경험이 있습니다
+              </li>
+              <li className="py-3 font-bold tracking-tight">
+                크로스 브라우징을 고려합니다
+              </li>
+            </ul>
+          </article>
+          <article className="shadow-xl rounded-3xl relative border-4 border-[#005B43] bg-[#E7FFF4]/95">
+            <h1 className="font-extrabold absolute bg-[#a0e5d0] -top-8 -left-5 px-3 py-2 border-4 lg:text-3xl border-[#005B43] transform -rotate-12">
+              TOOL
+            </h1>
+            <ul className="text-left px-3 mt-10">
+              <li className="py-2 font-bold flex flex-col border-b-[1px] border-[#181F1B] border-dashed ">
+                <span className="text-lg text-gray-700">GitHub</span>
+                <span className="py-1">
+                  commit,push,clone,pull을 사용하여 레파지토리를 관리합니다
+                </span>
+              </li>
+              <li className="py-2 font-bold flex flex-col border-b-[1px] border-[#181F1B] border-dashed">
+                <span className="text-orange-700 text-lg">Postman</span>
+                <span className="py-1">
+                  get,post,delete 요청을 하여 응답하는지 확인하고 디버깅할 수
+                  있습니다
+                </span>
+              </li>
+              <li className="py-2 font-bold flex flex-col border-b-[1px] border-[#181F1B] border-dashed">
+                <span className="text-blue-800 text-lg">vscode</span>
+                <span className="py-1">
+                  주로사용하는 IDE툴이며, 코드작성에 편리한 확장프로그램들을
+                  추가하여 사용합니다
+                </span>
+              </li>
+            </ul>
+          </article>
+  */
+}
