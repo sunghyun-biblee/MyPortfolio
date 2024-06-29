@@ -56,7 +56,7 @@ export const SkillPart = ({ value }: ISkill) => {
   return (
     <div
       className=" min-h-[100vh] w-[100%] flex justify-center
-       bg-gradient-to-b to-[#96EBA0] from-[#20DABF] pt-[5rem]
+       bg-gradient-to-b to-[#96EBA0] from-[#20DABF] pt-[5rem] font-pretendard
     "
       ref={value.element}
     >
@@ -97,8 +97,8 @@ export const SkillPart = ({ value }: ISkill) => {
         mysm:px-4
         "
         >
-          {SkillArray.map((item) => (
-            <SkillItem item={item}></SkillItem>
+          {SkillArray.map((item, index) => (
+            <SkillItem item={item} key={item.title + index}></SkillItem>
           ))}
         </section>
       </div>

@@ -25,7 +25,7 @@ export const AboutMe = ({ value }: IAboutMe) => {
     >
       <div
         className="lg:w-[100%] mysm:w-[100vw] lg:max-w-[1400px]  lg:min-h-[100vh] mysm:min-h-[100vh] mx-auto my-0 relative flex flex-col justify-center text-left   box-border  mysm:p-0
-     lg:items-stretch mysm:items-center bg-transparent/10
+     lg:items-stretch mysm:items-center bg-transparent/20
       "
       >
         <BackGroundImg
@@ -43,32 +43,38 @@ export const AboutMe = ({ value }: IAboutMe) => {
           </h1>
         </div>
         <div
-          className="flex flex-col md:text-lg mysm:text-sm z-10  text-white  font-medium max-w-[730px] lg:mt-[10rem] mysm:mt-[6rem]
-         lg:ml-[auto]   mysm:ml-[0px]  mysm:mr-[0px] lg:mr-[3rem] 
+          className="flex flex-col md:text-lg mysm:text-base z-10  text-[#efefef] 
+          lg:max-w-[640px] md:max-w-[650px] lg:mt-[10rem] mysm:mt-[6rem]
+         lg:ml-[auto]   mysm:ml-[0px]  mysm:mr-[0px] lg:mr-[5rem] 
           transition-all duration-[1000ms]
           transfrom lg:-translate-y-[100px] mysm:-translate-y-[0px]
-           lg:px-3 lg:py-3 mysm:px-3 
-             
+           lg:px-2 lg:py-3 mysm:px-3 
+           font-pretendard 
+           font-medium 
+           
+          md:tracking-wide
+          mysm:tracking-normal
+            
         "
           {...TextAnimate}
         >
           {/* <span className="cursor-pointer ">renderSkill Animation</span> */}
           <div>
-            <h3 className="md:text-xl mysm:text-[17px] font-semibold leading-10">
+            <h1 className="md:text-[1.7rem] mysm:text-xl font-semibold ">
               꾸준히 우상향할 프론트엔드 개발자 조성현 입니다
-            </h3>
+            </h1>
 
-            <div className="py-2 md:block mysm:flex flex-col my-2">
+            <div className=" md:block mysm:flex flex-col mt-[1rem] md:mb-[0.5rem] mysm:mb-[1rem]">
               <span className="lg:text-[black] mysm:text-[#ee4949]  font-extrabold text-xl tracking-wide transition-colors duration-700">
-                "중요한건 꺽이지 않는 마음"
+                ' 중요한건 꺽이지 않는 마음 '
               </span>
-              <span className="text-sm pl-3 pt-2">
+              <span className="text-sm md:pl-3 mysm:pl-1 pt-2 tracking-wider lg:text-inherit mysm:text-gray-300">
                 이 문장은 항상 마음에 두고있는 문장입니다
               </span>
             </div>
-            <p className="leading-8 tracking-normal">
+            <p className="leading-[1.9rem]">
               개발자를 준비하면서 처음마주하는 기술들은 시간이 다소 걸리더라도
-              외울려하지않고, 최대한 이해하여 사용하려는 편이며
+              외울려하지않고 최대한 이해하여 사용하려는 편이며,
               <br />
               프로젝트를 진행하며 생기는 트러블<b>(이슈)</b>을 마주쳐도
               회피하지않고, 팀원들과의 소통으로 일정 및 리소스등을 고려하여 어떤
@@ -77,8 +83,8 @@ export const AboutMe = ({ value }: IAboutMe) => {
             </p>
           </div>
           <span className="py-4">
-            인터랙티브한 웹과 제이콥의 법칙을 활용하여 UI/UX 디자인을
-            구현하는것을 좋아합니다
+            인터랙티브한 웹과 제이콥의 법칙을 활용하여 UI/UX 디자인을 구현하는걸
+            좋아합니다
           </span>
         </div>
       </div>

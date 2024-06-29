@@ -41,7 +41,7 @@ export const ProjectsItem = ({ item }: IprojectItem) => {
           <ul className="pt-5 mt-5 border-t-2 border-gray-500 ">
             <li className="flex  py-2">
               <span className="inline-block w-36  text-left text-2xl font-extrabold uppercase tracking-wide mr-10">
-                functions
+                주요기능
               </span>
               <p className="flex flex-col w-[calc(100%-9rem)] text-right font-semibold">
                 {/* {item.function.map((item) => (
@@ -79,6 +79,8 @@ export const ProjectsItem = ({ item }: IprojectItem) => {
                 Github
               </span>
               <a
+                rel="noreferrer noopener"
+                target="_blank"
                 href={`https://${item.github}.git`}
                 className="w-[calc(100%-9rem)] text-blue-700 hover:underline text-right"
               >

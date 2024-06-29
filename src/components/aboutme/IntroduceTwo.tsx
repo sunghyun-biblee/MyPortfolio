@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import preview from "assets/img/profileImg.jpg";
+import preview from "assets/img/profileImg.webp";
 import styled from "styled-components";
 import { ScrollMoveType } from "components/projects/Projects";
-import MyQR from "assets/img/myQR.jpg";
+import MyQR from "assets/img/myQR.webp";
 import Arrow from "assets/img/ClickArrow.svg";
 interface IIntroduce {
   value: ScrollMoveType;
@@ -35,6 +35,7 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
       className="h-[100dvh] relative  w-[100%]  box-border overflow-hidden 
     bg-gradient-to-b from-blue-500 to-cyan-500
     flex flex-col justify-center items-center
+    font-pretendard
     "
       ref={value.element}
     >
@@ -74,16 +75,16 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
                   <Img src={preview} alt="img" id="container_img" />
                 </FlipCardFront>
 
-                <FlipCardBack className="rounded-lg overflow-hidden  bg-blue-400 flex relative">
+                <FlipCardBack className="rounded-lg overflow-hidden  bg-blue-500 flex relative">
                   <Edge />
-                  <div className=" ml-[8%] w-[17%] h-[100%] bg-blue-400/50 z-[3] brightness-[55%]"></div>
-                  <ul className="w-[75%] h-[100%] right-0  text-white z-[4] box-border p-3 text-left">
+                  <div className=" ml-[8%] w-[17%] h-[100%] bg-blue-500/50 z-[3] brightness-[55%]"></div>
+                  <ul className="w-[75%] h-[100%] right-0  text-white z-[4] box-border p-3 text-left tracking-wide">
                     <Li className="text-right font-semibold text-lg ">
                       <span>FrontEnd</span>
                     </Li>
                     <Li className="flex justify-between pt-10">
                       <span className="font-semibold">조성현</span>
-                      <GraySpan>99.10.14</GraySpan>
+                      <GraySpan>1999.10</GraySpan>
                     </Li>
 
                     <li className="h-[2px] bg-[#efefef] my-5"></li>
@@ -114,7 +115,7 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
                         <img
                           src={MyQR}
                           alt="QRcode"
-                          className="max-w-[80px] max-h-[80px]"
+                          className="w-[80px] h-[80px]"
                         />
                       </div>
                     </li>
@@ -123,13 +124,17 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
               </FlipBox>
             </div>
           </div>
-          <div className="overflow-hidden h-auto my-10" id="title">
+          <div
+            className="overflow-hidden min-h-[70px]
+          max-h-[90px] my-10 py-1"
+            id="title"
+          >
             <h1
               className="lg:text-5xl md:text-4xl mysm:text-3xl text-white py-1
               transform translate-y-[110px] animate-introSlideIn-title
-              font-mono [text-shadow:_5px_4px_4px_#335154]"
+              font-Nanum [text-shadow:_4.5px_4px_4px_#335154] font-semibold"
             >
-              Frontend_Developer "sungHyun"
+              Frontend_Developer 'sungHyun'
             </h1>
           </div>
         </div>

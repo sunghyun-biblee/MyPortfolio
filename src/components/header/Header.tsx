@@ -42,8 +42,9 @@ export const Header = ({ scrollRef, nav }: IHeader) => {
     <header
       className={`flex flex-col   transition-colors duration-500
         w-[100%]
-    
-      ${isScroll ? "bg-[#AED1F5]" : "bg-[#5ea3ec]"}
+    font-pretendard  
+    backdrop-blur-[5px]
+      ${isScroll ? "bg-[#AED1F5]/80 " : "bg-[#5ea3ec]/80"}
        
       `}
     >
@@ -53,7 +54,7 @@ export const Header = ({ scrollRef, nav }: IHeader) => {
         mysm:px-3"
       >
         <h1
-          className={`text-2xl font-semibold  transition-colors cursor-pointer ${
+          className={`text-2xl font-bold transition-colors cursor-pointer ${
             isScroll
               ? "text-blue-950 hover:text-white"
               : "text-[#f2f2f2] hover:text-blue-950"
@@ -93,12 +94,12 @@ export const Header = ({ scrollRef, nav }: IHeader) => {
             ))}
         </ul>
         <div className="md:hidden mysm:flex justify-center items-center">
-          <button
+          <div
             className="w-[2rem] h-[2rem]"
             onClick={() => setIsMenu((prev) => !prev)}
           >
             <MenuBar isScroll={isScroll} />
-          </button>
+          </div>
         </div>
       </div>
 
