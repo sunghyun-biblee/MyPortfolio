@@ -38,6 +38,10 @@ export const Header = ({ scrollRef, nav }: IHeader) => {
     });
   }, []);
 
+  const handleClick = (item: ItemType) => {
+    item.onMove();
+    setIsMenu(false);
+  };
   return (
     <header
       className={`flex flex-col   transition-colors duration-500
@@ -122,7 +126,7 @@ export const Header = ({ scrollRef, nav }: IHeader) => {
                   : index === nav.length - 2 && "mb-[0.5rem]"
               }
               `}
-              onClick={item.onMove}
+              onClick={() => handleClick(item)}
               key={item.name + index}
             >
               <span className={` font-semibold transition-colors `}>
