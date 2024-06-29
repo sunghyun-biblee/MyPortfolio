@@ -78,7 +78,7 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
                 <FlipCardBack className="rounded-lg overflow-hidden  bg-blue-500 flex relative">
                   <Edge />
                   <div className=" ml-[8%] w-[17%] h-[100%] bg-blue-500/50 z-[3] brightness-[55%]"></div>
-                  <ul className="w-[75%] h-[100%] right-0  text-white z-[4] box-border p-3 text-left tracking-wide">
+                  <ul className="w-[75%] h-[100%] right-0  text-white z-[4] box-border p-[0.6rem] text-left tracking-wide">
                     <Li className="text-right font-semibold text-lg ">
                       <span>FrontEnd</span>
                     </Li>
@@ -99,8 +99,11 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
                       <GraySpan>2018.03~2020.08</GraySpan>
                     </Li>
                     <Li>
-                      <span className="inline-block pb-1">
-                        멀티캠퍼스 웹 개발자 수료
+                      <span className="inline-block pb-1 tracking-tight">
+                        멀티캠퍼스 웹 개발자 수료 &nbsp;
+                        <span className="text-xs text-yellow-300">
+                          개인 최우수
+                        </span>
                       </span>
                       <GraySpan>2023.08~2024.02</GraySpan>
                     </Li>
