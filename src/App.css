@@ -2,6 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ./woff2/Pretendard-ExtraBold.woff2 */
+@font-face {
+  font-family: "NanumSquare";
+  font-weight: 800;
+  font-display: swap;
+  src: local("NanumSquare ExtraBold"),
+    url("assets/fonts/NanumSquareOTF_acEB.otf") format("otf");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 800;
+  font-display: swap;
+  src: local("Pretendard ExtraBold"),
+    url("assets/fonts/Pretendard-ExtraBold.subset.woff2") format("woff2"),
+    url("assets/fonts/Pretendard-ExtraBold.subset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-display: swap;
+  src: local("Pretendard Bold"),
+    url("assets/fonts/Pretendard-Bold.subset.woff2") format("woff2"),
+    url("assets/fonts/Pretendard-Bold.subset.woff2") format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-display: swap;
+  src: local("Pretendard SemiBold"),
+    url("assets/fonts/Pretendard-SemiBold.subset.woff2") format("woff2"),
+    url("assets/fonts/Pretendard-SemiBold.subset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-display: swap;
+  src: local("Pretendard Medium"),
+    url("assets/fonts/Pretendard-Medium.subset.woff2") format("woff2"),
+    url("assets/fonts/Pretendard-Medium.subset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-display: swap;
+  src: local("Pretendard Regular"),
+    url("assets/fonts/Pretendard-Regular.subset.woff2") format("woff2"),
+    url("assets/fonts/Pretendard-Regular.subset.woff") format("woff");
+}
+
 .App {
   text-align: center;
 }

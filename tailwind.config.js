@@ -3,6 +3,10 @@ module.exports = {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        pretendard: ["Pretendard"],
+        Nanum: ["NanumSquare"],
+      },
       screens: {
         mysm: "375px",
       },
