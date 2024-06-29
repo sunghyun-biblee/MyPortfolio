@@ -12,6 +12,7 @@ module.exports = {
       },
       transitionProperty: {
         height: "height",
+        width: "width",
         margin: "margin",
       },
       transitionDuration: {
