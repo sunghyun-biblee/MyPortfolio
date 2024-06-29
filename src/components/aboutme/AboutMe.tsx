@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 import preview2 from "assets/img/A1.jpg";
 import { ScrollMoveType } from "components/projects/Projects";
 import styled from "styled-components";
 import { useTextFadeIn } from "hooks/useTextFadeIn";
+import { AboutMeModal } from "./AboutMeModal";
 
 interface IAboutMe {
   value: ScrollMoveType;
@@ -14,6 +15,9 @@ interface BackGroundProps {
 export const AboutMe = ({ value }: IAboutMe) => {
   const TitleAnimate = useTextFadeIn(1, 0, "down");
   const TextAnimate = useTextFadeIn(1, 0.4);
+  const [isDescript, setIsDescript] = useState<boolean>(false);
+  const [isModal, setIsModal] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(1);
 
   return (
     <div
@@ -44,11 +48,11 @@ export const AboutMe = ({ value }: IAboutMe) => {
         </div>
         <div
           className="flex flex-col md:text-lg mysm:text-base z-10  text-[#efefef] 
-          lg:max-w-[640px] md:max-w-[650px] lg:mt-[10rem] mysm:mt-[6rem]
+          max-w-[650px] lg:mt-[10rem] mysm:mt-[6rem]
          lg:ml-[auto]   mysm:ml-[0px]  mysm:mr-[0px] lg:mr-[5rem] 
           transition-all duration-[1000ms]
           transfrom lg:-translate-y-[100px] mysm:-translate-y-[0px]
-           lg:px-2 lg:py-3 mysm:px-3 
+           lg:px-0 lg:py-0 mysm:px-3 
            font-pretendard 
            font-medium 
            
@@ -69,56 +73,77 @@ export const AboutMe = ({ value }: IAboutMe) => {
                 ' 중요한건 꺽이지 않는 마음 '
               </span>
               <span className="text-sm md:pl-3 mysm:pl-1 pt-2 tracking-wider lg:text-inherit mysm:text-gray-300">
-                이 문장은 항상 마음에 두고있는 문장입니다
+                이라는 신조를 항상 마음에 새기고 있습니다
               </span>
             </div>
-            <p className="leading-[1.9rem]">
-              개발자를 준비하면서 처음마주하는 기술들은 시간이 다소 걸리더라도
-              외울려하지않고 최대한 이해하여 사용하려는 편이며,
+            <p className="leading-[1.9rem] py-1">
+              개발자로 성장하는 과정에서 처음 마주하는 기술들에 시간이
+              걸리더라도 외우려 하지 않고 최대한 이해하여 사용하는 것을 선호
+              합니다.
               <br />
-              프로젝트를 진행하며 생기는 트러블<b>(이슈)</b>을 마주쳐도
-              회피하지않고, 팀원들과의 소통으로 일정 및 리소스등을 고려하여 어떤
-              것이 우선순위인지 유연하게 판단하며, 팀원들의 공감을 바탕으로
-              프로젝트를 끝까지 마무리 합니다.
+              프로젝트 진행 중 발생하는 문제에 대해서는 회피하지 않고 팀원들과
+              소통하여 해결하며, 일정과 리소스를 고려하여 우선순위를 유연하게
+              조정한 뒤, 팀원들의 공감을 바탕으로 프로젝트를 끝까지 마무리합니다
+            </p>
+            <p>
+              이런 경험을 바탕으로 배움에 대한 열정을 잃지 않고 꾸준한 노력을
+              기반으로 <br />
+              멀티캠퍼스 수료과정에서{" "}
+              <BestSpan
+                className="text-yellow-300 hover:cursor-pointer"
+                onClick={() => setIsModal(true)}
+              >
+                개인 최우수상
+              </BestSpan>
+              을 수상했습니다
             </p>
           </div>
-          <span className="py-4">
-            인터랙티브한 웹과 제이콥의 법칙을 활용하여 UI/UX 디자인을 구현하는걸
-            좋아합니다
-          </span>
+          <div className="pt-[2rem] text-base relative">
+            P.S 인터랙티브한 웹과
+            <JaKobSpan onClick={() => setIsDescript((prev) => !prev)}>
+              제이콥의 법칙
+            </JaKobSpan>
+            을 활용하여 UI/UX 디자인을 구현하는걸 좋아합니다
+            <div
+              className={`absolute  -left-[0%] transition-width duration-1000 overflow-hidden  text-[#BEFBFF] break
+                md:-bottom-[50%]
+                mysm:-bottom-[65%]
+                max-w-[600px] 
+                md:min-h-[24px] 
+                md:max-h-[24px]
+                mysm:min-h-[24px] 
+                mysm:max-h-[48px]
+              ${isDescript ? "w-[100%] " : "w-[0px] "}`}
+            >
+              사용자는 익숙해진 기존의 경험을 바탕으로 기대치를 형성하는 경향을
+              보인다는 내용의 법칙
+            </div>
+          </div>
         </div>
+        <AboutMeModal
+          isModal={isModal}
+          setIsModal={setIsModal}
+          page={page}
+          setPage={setPage}
+        ></AboutMeModal>
       </div>
-
-      {/* <ul className="flex flex-col items-end px-6 ml-[70px]">
-            <li
-              className="border-[1px] rounded-3xl w-[100%] text-left px-5 py-3
-            hover:bg-[#393E46] hover:text-[#efefef] hover:border-red  font-semibold font-sans border-black hover:border-gray-50 "
-            >
-              <span> sunghyun543@gmail.com</span>
-            </li>
-            <li
-              className="border-[1px] rounded-3xl w-[100%] mt-3 text-left px-5 py-3
-            hover:bg-[#393E46] hover:text-[#efefef] hover:border-red  font-semibold font-sans border-black hover:border-gray-50 "
-            >
-              <span> github</span>
-            </li>
-            <li
-              className="border-[1px] rounded-3xl w-[100%] mt-3 text-left px-5 py-3
-            hover:bg-[#393E46] hover:text-[#efefef] hover:border-red  font-semibold font-sans border-black hover:border-gray-50 "
-            >
-              <span> blog</span>
-            </li>
-            <li
-              className="border-[1px] rounded-3xl w-[100%] mt-3 text-left px-5 py-3
-            hover:bg-[#393E46] hover:text-[#efefef] hover:border-red  font-semibold font-sans border-black hover:border-gray-50 "
-            >
-              <span> KAKAO</span>
-            </li>
-          </ul> */}
     </div>
   );
 };
+const BestSpan = styled.span`
+  &::after {
+    content: "📋";
+  }
+`;
 
+const JaKobSpan = styled.span`
+  padding-bottom: 1px;
+  margin: 0px 5px;
+  cursor: pointer;
+  color: #befbff;
+  transition: all 0.3s;
+  border-bottom: 1px solid #befbff;
+`;
 const BackGroundImg = styled.div<BackGroundProps>`
   position: absolute;
   height: 100%;
