@@ -1,6 +1,6 @@
 import React from "react";
-import Best from "assets/img/Best.webp";
-import Completed from "assets/img/Completed.webp";
+import Best from "assets/img/Award/Best.webp";
+import Completed from "assets/img/Award/Completed.webp";
 import styled from "styled-components";
 
 interface IAboutMeModal {
@@ -45,11 +45,12 @@ export const AboutMeModal = ({
         </button>
       )}
       <div className={`flex relative overflow-hidden`}>
-        <div
+        <SlideBox
+          value={page}
           className={`flex  lg:w-[600px]
         md:w-[400px]
         mysm:w-[250px] 
-        -translate-x-[${page}00%]
+      
         transition-transform
         duration-300
         `}
@@ -69,15 +70,17 @@ export const AboutMeModal = ({
           md:min-w-[400px] md:h-[500px]
           mysm:min-w-[250px] mysm:h-[auto]"
           />
-        </div>
+        </SlideBox>
       </div>
       <div className=" flex justify-center flex-col mt-[4rem]">
         <ul className="flex justify-center w-[100px] gap-[20px] r ">
           <PageNationIcon
             className={` ${page === 0 ? "current" : ""}`}
+            onClick={() => setPage(0)}
           ></PageNationIcon>
           <PageNationIcon
             className={` ${page === 1 ? "current" : ""}`}
+            onClick={() => setPage(1)}
           ></PageNationIcon>
         </ul>
         <button
@@ -91,6 +94,7 @@ export const AboutMeModal = ({
   );
 };
 const PageNationIcon = styled.li`
+  cursor: pointer;
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -100,4 +104,9 @@ const PageNationIcon = styled.li`
     filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.85));
     background-color: white;
   }
+`;
+
+const SlideBox = styled.div<{ value: number }>`
+  transform: ${(props) =>
+    props.value === 0 ? `translateX(0%)` : `translateX(-${props.value}00%)`};
 `;
