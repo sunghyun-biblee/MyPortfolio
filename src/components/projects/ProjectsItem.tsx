@@ -6,7 +6,7 @@ interface IprojectItem {
 }
 export const ProjectsItem = ({ item }: IprojectItem) => {
   return (
-    <article className="bg-[#E2FEF0] p-12 mb-20 rounded-lg shadow-2xl">
+    <article className="bg-[#E2FEF0] mb-20 rounded-lg shadow-2xl">
       <div className="mb-10 flex justify-between items-center lg:flex-row mysm:flex-col">
         <h1 className="text-5xl uppercase font-extrabold">{item.title}</h1>
         <span className="text-2xl text-gray-600/80 font-semibold">
@@ -87,7 +87,7 @@ export const ProjectsItem = ({ item }: IprojectItem) => {
                 {item.github}
               </a>
             </li>
-            {item.url && (
+            {/* {item.url && (
               <li className="flex justify-between py-2 items-center">
                 <span className="inline-block w-36  text-left text-2xl font-extrabold uppercase mr-10">
                   url
@@ -96,7 +96,7 @@ export const ProjectsItem = ({ item }: IprojectItem) => {
                   {item.url}
                 </p>
               </li>
-            )}
+            )} */}
           </ul>
         </div>
       </div>

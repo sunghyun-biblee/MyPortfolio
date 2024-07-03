@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      colors: {
+        skillbg: "#d6edf9",
+      },
       fontFamily: {
         pretendard: ["Pretendard"],
         Nanum: ["NanumSquare"],
@@ -20,6 +23,15 @@ module.exports = {
       },
 
       keyframes: {
+        ProejctOn: {
+          0: { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+        ProejctOff: {
+          0: { opacity: 1 },
+          "100%": { opacity: 0 },
+        },
+
         introSlideIn: {
           0: { transform: "translateX(500px) scale(.2)" },
           "100%": { transform: "translateX(0px) scale(1)" },
@@ -44,6 +56,8 @@ module.exports = {
         },
       },
       animation: {
+        "ProejctAni-On": "ProejctOn 0.3s ",
+        "ProejctAni-Off": "ProejctOff 1s ",
         "introSlideIn-title": "introSlideInTitle .5s ease forwards .5s",
         "introSlideUp-button": "introSlideUp 0.8s ease-in-out forwards 1.5s",
         "introSlideUp-description":
