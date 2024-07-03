@@ -5,6 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import styled from "styled-components";
 
 type ScrollRefType = MutableRefObject<HTMLDivElement[]>;
 
@@ -57,17 +58,21 @@ export const Header = ({ scrollRef, nav }: IHeader) => {
         md:px-5
         mysm:px-3"
       >
-        <h1
-          className={`text-2xl font-bold transition-colors cursor-pointer ${
+        <span
+          className={`text-2xl font-bold cursor-pointer ${
             isScroll
               ? "text-blue-950 hover:text-white"
               : "text-[#f2f2f2] hover:text-blue-950"
           }
         `}
           onClick={nav[0].onMove}
+          style={{
+            transition: "color 0.3s",
+            borderBottom: isScroll ? "1px solid #1e3a8a" : "1px solid #f2f2f2",
+          }}
         >
           biblee Portfolio
-        </h1>
+        </span>
         <ul
           className={` lg:text-xl md:text-lg mysm:text-sm 
             md:flex

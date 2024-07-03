@@ -88,16 +88,11 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
                     </Li>
 
                     <li className="h-[2px] bg-[#efefef] my-5"></li>
-                    <Li className="flex justify-between mb-[10px]">
+                    <Li className="flex justify-between ">
                       <span>정보처리산업기사</span>
                       <GraySpan>2022.06</GraySpan>
                     </Li>
-                    <Li>
-                      <span className="inline-block pb-1">
-                        계명문화대학교 컴퓨터학부
-                      </span>
-                      <GraySpan>2018.03~2020.08</GraySpan>
-                    </Li>
+
                     <Li>
                       <span className="inline-block pb-1 tracking-tight">
                         멀티캠퍼스 웹 개발자 수료 &nbsp;
@@ -106,6 +101,12 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
                         </span>
                       </span>
                       <GraySpan>2023.08~2024.02</GraySpan>
+                    </Li>
+                    <Li>
+                      <span className="inline-block pb-1">
+                        계명문화대학교 컴퓨터학부
+                      </span>
+                      <GraySpan>2018.03~2020.08</GraySpan>
                     </Li>
 
                     <li className="flex justify-start mt-[25px] ml-[5px] ">

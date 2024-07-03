@@ -18,7 +18,7 @@ const SkillArray = [
     title: "Javascript",
     text: [
       "ES6 문법들을 이해하고 활용할 수 있습니다",
-      "localStroage로 데이터를 관리할 수 있습니다 (자동로그인구현,영상이어보기)",
+      "localStroage로 데이터를 관리할 수 있습니다 (자동로그인 구현, 영상 이어보기)",
       "typescript를 사용 경험이 있습니다",
       "가독성이 좋은 코드 및 클린코드를 만들려고 노력합니다",
     ],
@@ -56,7 +56,7 @@ export const SkillPart = ({ value }: ISkill) => {
   return (
     <div
       className=" min-h-[100vh] w-[100%] flex justify-center
-       bg-gradient-to-b to-[#96EBA0] from-[#20DABF] pt-[5rem] font-pretendard
+       bg-gradient-to-b to-[#D8F9DA] from-[#20DABF] pt-[5rem] font-pretendard
     "
       ref={value.element}
     >
