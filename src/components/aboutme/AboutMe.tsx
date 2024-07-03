@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import preview2 from "assets/img/A1.jpg";
+import preview2 from "assets/img/A1.webp";
 import { ScrollMoveType } from "components/projects/Projects";
 import styled from "styled-components";
 import { useTextFadeIn } from "hooks/useTextFadeIn";
@@ -10,14 +10,14 @@ interface IAboutMe {
   value: ScrollMoveType;
 }
 interface BackGroundProps {
-  img: string;
+  value: string;
 }
 export const AboutMe = ({ value }: IAboutMe) => {
   const TitleAnimate = useTextFadeIn(1, 0, "down");
   const TextAnimate = useTextFadeIn(1, 0.4);
   const [isDescript, setIsDescript] = useState<boolean>(false);
   const [isModal, setIsModal] = useState<boolean>(false);
-  const [page, setPage] = useState<number>(1);
+  const [page, setPage] = useState<number>(0);
 
   return (
     <div
@@ -33,7 +33,7 @@ export const AboutMe = ({ value }: IAboutMe) => {
       "
       >
         <BackGroundImg
-          img={preview2}
+          value={preview2}
           className="lg:w-[600px] transition-all duration-1000 lg:brightness-90  mysm:brightness-50"
         />
 
@@ -149,7 +149,7 @@ const BackGroundImg = styled.div<BackGroundProps>`
   height: 100%;
   min-height: 600px;
 
-  background: ${(props) => `url(${props.img})  no-repeat`};
+  background: ${(props) => `url(${props.value})  no-repeat`};
 
   background-attachment: fixed;
   /* filter: brightness(50%); */

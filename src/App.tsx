@@ -62,7 +62,7 @@ function App() {
         </div>
       </div>
 
-      <ReactQueryDevtools></ReactQueryDevtools>
+      {/* <ReactQueryDevtools></ReactQueryDevtools> */}
     </QueryClientProvider>
   );
 }
