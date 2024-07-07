@@ -66,17 +66,13 @@ export const Header = ({ scrollRef, nav }: IHeader) => {
           }
         `}
           onClick={nav[0].onMove}
-          style={{
-            transition: "color 0.3s",
-            borderBottom: isScroll ? "1px solid #1e3a8a" : "1px solid #f2f2f2",
-          }}
         >
           biblee Portfolio
         </span>
         <ul
           className={` lg:text-xl md:text-lg mysm:text-sm 
             md:flex
-            mysm:hidden
+            mysm:hidden 
             ${isScroll ? "text-blue-950" : "text-[#f2f2f2]"}
            `}
         >
@@ -113,7 +109,7 @@ export const Header = ({ scrollRef, nav }: IHeader) => {
       </div>
 
       <ul
-        className={`overflow-hidden transition-height box-border bg-transparent mysm:flex md:hidden flex-col md:px-5 mysm:px-3 w-[100%] bg-[#5ea3ec]  
+        className={`overflow-hidden transition-mobileMenu box-border  duration-500 bg-transparent mysm:flex md:hidden flex-col md:px-5 mysm:px-3 w-[100%]   
       ${isMenu ? "h-[14.125rem] border-t-2" : "h-0 border-t-0 "}
       ${isScroll ? " border-blue-950/50" : "border-[#efefef]/50"} text-lg
       `}

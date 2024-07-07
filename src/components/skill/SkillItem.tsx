@@ -19,11 +19,11 @@ export const SkillItem = ({ item }: ISkillItem) => {
   return (
     <Article
       className="shadow-xl rounded-3xl relative border-4 border-[#005B43] bg-[#E7FFF4]/95
-backface
+
       "
       {...animateObserve}
     >
-      <h1 className="font-extrabold font-Nanum absolute bg-[#a0e5d0] -top-8 -left-5 px-3 py-2 border-4 lg:text-3xl mysm:text-xl border-[#005B43] transform -rotate-[11deg]">
+      <h1 className="font-extrabold font-pretendard absolute bg-[#a0e5d0] -top-8 -left-5 px-3 py-2 border-4 lg:text-3xl mysm:text-xl border-[#005B43] transform -rotate-[11deg]">
         {item.title}
       </h1>
       <ul className="text-left lg:px-4 mysm:px-3 my-10">
