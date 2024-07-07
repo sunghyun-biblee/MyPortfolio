@@ -14,7 +14,7 @@ module.exports = {
         mysm: "375px",
       },
       transitionProperty: {
-        height: "height",
+        mobileMenu: "height , color",
         width: "width",
         margin: "margin",
       },

@@ -2,7 +2,9 @@ import React, { useEffect, useRef } from "react";
 import { projectItemType } from "./Projects";
 import preview from "assets/img/preview.jpg";
 import styled from "styled-components";
+import url from "assets/img/url.png";
 import githubIcon from "assets/img/github-mark.svg";
+import { useNavigate } from "react-router-dom";
 
 interface IprojectItem {
   item: projectItemType;
@@ -11,7 +13,7 @@ interface IprojectItem {
 }
 export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
   const ProejctRef = useRef<HTMLDivElement>(null);
-
+  const nav = useNavigate();
   useEffect(() => {
     if (ProejctRef.current && index === current) {
       setTimeout(() => {
@@ -34,47 +36,59 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
     }
   }, [current, index]);
 
+  const handleReadMeClick = (index: number) => {
+    return nav("/string");
+  };
   return (
     <Article
-      className={`mt-[3rem] w-[600px] transition-all  duration-300 `}
+      className={` max-w-[700px] w-[100vw] transition-all  duration-300 shadow-lg `}
       ref={ProejctRef}
     >
-      <div>
-        <div className="overflow-hidden  rounded-md w-[100%] max-h-[350px] ">
-          <img src={item.projectImg} alt="webIMG" className=" " />
+      <div className="h-[100%]">
+        <div className="overflow-hidden  rounded-md w-[100%] h-[390px] ">
+          <img
+            src={item.projectImg}
+            alt="webIMG"
+            className="w-[100%] h-[100%] "
+          />
         </div>
-        <div>
-          <ul className="pt-[1rem]">
-            <li className="relative">
-              <ProjectTitle className="text-3xl font-bold uppercase">
-                {item.title}
-              </ProjectTitle>
-            </li>
-            <li className="mt-[1rem]">
-              <ProjectSpan className="text-blue-950 font-medium">
-                {item.category}
-              </ProjectSpan>
-            </li>
-            <li className="mt-[1rem]">
-              <ProjectSpan>{item.description}</ProjectSpan>
-            </li>
-            <li className="flex items-center mt-[1rem]">
-              {item.skills.map((item, index) => (
-                <ProjectSkill
-                  key={item + index + item}
-                  className="bg-skillbg rounded-lg font-medium text-blue-500 shadow-sm"
-                >
-                  {item}
-                </ProjectSkill>
-              ))}
-            </li>
-            <li className="flex justify-start items-center mt-[2rem]">
-              <DetailBtn>자세히보기 ▶</DetailBtn>
+
+        <ul
+          className="md:p-5 mysm:p-4 md:text-base mysm:text-sm
+        flex flex-col justify-between h-[calc(100%-390px)]"
+        >
+          <li className="flex justify-between items-center">
+            <ProjectTitle className="md:text-3xl mysm:text-xl font-bold uppercase">
+              {item.title}
+            </ProjectTitle>
+            <ProjectSpan className="text-blue-950 font-medium ">
+              {item.category}
+            </ProjectSpan>
+          </li>
+
+          <li className="md:mt-[1rem] mysm:mt-[0.5rem] text-left font-medium">
+            <ProjectSpan>{item.description}</ProjectSpan>
+          </li>
+          <li className="flex items-center mt-[1rem] flex-wrap w-[100%] gap-2">
+            {item.skills.map((item, index) => (
+              <span
+                key={item + index + item}
+                className="bg-skillbg rounded-md font-medium text-blue-500 
+                px-2 py-1 shadow-md  md:text-base mysm:text-xs
+                "
+              >
+                {item}
+              </span>
+            ))}
+          </li>
+
+          <li className="flex justify-between items-center mt-[2rem]">
+            <div className="flex">
               <GithubBtn
                 href={item.github}
                 target="_blank"
                 rel="noopener  noreferrer"
-                className="bg-[#efefef] border-[1px] border-indigo-950 rounded-md"
+                className="py-2 md:px-3  mysm:px-2 md:text-base mysm:text-xs "
               >
                 Github
               </GithubBtn>
@@ -83,13 +97,20 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
                   href={item.deploy}
                   target="_blank"
                   rel="noopener  noreferrer"
+                  className="py-2 md:px-3  mysm:px-2 md:text-base mysm:text-xs"
                 >
-                  배포
+                  <span> 사이트 바로가기</span>
                 </DeployBtn>
               )}
-            </li>
-          </ul>
-        </div>
+            </div>
+            <DetailBtn
+              className=" py-2 md:px-3 min-h-[36px]  mysm:px-2 md:text-base mysm:text-xs"
+              onClick={() => handleReadMeClick(index)}
+            >
+              자세히보기 ▶ README
+            </DetailBtn>
+          </li>
+        </ul>
       </div>
     </Article>
   );
@@ -98,48 +119,114 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
 const Article = styled.article`
   animation-fill-mode: forwards;
 `;
-const DetailBtn = styled.button``;
+const DetailBtn = styled.button`
+  background-color: #0060d1;
+  color: #d1f5ff;
+  font-weight: 500;
+  border-radius: 6px;
+`;
 
 const GithubBtn = styled.a`
+  background-color: #efefef;
   display: flex;
-  align-items: end;
-  font-size: 1rem;
+  align-items: center;
   font-weight: 600;
-  padding: 0.5rem 0.75rem;
-  margin: 0 10px;
 
+  border: 1px solid rgba(30, 27, 75, 0.15);
+  border-radius: 6px;
   &::before {
-    content: "";
-    margin-right: 0.125rem;
-    width: 28px;
-    height: 28px;
+    content: " ";
+    margin-right: 0.25rem;
+    width: 26px;
+    height: 26px;
     background: url(${githubIcon}) no-repeat center center;
+    background-size: 24px 24px;
+  }
 
-    background-size: 22px 22px;
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    &::before {
+      width: 24px;
+      height: 24px;
+      background-size: 22px 22px;
+    }
+  }
+  @media screen and (min-width: 375px) and (max-width: 767px) {
+    &::before {
+      width: 20px;
+      height: 20px;
+      background-size: 20px 20px;
+    }
   }
 `;
-const DeployBtn = styled.a``;
-const ProjectSkill = styled.span`
-  padding: 5px 10px;
-  margin-right: 10px;
+const DeployBtn = styled.a`
+  background-color: #efefef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  margin-left: 10px;
+
+  border-radius: 6px;
+  border: 1px solid rgba(30, 27, 75, 0.15);
+
+  &::before {
+    content: " ";
+    margin-right: 0.25rem;
+    width: 26px;
+    height: 26px;
+    background: url(${url}) no-repeat center center;
+    background-size: 24px 24px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    &::before {
+      width: 24px;
+      height: 24px;
+      background-size: 22px 22px;
+    }
+  }
+  @media screen and (min-width: 375px) and (max-width: 767px) {
+    &::before {
+      width: 20px;
+      height: 20px;
+      background-size: 20px 20px;
+    }
+  }
 `;
+
 const ProjectSpan = styled.span`
   display: inline-block;
-
-  width: 100%;
   text-align: left;
 `;
 const ProjectTitle = styled.h1`
   display: flex;
   align-items: end;
+
   font-weight: 700;
   &::after {
+    display: block;
     content: "";
-    width: 10px;
-    height: 10px;
+    width: 7px;
+    height: 7px;
     margin-left: 3px;
     border-radius: 100%;
     margin-bottom: 5px;
     background-color: rgb(96, 165, 250);
   }
+  /* @media screen and (min-width: 1024px) {
+    background-size: 1100px auto;
+    background-position: 23% 90%;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 100%;
+    background-size: 1010px auto;
+
+    background-position: 10% 100%;
+  }
+  @media screen and (min-width: 375px) and (max-width: 767px) {
+    width: 100%;
+    background-size: 1010px auto;
+
+    background-position: 10% 100%;
+  } */
 `;
