@@ -4,7 +4,8 @@ import preview from "assets/img/preview.jpg";
 import styled from "styled-components";
 import url from "assets/img/url.png";
 import githubIcon from "assets/img/github-mark.svg";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface IprojectItem {
   item: projectItemType;
@@ -12,6 +13,7 @@ interface IprojectItem {
   index: number;
 }
 export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
+  const location = useLocation();
   const ProejctRef = useRef<HTMLDivElement>(null);
   const nav = useNavigate();
   useEffect(() => {
@@ -37,7 +39,7 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
   }, [current, index]);
 
   const handleReadMeClick = (index: number) => {
-    return nav("/string");
+    return nav("/ClassHub");
   };
   return (
     <Article
@@ -104,8 +106,9 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
               )}
             </div>
             <DetailBtn
+              to={"/ClassHub"}
               className=" py-2 md:px-3 min-h-[36px]  mysm:px-2 md:text-base mysm:text-xs"
-              onClick={() => handleReadMeClick(index)}
+              state={{ modal: location }}
             >
               자세히보기 ▶ README
             </DetailBtn>
@@ -119,7 +122,7 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
 const Article = styled.article`
   animation-fill-mode: forwards;
 `;
-const DetailBtn = styled.button`
+const DetailBtn = styled(Link)`
   background-color: #0060d1;
   color: #d1f5ff;
   font-weight: 500;
