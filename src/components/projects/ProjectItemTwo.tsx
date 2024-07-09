@@ -6,6 +6,7 @@ import url from "assets/img/url.png";
 import githubIcon from "assets/img/github-mark.svg";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { MarkDown } from "components/markdown/MarkDown";
 
 interface IprojectItem {
   item: projectItemType;
@@ -38,8 +39,18 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
     }
   }, [current, index]);
 
-  const handleReadMeClick = (index: number) => {
-    return nav("/ClassHub");
+  const handleReadMeClick = (id: string) => {
+    document.body.style.overflowY = "hidden";
+    switch (id) {
+      case "PortFolio":
+        return nav("/PortFolio");
+      case "ClassHub":
+        return nav("/ClassHub");
+      case "TripFixied":
+        return nav("/TripFixied");
+      default:
+        return nav("/");
+    }
   };
   return (
     <Article
@@ -69,7 +80,9 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
           </li>
 
           <li className="md:mt-[1rem] mysm:mt-[0.5rem] text-left font-medium">
-            <ProjectSpan>{item.description}</ProjectSpan>
+            <ProjectSpan>
+              <MarkDown>{item.description}</MarkDown>
+            </ProjectSpan>
           </li>
           <li className="flex items-center mt-[1rem] flex-wrap w-[100%] gap-2">
             {item.skills.map((item, index) => (
@@ -84,7 +97,7 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
             ))}
           </li>
 
-          <li className="flex justify-between items-center mt-[2rem]">
+          <li className="flex justify-between items-center mt-[2rem] ">
             <div className="flex">
               <GithubBtn
                 href={item.github}
@@ -106,9 +119,8 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
               )}
             </div>
             <DetailBtn
-              to={"/ClassHub"}
+              onClick={() => handleReadMeClick(item.id)}
               className=" py-2 md:px-3 min-h-[36px]  mysm:px-2 md:text-base mysm:text-xs"
-              state={{ modal: location }}
             >
               자세히보기 ▶ README
             </DetailBtn>
@@ -122,7 +134,7 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
 const Article = styled.article`
   animation-fill-mode: forwards;
 `;
-const DetailBtn = styled(Link)`
+const DetailBtn = styled.button`
   background-color: #0060d1;
   color: #d1f5ff;
   font-weight: 500;
@@ -200,6 +212,15 @@ const DeployBtn = styled.a`
 const ProjectSpan = styled.span`
   display: inline-block;
   text-align: left;
+  .markDownContainer {
+    code {
+      font-size: 0.9rem;
+      font-family: Pretendard;
+      background-color: rgb(223, 226, 229);
+      padding: 0.25rem 0.4rem;
+      border-radius: 6px;
+    }
+  }
 `;
 const ProjectTitle = styled.h1`
   display: flex;
