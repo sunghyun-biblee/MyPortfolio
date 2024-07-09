@@ -19,6 +19,7 @@ interface Itest {
 }
 
 export type projectItemType = {
+  id: string;
   projectImg: string;
   title: string;
   skills: string[];
@@ -31,6 +32,7 @@ export type projectItemType = {
 };
 const projectArray = [
   {
+    id: "PortFolio",
     date: "2024.03~2024.05",
     projectImg: MyPortfolio,
     category: "팀 프로젝트",
@@ -43,6 +45,7 @@ const projectArray = [
       "이전 프로젝트때 배웠던 Typescript, tailwindCSS를 복습하고, 저만의 포트폴리오를 만들기 위해 웹 형태로 제작하였습니다",
   },
   {
+    id: "ClassHub",
     date: "2024.03~2024.05",
     projectImg: ClassHub,
     category: "팀 프로젝트",
@@ -66,6 +69,7 @@ const projectArray = [
       "온라인 학습시스템과 커뮤니티가 포함되어, 언제 어디서나 학습에 접근할 수 있는 플랫폼을 제공하기위한 서비스입니다",
   },
   {
+    id: "TripFixied",
     date: "2024.03~2024.05",
     projectImg: TripFixied,
     category: "개인 프로젝트",
@@ -79,8 +83,7 @@ const projectArray = [
       "선택지역의 숙소 정보 제공",
     ],
     github: "github.com/sunghyun-biblee/Trip_Fixied_Project",
-    description:
-      "여행일정에 맞춰 관광지 정보, 축제정보, 숙소 정보를 제공하여 일정을 계획하기 쉽도록 도움을 제공하는 서비스입니다",
+    description: `**여행일정**에 맞춰 \`관광지 정보\`  \`축제정보\` \`숙소 정보\`를 제공하여 일정을 계획하기 쉽도록 도움을 제공하는 서비스입니다`,
     // 여행계획을 세우기 힘든 사람들을 위해 공공데이터 기반으로 여행지를 추천해주는 서비스 입니다.
   },
 ];
@@ -107,9 +110,9 @@ export const Projects = ({ value }: Itest) => {
       <div
         className={`${
           screen === "md"
-            ? "w-20 h-20 md:block mysm:hidden"
-            : "w-8 h-8 md:hidden mysm:block mr-1"
-        } hover:text-blue-400 text-gray-400 transition-colors duration-200 cursor-pointer lg:mr-0 md:mr-2
+            ? "w-20 h-20 lg:block mysm:hidden"
+            : "w-8 h-8 lg:hidden mysm:block mr-1"
+        } hover:text-blue-400 text-gray-400 transition-colors duration-200 cursor-pointer lg:mr-5
           `}
         onClick={handleLeftClick}
       >
@@ -136,8 +139,8 @@ export const Projects = ({ value }: Itest) => {
       <div
         className={`${
           screen === "md"
-            ? "w-20 h-20 md:block mysm:hidden lg:ml-0 md:ml-2"
-            : "w-8 h-8 md:hidden mysm:block ml-1"
+            ? "w-20 h-20 lg:block mysm:hidden lg:ml-5"
+            : "w-8 h-8 lg:hidden mysm:block ml-1"
         } 
          hover:text-blue-400 text-gray-400 transition-colors duration-200 cursor-pointer `}
         onClick={handleRightClick}
@@ -215,11 +218,6 @@ export const Projects = ({ value }: Itest) => {
   );
 };
 
-const LeftBtn = styled.button`
-  width: 100px;
-  height: 100px;
-  background-image: url(${LeftArrow});
-`;
 const Dot = styled.span<{ value: boolean }>`
   display: inline-block;
   width: 1rem;
