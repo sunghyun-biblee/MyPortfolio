@@ -1,9 +1,10 @@
 import MainImg from "assets/img/ClassHub/Mainpage2.jpg";
 
 export const ClassHubData = {
+  id: "Class",
   title: "ClassHub",
-  colorConcept: "#70AEF9",
   mainImage: MainImg,
+  colorConcept: "#70AEF9",
   personnel: [1, 3, 4],
   date: "2024.05.01~ 2024.06.18",
   Contribution: "35%",
@@ -17,7 +18,7 @@ export const ClassHubData = {
     {
       name: "React-Query",
       description:
-        "React Query는 React 애플리케이션에서 데이터 가져오기, 관리 및 캐싱을 사용하기 쉽게 해주는 라이브러리입니다. \n서버에서 데이터를 비동기적으로 가져오고 Mutation을 사용하여 낙관적 업데이트를 통해 사용자 경험을 개선합니다. API 요청을 처리하고 결과를 캐싱하여 성능을 최적화할 수 있습니다.",
+        "React Query는 React 애플리케이션에서 데이터 가져오기, 관리 및 캐싱을 사용하기 쉽게 해주는 라이브러리입니다. \n서버에서 데이터를 비동기적으로 가져오고 Mutation을 사용하여 낙관적 업데이트를 통해 사용자 경험을 개선합니다.\nAPI 요청을 처리하고 결과를 캐싱하여 성능을 최적화할 수 있습니다.",
     },
     {
       name: "Typescript",
@@ -27,12 +28,12 @@ export const ClassHubData = {
     {
       name: "tailwindCSS",
       description:
-        "tailwindCSS는 CSS 프레임워크로, 클래스 기반 스타일링을 통해 일관된 디자인을 짧은 시간에 구현할 수 있습니다. 또한, 반응형 웹 개발을 가속화할 수 있는 장점이 있습니다",
+        "TailwindCSS는 클래스 기반 스타일링을 통해 일관된 디자인을 빠르게 구현할 수 있는 CSS 프레임워크입니다.\n특히, 반응형 웹 구현 가속화하기 좋으며 개발자의 피로도를 줄이는 장점이 있습니다",
     },
     {
       name: "styled-components",
       description:
-        "Styled Components는 CSS-in-JS로 JavaScript 코드 내에서 CSS를 작성할 수 있게 해주는 라이브러리입니다. 컴포넌트와 스타일을 함께 정의해 스타일을 관리하고 재사용할 수 있습니다.또한 props를 전달하여 조건부로 스타일을 다르게 적용할 수있습니다.",
+        "Styled Components는 JavaScript 코드 내에서 CSS를 작성할 수 있게 해주는 CSS-in-JS 라이브러리입니다. \n컴포넌트와 스타일을 함께 정의하여 스타일을 관리하고 재사용할 수 있으며, props를 전달하여 조건부로 스타일을 다르게 적용할 수 있습니다.",
     },
   ],
   summary: `**클래스허브**는 언제 어디서나 접근 가능한 온라인 학습 플랫폼으로 \n\n  다양한 프로그래밍 주제와 전문가 강의를 통해 학생들에게 편리하고 효율적인 학습 경험을 제공합니다.`,
@@ -49,17 +50,17 @@ export const ClassHubData = {
     {
       title: "프로젝트 기획 및 디자인 구성",
       description:
-        "Figma를 활용하여 화면정의서, 와이어프레임,메뉴 구조도, TaskFlow 제작",
+        "Figma를 활용하여 화면정의서, 와이어프레임,메뉴 구조도, TaskFlow를 제작하였습니다",
     },
     {
       title: "유저관련 기능 구현",
       description:
-        "소셜로그인(Google)으로 회원가입 및 로그인 시 발급받는 JWT 토큰을 쿠키로 관리하며, 유저정보는 ContextAPI를 사용하여 전역적으로 관리",
+        "소셜로그인 (Google) 으로 회원가입 및 로그인 시 발급받는 **JWT 토큰 을 쿠키로 관리** 하며, 유저정보는 **ContextAPI** 를 사용하여 전역적으로 관리",
     },
     {
       title: "질답 및 스터디모집을 위한 커뮤니티 구현",
       description:
-        "게시물 상세페이지의 로딩속도를 줄이기 위해 React-Query의 prefetch를 사용하여  ",
+        "게시물 상세페이지의 로딩속도를 줄이기 위해 **React-Query의 prefetch** 를 사용하여  ",
     },
     {
       title: "PortOne을 활용하여 강의 결제 및 결제내역 조회 구현",
@@ -69,12 +70,12 @@ export const ClassHubData = {
     {
       title: "강의 업로드 페이지 구현",
       description:
-        "비디오 업로드를 위핸 배열을 이중 배열로 구성하여 각 섹션별로 저장하고, 강의 제목, 가격 등의 정보를 JSON 형식으로 formData에 추가한 후, 강의 업로드시 multipart/formData 형식으로 POST 요청하도록 기능을 구현",
+        "비디오 업로드를 위해 이중 배열로 구성하여 각 섹션별로 저장하고, 강의 제목, 가격 등의 정보를 **JSON 형식으로 formData에 추가** 한 후, 강의 업로드시 **multipart/formData 형식** 으로 POST 요청하도록 기능을 구현",
     },
     {
       title: "localStorage를 사용하여 영상 이어듣기 구현",
       description:
-        "사용자가 영상을 시청할 때 localStorage에 영상 정보를 저장하여, 추후에 재시청할 때 localStorage의 정보를 참조하여 영상을 이어서 들을 수 있도록 구현",
+        "사용자가 영상을 시청할 때 **localStorage에 영상 정보를 저장**하여, 추후에 재시청할 때 localStorage의 정보를 참조하여 영상을 이어서 들을 수 있도록 구현",
     },
   ],
   troubleShooting: [
@@ -94,8 +95,11 @@ export const ClassHubData = {
       Resolution:
         "**[해결방안]** CORS 오류로 인해 모든 API 호출이 차단되어 아무 작업도 할 수 없는 상황을 해결하기 위해 http-proxy-middleware 라이브러리를 사용하여 프록시를 설정하여 CORS 문제를 해결했습니다",
       myThink:
-        "**[회고]** 이번 프로젝트에서 API에 매우 의존적이었기 때문에 CORS 오류가 발생하면 아무 작업도 할 수 없다는 점을 실감했습니다. 이런 상황을 해결하기 위해 Mock Service Worker의 필요성을 느꼈고, 이를 대비하여 미리 Mock 데이터를 활용할 수 있는 방법에 대해 공부해야겠다고 결심했습니다.",
+        "**[회고]** 이번 프로젝트에서 API에 매우 의존적인 프로젝트는 CORS 오류가 발생하면 아무 작업도 할 수 없다는 점을 실감했습니다. 이런 상황을 해결하기 위해 Mock Service Worker의 필요성을 느꼈고, 이를 대비하여 미리 Mock 데이터를 활용할 수 있는 방법에 대해 공부해야겠다고 결심했습니다.",
     },
   ],
   ProjectIMG: [],
+  deploy: "https://devproject.store",
+  github: "github.com/sunghyun-biblee/ClassHub",
+  category: "팀 프로젝트",
 };
