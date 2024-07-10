@@ -8,8 +8,8 @@ interface IToogleProps {
   title?: string;
   trouble?: string;
   Resolution?: string;
-  search?: string;
-  myThink?: string;
+  search?: string | null | undefined;
+  myThink?: string | null | undefined;
   category: string;
 }
 export const ListToggleBox = ({
@@ -33,7 +33,7 @@ export const ListToggleBox = ({
         return (
           <div className="flex flex-col text-left">
             <div
-              className="flex items-center bg-gray-200 p-1"
+              className="flex items-center bg-gray-200 p-1 cursor-pointer"
               onClick={handleToggleClick}
             >
               <span
@@ -46,7 +46,9 @@ export const ListToggleBox = ({
               <span>{name}</span>
             </div>
             {isToggle && (
-              <p className="pl-1 py-2 whitespace-pre-wrap">{description}</p>
+              <p className="pl-1 py-2 whitespace-pre-wrap break-keep">
+                {description}
+              </p>
             )}
           </div>
         );
@@ -57,7 +59,7 @@ export const ListToggleBox = ({
               {title}
             </span>
             <div
-              className="relative before:absolute 
+              className="relative before:absolute last:break-keep last:whitespace-pre-wrap
               ml-1
           last:pl-4
   before:w-2 
@@ -106,6 +108,7 @@ export const ListToggleBox = ({
 
 const TroubleShootingBox = styled.div`
   p {
-    padding: 8px 0px;
+    padding: 8px 4px;
+    word-break: keep-all;
   }
 `;

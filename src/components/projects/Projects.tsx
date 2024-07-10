@@ -1,13 +1,10 @@
-import React, { RefObject, forwardRef, useState } from "react";
-import { ProjectsItem } from "./ProjectsItem";
-import { TripFixedProejct } from "./TripFixedProejct";
+import React, { RefObject, useState } from "react";
+
 import { ProjectItemTwo } from "./ProjectItemTwo";
 import ClassHub from "assets/img/ClassHub/Mainpage2.jpg";
 import TripFixied from "assets/img/TripFixied/mainpage2.jpg";
 import MyPortfolio from "assets/img/MyPortfolio/mainpage2.jpg";
 import styled from "styled-components";
-import LeftArrow from "assets/img/LeftArrow.svg";
-import RightArrow from "assets/img/RightArrow.svg";
 
 export interface ScrollMoveType {
   element: RefObject<HTMLDivElement>;
@@ -20,24 +17,24 @@ interface Itest {
 
 export type projectItemType = {
   id: string;
-  projectImg: string;
   title: string;
-  skills: string[];
-  deploy: string | null;
-  function: string[];
-  github: string;
-  category: string | null;
-  description: string;
+  mainImage: string;
   date: string;
+  skillArray: string[];
+  deploy?: string | null;
+  function: string[];
+  github?: string;
+  category?: string | null;
+  description: string;
 };
 const projectArray = [
   {
-    id: "PortFolio",
+    id: "My",
     date: "2024.03~2024.05",
-    projectImg: MyPortfolio,
+    mainImage: MyPortfolio,
     category: "팀 프로젝트",
     title: "My Portfolio",
-    skills: ["Typescript", "React", "styled-components", "tailwindCSS"],
+    skillArray: ["Typescript", "React", "styled-components", "tailwindCSS"],
     deploy: null,
     function: ["간단한 자기소개", "기술 스택", "진행한 프로젝트", "인적사항"],
     github: "github.com/sunghyun-biblee/MyPortfolio",
@@ -45,12 +42,12 @@ const projectArray = [
       "이전 프로젝트때 배웠던 Typescript, tailwindCSS를 복습하고, 저만의 포트폴리오를 만들기 위해 웹 형태로 제작하였습니다",
   },
   {
-    id: "ClassHub",
+    id: "Class",
     date: "2024.03~2024.05",
-    projectImg: ClassHub,
+    mainImage: ClassHub,
     category: "팀 프로젝트",
     title: "Class Hub",
-    skills: [
+    skillArray: [
       "Typescript",
       "React",
       "styled-components",
@@ -69,12 +66,12 @@ const projectArray = [
       "온라인 학습시스템과 커뮤니티가 포함되어, 언제 어디서나 학습에 접근할 수 있는 플랫폼을 제공하기위한 서비스입니다",
   },
   {
-    id: "TripFixied",
+    id: "Trip",
     date: "2024.03~2024.05",
-    projectImg: TripFixied,
+    mainImage: TripFixied,
     category: "개인 프로젝트",
-    title: "trip fixed",
-    skills: ["Javascript", "React", "styled-components", "firebase"],
+    title: "trip_fixed",
+    skillArray: ["Javascript", "React", "styled-components", "firebase"],
     deploy: null,
     function: [
       "여행일자의 날씨정보 제공",
@@ -173,8 +170,9 @@ export const Projects = ({ value }: Itest) => {
       <div className="max-w-[1400px] w-[100vw] px-3 flex flex-col ">
         <h1
           className="text-left lg:text-6xl md:text-6xl mysm:text-[40px] uppercase font-extrabold [text-shadow:_5px_3px_3px_#82b585] py-5 mb-10
-        border-b-4 border-[#181F1B]
+    
         "
+          // border-b-4 border-[#181F1B]
         >
           Project
         </h1>
@@ -218,7 +216,7 @@ export const Projects = ({ value }: Itest) => {
   );
 };
 
-const Dot = styled.span<{ value: boolean }>`
+export const Dot = styled.span<{ value: boolean }>`
   display: inline-block;
   width: 1rem;
   height: 1rem;

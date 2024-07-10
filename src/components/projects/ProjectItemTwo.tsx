@@ -1,12 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import { projectItemType } from "./Projects";
-import preview from "assets/img/preview.jpg";
+
 import styled from "styled-components";
-import url from "assets/img/url.png";
-import githubIcon from "assets/img/github-mark.svg";
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import url from "assets/icons/url.svg";
+import githubIcon from "assets/icons/github-mark.svg";
+import { useLocation, useNavigate } from "react-router-dom";
+
 import { MarkDown } from "components/markdown/MarkDown";
+import { ReadMeBtn } from "components/Button/ReadMeBtn";
 
 interface IprojectItem {
   item: projectItemType;
@@ -39,19 +40,6 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
     }
   }, [current, index]);
 
-  const handleReadMeClick = (id: string) => {
-    document.body.style.overflowY = "hidden";
-    switch (id) {
-      case "PortFolio":
-        return nav("/PortFolio");
-      case "ClassHub":
-        return nav("/ClassHub");
-      case "TripFixied":
-        return nav("/TripFixied");
-      default:
-        return nav("/");
-    }
-  };
   return (
     <Article
       className={` max-w-[700px] w-[100vw] transition-all  duration-300 shadow-lg `}
@@ -60,7 +48,7 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
       <div className="h-[100%]">
         <div className="overflow-hidden  rounded-md w-[100%] h-[390px] ">
           <img
-            src={item.projectImg}
+            src={item.mainImage}
             alt="webIMG"
             className="w-[100%] h-[100%] "
           />
@@ -85,7 +73,7 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
             </ProjectSpan>
           </li>
           <li className="flex items-center mt-[1rem] flex-wrap w-[100%] gap-2">
-            {item.skills.map((item, index) => (
+            {item.skillArray.map((item, index) => (
               <span
                 key={item + index + item}
                 className="bg-skillbg rounded-md font-medium text-blue-500 
@@ -100,7 +88,7 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
           <li className="flex justify-between items-center mt-[2rem] ">
             <div className="flex">
               <GithubBtn
-                href={item.github}
+                href={`https://${item.github}`}
                 target="_blank"
                 rel="noopener  noreferrer"
                 className="py-2 md:px-3  mysm:px-2 md:text-base mysm:text-xs "
@@ -109,7 +97,7 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
               </GithubBtn>
               {item.deploy && (
                 <DeployBtn
-                  href={item.deploy}
+                  href={`https://${item.deploy}`}
                   target="_blank"
                   rel="noopener  noreferrer"
                   className="py-2 md:px-3  mysm:px-2 md:text-base mysm:text-xs"
@@ -118,12 +106,8 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
                 </DeployBtn>
               )}
             </div>
-            <DetailBtn
-              onClick={() => handleReadMeClick(item.id)}
-              className=" py-2 md:px-3 min-h-[36px]  mysm:px-2 md:text-base mysm:text-xs"
-            >
-              자세히보기 ▶ README
-            </DetailBtn>
+
+            <ReadMeBtn projectId={item.id}></ReadMeBtn>
           </li>
         </ul>
       </div>
@@ -133,12 +117,6 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
 
 const Article = styled.article`
   animation-fill-mode: forwards;
-`;
-const DetailBtn = styled.button`
-  background-color: #0060d1;
-  color: #d1f5ff;
-  font-weight: 500;
-  border-radius: 6px;
 `;
 
 const GithubBtn = styled.a`

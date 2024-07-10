@@ -63,8 +63,8 @@ export const ProjectsItem = ({ item }: IprojectItem) => {
                 Skills
               </span>
               <p className="inline-block w-[calc(100%-9rem)] text-right font-semibold tracking-wide">
-                {item.skills.map((data, index) => {
-                  if (item.skills.length === index + 1) {
+                {item.skillArray.map((data, index) => {
+                  if (item.skillArray.length === index + 1) {
                     const text = data;
                     return text;
                   } else {
