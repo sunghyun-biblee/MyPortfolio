@@ -1,16 +1,12 @@
+import React, { useEffect, useRef, useState } from "react";
 import { AboutMe } from "components/aboutme/AboutMe";
 import { IntroduceTwo } from "components/aboutme/IntroduceTwo";
 import { Header } from "components/header/Header";
-import { ClassHubComponent } from "components/ProjectDetail/ClassHubComponent";
-import { PortFolioComponent } from "components/ProjectDetail/PortFolioComponent";
-import { TripFixiedComponent } from "components/ProjectDetail/TripFixiedComponent";
 import { Projects } from "components/projects/Projects";
 import { SkillPart } from "components/skill/SkillPart";
 import { useScrollMove } from "hooks/useScrollMove";
-import React, { useEffect, useRef, useState } from "react";
-import { QueryClient } from "react-query";
-import { Outlet, Route, Routes, useLocation } from "react-router-dom";
-import { Test } from "Test";
+import { Outlet } from "react-router-dom";
+import { Footer } from "./footer/Footer";
 
 export const Main = () => {
   const nav = [
@@ -18,12 +14,11 @@ export const Main = () => {
     useScrollMove("About Me"),
     useScrollMove("Skills"),
     useScrollMove("Projects"),
-    useScrollMove("test"),
+    useScrollMove("Footer"),
   ];
 
   const scrollRef = useRef<HTMLDivElement[]>([]);
   const [scrollProgress, setScrollProgress] = useState<number>(0);
-  const qeuryClient = new QueryClient();
 
   useEffect(() => {
     const updateProgressBar = () => {
@@ -56,7 +51,7 @@ export const Main = () => {
         {/* <Introduce></Introduce> */}
         <SkillPart value={nav[2]}></SkillPart>
         <Projects value={nav[3]}></Projects>
-        <Test value={nav[4]}></Test>
+        <Footer value={nav[4]}></Footer>
       </div>
       <Outlet />
     </div>
