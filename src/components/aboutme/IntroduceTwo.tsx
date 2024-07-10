@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import preview from "assets/img/profileImg.webp";
+import preview from "assets/img/profile/profileImg.webp";
 import styled from "styled-components";
 import { ScrollMoveType } from "components/projects/Projects";
-import MyQR from "assets/img/myQR.webp";
-import Arrow from "assets/img/ClickArrow.svg";
+import MyQR from "assets/img/profile/myQR.webp";
+import Arrow from "assets/icons/ClickArrow.svg";
 interface IIntroduce {
   value: ScrollMoveType;
 }
