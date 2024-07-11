@@ -64,7 +64,7 @@ export const AboutMe = ({ value }: IAboutMe) => {
         >
           {/* <span className="cursor-pointer ">renderSkill Animation</span> */}
           <div>
-            <h1 className="md:text-3xl mysm:text-2xl font-semibold mb-5 ">
+            <h1 className="md:text-3xl mysm:text-xl font-semibold mb-5 ">
               꾸준히 우상향할{" "}
               <span
                 className="transition-all duration-500 lg:text-gray-800 mysm:text-gray-200 font-bold
