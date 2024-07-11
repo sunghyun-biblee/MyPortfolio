@@ -49,7 +49,7 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
           <div className="flex justify-center">
             <div
               className=" animate-introPopUp-profileImg mysm:mt-[50px] lg:mt-[0px]
-                opacity-0 w-[330px] h-[530px] relative
+                opacity-0 md:w-[330px] md:h-[530px] relative mysm:w-[300px] mysm:h-[450px]
                  flex justify-center items-center cursor-pointer"
               id="img-inner"
               onClick={handleImgClick}
@@ -88,13 +88,13 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
                     </Li>
 
                     <li className="h-[2px] bg-[#efefef] my-5"></li>
-                    <Li className="flex justify-between ">
+                    <Li className="flex justify-between md:text-base mysm:text-sm">
                       <span>정보처리산업기사</span>
                       <GraySpan>2022.06</GraySpan>
                     </Li>
 
                     <Li>
-                      <span className="inline-block pb-1 tracking-tight">
+                      <span className="inline-block pb-1 tracking-tight md:text-base mysm:text-sm">
                         멀티캠퍼스 웹 개발자 수료 &nbsp;
                         <span className="text-xs text-yellow-300">
                           개인 최우수
@@ -115,11 +115,13 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
                           sunghyun543@gmail.com
                         </span> */}
                       <div className="flex flex-col items-center">
-                        <span className="tracking-wide text-lg">KakaoQR</span>
+                        <span className="tracking-wide md:text-lg mysm:text-base">
+                          KakaoQR
+                        </span>
                         <img
                           src={MyQR}
                           alt="QRcode"
-                          className="w-[80px] h-[80px]"
+                          className="md:w-[80px] md:h-[80px] mysm:w-[70px] mysm:h-[70px]"
                         />
                       </div>
                     </li>
@@ -148,6 +150,9 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
 };
 const Li = styled.li`
   padding: 0.7rem 0px;
+  @media screen and (min-width: 375px) and (max-width: 767px) {
+    padding: 0.4rem 0px;
+  }
 `;
 const GraySpan = styled.span`
   color: rgb(209 213 219);
