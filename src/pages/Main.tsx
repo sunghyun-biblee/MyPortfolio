@@ -15,7 +15,7 @@ export const Main = () => {
     useScrollMove("About Me"),
     useScrollMove("Skills"),
     useScrollMove("Projects"),
-    useScrollMove("Footer"),
+    useScrollMove("Contact"),
   ];
 
   const scrollRef = useRef<HTMLDivElement[]>([]);

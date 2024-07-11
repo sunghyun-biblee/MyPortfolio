@@ -39,7 +39,7 @@ const projectArray = [
     function: ["간단한 자기소개", "기술 스택", "진행한 프로젝트", "인적사항"],
     github: "github.com/sunghyun-biblee/MyPortfolio",
     description:
-      "이전 프로젝트때 배웠던 Typescript, tailwindCSS를 복습하고, 저만의 포트폴리오를 만들기 위해 웹 형태로 제작하였습니다",
+      "이전 프로젝트때 배웠던 `Typescript` `tailwindCSS` 를 복습하고, 저만의 포트폴리오를 만들기 위해 웹 형태로 제작하였습니다",
   },
   {
     id: "Class",
@@ -63,7 +63,7 @@ const projectArray = [
     ],
     github: "github.com/sunghyun-biblee/ClassHub",
     description:
-      "온라인 학습시스템과 커뮤니티가 포함되어, 언제 어디서나 학습에 접근할 수 있는 플랫폼을 제공하기위한 서비스입니다",
+      "`온라인 학습시스템 및 커뮤니티` 로 구성되어, 언제 어디서나 학습에 접근할 수 있는 플랫폼 을 제공하기위한 서비스입니다",
   },
   {
     id: "Trip",
@@ -80,7 +80,7 @@ const projectArray = [
       "선택지역의 숙소 정보 제공",
     ],
     github: "github.com/sunghyun-biblee/Trip_Fixied_Project",
-    description: `**여행일정**에 맞춰 \`관광지 정보\`  \`축제정보\` \`숙소 정보\`를 제공하여 일정을 계획하기 쉽도록 도움을 제공하는 서비스입니다`,
+    description: `여행일정에 맞춰 \`관광지 정보\`  \`축제정보\` \`숙소 정보\`를 제공하여 여행 계획을 세우기 쉽도록 도움을 제공하는 서비스입니다`,
     // 여행계획을 세우기 힘든 사람들을 위해 공공데이터 기반으로 여행지를 추천해주는 서비스 입니다.
   },
 ];
@@ -162,14 +162,14 @@ export const Projects = ({ value }: Itest) => {
   };
   return (
     <div
-      className="  min-h-[100vh] w-[100%] flex justify-center bg-gradient-to-b from-[#D8F9DA] to-[#efefef] lg:pt-[10rem] mysm:pt-[7rem]
+      className="  min-h-[100vh] w-[100%] flex justify-center bg-gradient-to-b from-[#D8F9DA] to-[#efefef] lg:pt-[10rem] mysm:pt-[6rem]
       font-pretendard
 "
       ref={value.element}
     >
       <div className="max-w-[1400px] w-[100vw] px-3 flex flex-col ">
         <h1
-          className="text-left lg:text-6xl md:text-6xl mysm:text-[40px] uppercase font-extrabold [text-shadow:_5px_3px_3px_#82b585] py-5 mb-10
+          className="text-left lg:text-6xl md:text-6xl mysm:text-[40px] uppercase font-extrabold [text-shadow:_5px_3px_3px_#82b585] py-4 lg:mb-0 md:mb-5
     
         "
           // border-b-4 border-[#181F1B]
