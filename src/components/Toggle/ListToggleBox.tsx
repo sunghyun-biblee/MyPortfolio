@@ -1,7 +1,23 @@
 import React, { useState } from "react";
 import { MarkDown } from "components/markdown/MarkDown";
 import styled from "styled-components";
+import Markdown from "react-markdown";
 
+const MarkDwWrapper = styled.div`
+  p {
+    padding: 0.5rem 0rem 0.5rem 0.25rem;
+    white-space: pre-wrap;
+    word-break: keep-all;
+  }
+  code {
+    padding: 0.2rem 0.4rem;
+    margin-right: 0.1rem;
+    border-radius: 4px;
+    background-color: rgb(233, 236, 239);
+    font-size: 0.9rem;
+    font-family: Pretendard;
+  }
+`;
 interface IToogleProps {
   name?: string;
   description?: string;
@@ -46,20 +62,20 @@ export const ListToggleBox = ({
               <span>{name}</span>
             </div>
             {isToggle && (
-              <p className="pl-1 py-2 whitespace-pre-wrap break-keep">
-                {description}
-              </p>
+              <MarkDwWrapper>
+                <Markdown>{description}</Markdown>
+              </MarkDwWrapper>
             )}
           </div>
         );
       case "myActivities":
         return (
           <div className="flex flex-col text-left p-1 mb-1">
-            <span className="p-1 mb-2 text-black bg-gray-200 w-[100%]">
+            <span className="p-1 mb-2 text-black bg-gray-200 w-[100%] break-keep">
               {title}
             </span>
-            <div
-              className="relative before:absolute last:break-keep last:whitespace-pre-wrap
+            <MarkDwWrapper
+              className="relative before:absolute last:break-keep last:whitespace-pre-wrap 
               ml-1
           last:pl-4
   before:w-2 
@@ -71,7 +87,7 @@ export const ListToggleBox = ({
   before:top-[0.5rem]"
             >
               <MarkDown>{description}</MarkDown>
-            </div>
+            </MarkDwWrapper>
           </div>
         );
       case "trouble":
@@ -80,21 +96,27 @@ export const ListToggleBox = ({
             <span className="p-1 mb-2 text-black bg-gray-200 w-[100%]">
               {title}
             </span>
-
-            <MarkDown>{trouble}</MarkDown>
-
+            <MarkDwWrapper>
+              <MarkDown>{trouble}</MarkDown>
+            </MarkDwWrapper>
             {search && (
               <>
                 <hr />
-                <MarkDown>{search}</MarkDown>
+                <MarkDwWrapper>
+                  <MarkDown>{search}</MarkDown>
+                </MarkDwWrapper>
               </>
             )}
             <hr />
-            <MarkDown>{Resolution}</MarkDown>
+            <MarkDwWrapper>
+              <MarkDown>{Resolution}</MarkDown>
+            </MarkDwWrapper>
             {myThink && (
               <>
                 <hr />
-                <MarkDown>{myThink}</MarkDown>
+                <MarkDwWrapper>
+                  <MarkDown>{myThink}</MarkDown>
+                </MarkDwWrapper>
               </>
             )}
           </TroubleShootingBox>

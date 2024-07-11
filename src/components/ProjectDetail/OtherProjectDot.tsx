@@ -4,8 +4,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 type DotProps = {
-  value: boolean;
-  color: string | null;
+  value?: boolean;
+  color?: string | null;
 };
 export const OtherProjectDot = () => {
   const proejctId = useLocation().pathname.split("/")[1];
@@ -16,7 +16,11 @@ export const OtherProjectDot = () => {
   const nav = useNavigate();
   const ProjectIdList = ["My", "Class", "Trip"];
   return (
-    <div className="absolute top-0 left-0 z-10 p-5 flex flex-col items-start">
+    <DotWrapper
+      color={colorConcept ? colorConcept : null}
+      value={false}
+      className={`absolute top-0 left-0 z-10  mysm:p-3 flex m-1 flex-col  items-start   brightness-95`}
+    >
       <div>
         {ProjectIdList.map((item, index) => (
           <Dot
@@ -28,10 +32,10 @@ export const OtherProjectDot = () => {
           />
         ))}
       </div>
-      <span className="text-gray-200 inline-block mt-1 text-xs">
+      <span className="text-gray-200 inline-block mt-1 text-xs md:block mysm:hidden">
         *점을 눌러 다른 프로젝트도 확인해보세요
       </span>
-    </div>
+    </DotWrapper>
   );
 };
 
@@ -47,4 +51,8 @@ const Dot = styled.span<DotProps>`
 
   border-radius: 100%;
   scale: ${(props) => (props.value ? "1.15" : "1")};
+`;
+
+const DotWrapper = styled.div<DotProps>`
+  background-color: ${(props) => props.color && props.color};
 `;

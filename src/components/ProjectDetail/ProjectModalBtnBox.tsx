@@ -14,15 +14,18 @@ export const ProjectModalBtnBox = ({ github, deploy }: ModalBtnBoxPros) => {
     return nav("/");
   };
   return (
-    <div className="absolute top-0 right-0 z-10 p-5">
-      <div className="flex flex-col items-center ">
-        <button onClick={handleCloseModal} className="w-10 h-10 p-1 mb-7">
+    <div className="absolute top-0 right-0 z-10 md:p-5 mysm:p-3">
+      <div className="flex md:flex-col mysm:flex-row-reverse items-center ">
+        <button
+          onClick={handleCloseModal}
+          className="w-8 h-8 p-1 md:mb-5 lg:w-10 lg:h-10"
+        >
           <XMark color={"white"} />
         </button>
         {github && (
           <GithubBtn
             href={`https://${github}`}
-            className="w-10 h-10 p-1 cursor-pointer mb-7"
+            className="w-10 h-10 p-1 cursor-pointer md:mb-5 mysm:mr-2 md:mr-0"
             target="_blank"
             rel="noopener  noreferrer"
           />
@@ -38,7 +41,7 @@ export const ProjectModalBtnBox = ({ github, deploy }: ModalBtnBoxPros) => {
 };
 const DeployBtn = () => {
   return (
-    <div className="w-10 h-10 p-1 mb-7">
+    <div className="lg:w-10 lg:h-10 md:w-8 md:h-8 mysm:w-7 mysm:h-7 p-1 md:mb-5 mysm:mr-2 md:mr-0">
       <svg
         data-slot="icon"
         fill="none"
@@ -63,6 +66,12 @@ const GithubBtn = styled.a`
   background-size: 34px 34px;
   background-repeat: no-repeat;
   background-position: center;
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    background-size: 30px 30px;
+  }
+  @media screen and (min-width: 375px) and (max-width: 767px) {
+    background-size: 24px 24px;
+  }
 `;
 
 const XMark = ({ color }: { color: string }) => {

@@ -42,21 +42,21 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
 
   return (
     <Article
-      className={` max-w-[700px] w-[100vw] transition-all  duration-300 shadow-lg `}
+      className={` lg:max-w-[800px] md:max-w-[700px] w-[100vw] transition-all  duration-300 `}
       ref={ProejctRef}
     >
-      <div className="h-[100%]">
-        <div className="overflow-hidden  rounded-md w-[100%] h-[390px] ">
+      <div className="h-[100%]  md:w-[100%] mysm:w-[95%] mysm:mx-[auto] shadow-lg mysm:border-x-[1px] ">
+        <div className="overflow-hidden lg:h-[500px] md:h-[450px] mysm:h-[270px] rounded-md mysm:my-0 ">
           <img
             src={item.mainImage}
             alt="webIMG"
-            className="w-[100%] h-[100%] "
+            className="w-[100%]  h-[100%] "
           />
         </div>
 
         <ul
-          className="md:p-5 mysm:p-4 md:text-base mysm:text-sm
-        flex flex-col justify-between h-[calc(100%-390px)]"
+          className="md:p-5 mysm:p-3 md:text-base mysm:text-sm
+        flex flex-col justify-between lg:min-h-[calc(100%-500px)] md:min-h-[calc(100%-450px)] mysm:min-h-[calc(100%-270px)]"
         >
           <li className="flex justify-between items-center">
             <ProjectTitle className="md:text-3xl mysm:text-xl font-bold uppercase">
@@ -85,8 +85,8 @@ export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
             ))}
           </li>
 
-          <li className="flex justify-between items-center mt-[2rem] ">
-            <div className="flex">
+          <li className="flex justify-between items-center md:mt-[2rem] mysm:mt-[1rem] ">
+            <div className="flex gap-1">
               <GithubBtn
                 href={`https://${item.github}`}
                 target="_blank"
@@ -157,7 +157,6 @@ const DeployBtn = styled.a`
   justify-content: space-between;
   align-items: center;
   font-weight: 600;
-  margin-left: 10px;
 
   border-radius: 6px;
   border: 1px solid rgba(30, 27, 75, 0.15);
@@ -194,8 +193,12 @@ const ProjectSpan = styled.span`
     code {
       font-size: 0.9rem;
       font-family: Pretendard;
-      background-color: rgb(223, 226, 229);
+      background-color: #d6edf9;
+      color: rgb(18, 54, 112);
+      font-weight: 500;
       padding: 0.25rem 0.4rem;
+
+      border: 1px solid rgba(0, 0, 0, 0.02);
       border-radius: 6px;
     }
   }
