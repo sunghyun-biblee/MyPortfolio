@@ -49,7 +49,7 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
           <div className="flex justify-center">
             <div
               className=" animate-introPopUp-profileImg mysm:mt-[50px] lg:mt-[0px]
-                opacity-0 md:w-[330px] md:h-[530px] relative mysm:w-[290px] mysm:h-[465px]
+                opacity-0 md:w-[330px] md:h-[530px] relative mysm:w-[290px] mysm:h-[430px]
                  flex justify-center items-center cursor-pointer"
               id="img-inner"
               onClick={handleImgClick}
@@ -132,7 +132,7 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
           </div>
           <div
             className="overflow-hidden min-h-[70px]
-          max-h-[90px] my-10 py-1"
+          max-h-[90px] my-8 py-1"
             id="title"
           >
             <h1
