@@ -35,7 +35,7 @@ const projectArray = [
     category: "팀 프로젝트",
     title: "My Portfolio",
     skillArray: ["Typescript", "React", "styled-components", "tailwindCSS"],
-    deploy: null,
+    deploy: "bibleeportfolio.vercel.app/",
     function: ["간단한 자기소개", "기술 스택", "진행한 프로젝트", "인적사항"],
     github: "github.com/sunghyun-biblee/MyPortfolio",
     description:

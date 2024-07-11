@@ -65,7 +65,7 @@ export const MyPortfolioData = {
   ],
   troubleShooting: null,
   ProjectIMG: [],
-  deploy: null,
+  deploy: "bibleeportfolio.vercel.app/",
   github: "github.com/sunghyun-biblee/MyPortfolio",
   category: "개인 프로젝트",
 };

@@ -7,6 +7,7 @@ import { SkillPart } from "components/skill/SkillPart";
 import { useScrollMove } from "hooks/useScrollMove";
 import { Outlet } from "react-router-dom";
 import { Footer } from "./footer/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export const Main = () => {
   const nav = [
@@ -54,6 +55,7 @@ export const Main = () => {
         <Footer value={nav[4]}></Footer>
       </div>
       <Outlet />
+      <SpeedInsights />
     </div>
   );
 };
