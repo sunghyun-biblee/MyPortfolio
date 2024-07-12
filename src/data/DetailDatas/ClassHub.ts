@@ -1,5 +1,9 @@
 import MainImg from "assets/img/ClassHub/Mainpage2.jpg";
-
+import Commupage from "assets/img/ClassHub/CommunityPage.jpg";
+import CommuDetail from "assets/img/ClassHub/CommuDetail.jpg";
+import LecturePage from "assets/img/ClassHub/LecturePage2.jpg";
+import PaymentedPage from "assets/img/ClassHub/PaymentedPage.jpg";
+import MyPageDashBoard from "assets/img/ClassHub/MypageDashBoard.jpg";
 export const ClassHubData = {
   id: "Class",
   title: "ClassHub",
@@ -98,7 +102,14 @@ export const ClassHubData = {
         "**[회고]** 이번 프로젝트에서 API에 매우 의존적인 프로젝트는 CORS 오류가 발생하면 아무 작업도 할 수 없다는 점을 실감했습니다. 이런 상황을 해결하기 위해 `Mock Service Worker의 필요성`을 느꼈고, 이를 대비하여 미리 Mock 데이터를 활용할 수 있는 방법에 대해 공부해야겠다고 결심했습니다.",
     },
   ],
-  ProjectIMG: [],
+  ProjectIMG: [
+    { img: MainImg, imgDescrip: "메인 페이지" },
+    { img: Commupage, imgDescrip: "커뮤니티 페이지" },
+    { img: CommuDetail, imgDescrip: "글 상세 페이지" },
+    { img: LecturePage, imgDescrip: "강의목록 페이지" },
+    { img: PaymentedPage, imgDescrip: "결제완료 페이지" },
+    { img: MyPageDashBoard, imgDescrip: "마이페이지 대시보드" },
+  ],
   deploy: "https://devproject.store",
   github: "github.com/sunghyun-biblee/ClassHub",
   category: "팀 프로젝트",

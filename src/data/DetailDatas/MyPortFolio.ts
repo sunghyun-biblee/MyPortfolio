@@ -1,5 +1,9 @@
 import MainImg from "assets/img/MyPortfolio/mainpage2.jpg";
-
+import MainImgFront from "assets/img/MyPortfolio/Loot.jpg";
+import AboutMe from "assets/img/MyPortfolio/AboutMe.jpg";
+import skillImg from "assets/img/MyPortfolio/SkillPart.jpg";
+import ProjectPart from "assets/img/MyPortfolio/ProjectPart.jpg";
+import PorjectDetailPart from "assets/img/MyPortfolio/ProjectDetail.jpg";
 export const MyPortfolioData = {
   id: "My",
   title: "MyPortfolio",
@@ -64,7 +68,14 @@ export const MyPortfolioData = {
     },
   ],
   troubleShooting: null,
-  ProjectIMG: [],
+  ProjectIMG: [
+    { img: MainImgFront, imgDescrip: "초기화면 카드 앞면" },
+    { img: MainImg, imgDescrip: "초기화면 카드 뒷면" },
+    { img: AboutMe, imgDescrip: "자기 소개 화면" },
+    { img: skillImg, imgDescrip: "스킬 소개 화면" },
+    { img: ProjectPart, imgDescrip: "프로젝트 소개 화면" },
+    { img: PorjectDetailPart, imgDescrip: "프로젝트 자세히보기 화면" },
+  ],
   deploy: "bibleeportfolio.vercel.app/",
   github: "github.com/sunghyun-biblee/MyPortfolio",
   category: "개인 프로젝트",

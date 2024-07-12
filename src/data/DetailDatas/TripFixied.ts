@@ -1,5 +1,9 @@
 import MainImg from "assets/img/TripFixied/mainpage2.jpg";
-
+import DateCheck from "assets/img/TripFixied/DateCheck.jpg";
+import placeCheck from "assets/img/TripFixied/PlaceCheck.jpg";
+import HouseCheck from "assets/img/TripFixied/HouseCheck.jpg";
+import MapView from "assets/img/TripFixied/Mapview.jpg";
+import MypagePlan from "assets/img/TripFixied/MypagePlan.jpg";
 export const TripFixiedData = {
   id: "Trip",
   title: "Trip_Fixied",
@@ -79,7 +83,14 @@ export const TripFixiedData = {
       myThink: null,
     },
   ],
-  ProjectIMG: [],
+  ProjectIMG: [
+    { img: MainImg, imgDescrip: "메인 페이지" },
+    { img: DateCheck, imgDescrip: "날짜 입력 화면" },
+    { img: placeCheck, imgDescrip: "장소, 날씨정보 제공 화면" },
+    { img: HouseCheck, imgDescrip: "숙소 정보 제공 화면" },
+    { img: MapView, imgDescrip: "추가한 장소 확인 화면" },
+    { img: MypagePlan, imgDescrip: "마이페이지의 나의 계획" },
+  ],
   deploy: null,
   github: "github.com/sunghyun-biblee/Trip_Fixied_Project",
   category: "팀 프로젝트",
