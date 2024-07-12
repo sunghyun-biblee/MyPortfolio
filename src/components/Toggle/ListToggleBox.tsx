@@ -27,6 +27,8 @@ interface IToogleProps {
   search?: string | null | undefined;
   myThink?: string | null | undefined;
   category: string;
+  img?: string;
+  imgDescrip?: string;
 }
 export const ListToggleBox = ({
   name,
@@ -37,9 +39,14 @@ export const ListToggleBox = ({
   search,
   myThink,
   category,
+  img,
+  imgDescrip,
 }: IToogleProps) => {
   const [isToggle, setIsToggle] = useState<boolean>(false);
 
+  console.log(category);
+  console.log(img);
+  console.log(imgDescrip);
   const handleToggleClick = () => {
     setIsToggle((prev) => !prev);
   };
@@ -121,6 +128,15 @@ export const ListToggleBox = ({
             )}
           </TroubleShootingBox>
         );
+      case "projectScreen":
+        return (
+          <ProjectScreenBox>
+            <div className="w-[100%] h-[100%]">
+              <img src={img} alt="projectIMG" className="w-[100%] h-[100%]" />
+            </div>
+            <span className="pt-1">{imgDescrip}</span>
+          </ProjectScreenBox>
+        );
       default:
         break;
     }
@@ -133,4 +149,11 @@ const TroubleShootingBox = styled.div`
     padding: 8px 4px;
     word-break: keep-all;
   }
+`;
+
+const ProjectScreenBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 `;
