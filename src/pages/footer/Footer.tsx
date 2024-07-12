@@ -8,7 +8,7 @@ interface FooterProps {
 export const Footer = ({ value }: FooterProps) => {
   return (
     <footer
-      className="  min-h-[50vh] w-[100%] flex justify-center  overflow-hidden bg-gradient-to-b to-[#7493BC] from-[#efefef] font-pretendard"
+      className="  min-h-[100vh] w-[100%] flex justify-center items-center overflow-hidden bg-gradient-to-b to-[#7493BC] from-[#efefef] font-pretendard"
       ref={value.element}
     >
       <div
