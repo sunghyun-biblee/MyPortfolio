@@ -6,47 +6,62 @@ import url from "assets/icons/url.svg";
 type ModalBtnBoxPros = {
   github?: string;
   deploy?: string | null;
+  scroll?: boolean;
+  color?: string;
 };
-export const ProjectModalBtnBox = ({ github, deploy }: ModalBtnBoxPros) => {
+export const ProjectModalBtnBox = ({
+  github,
+  deploy,
+  color,
+}: ModalBtnBoxPros) => {
   const nav = useNavigate();
   const handleCloseModal = () => {
     document.body.style.overflowY = "auto";
     return nav("/");
   };
   return (
-    <div className="absolute top-0 right-0 z-10 md:p-5 mysm:p-3">
-      <div className="flex md:flex-col mysm:flex-row-reverse items-center ">
+    <BtnWrapper
+      className={`
+      lg:fixed  top-9 
+       right-[1.5%] z-50 lg:p-2 mysm:p-3 animate-Modal-on`}
+      color={color}
+    >
+      <div className="flex lg:flex-col mysm:flex-row-reverse items-center ">
         <button
           onClick={handleCloseModal}
-          className="w-8 h-8 p-1 md:mb-5 lg:w-10 lg:h-10"
+          className="w-8 h-8 p-1 lg:mb-5 lg:w-10 lg:h-10"
         >
           <XMark color={"white"} />
         </button>
         {github && (
           <GithubBtn
             href={`https://${github}`}
-            className="w-10 h-10 p-1 cursor-pointer md:mb-5 mysm:mr-2 md:mr-0"
+            className="w-10 h-10 p-1 cursor-pointer lg:mb-5 mysm:mr-2 lg:mr-0"
             target="_blank"
             rel="noopener  noreferrer"
           />
         )}
         {deploy && (
           <a href={deploy} target="_blank" rel="noopener  noreferrer">
-            <DeployBtn />
+            <DeployBtn color="white" />
           </a>
         )}
       </div>
-    </div>
+    </BtnWrapper>
   );
 };
-const DeployBtn = () => {
+
+const BtnWrapper = styled.div<ModalBtnBoxPros>`
+  background-color: ${(props) => props.color && props.color};
+`;
+export const DeployBtn = ({ color }: { color: string }) => {
   return (
-    <div className="lg:w-10 lg:h-10 md:w-8 md:h-8 mysm:w-7 mysm:h-7 p-1 md:mb-5 mysm:mr-2 md:mr-0">
+    <div className="lg:w-10 lg:h-10 md:w-8 md:h-8 mysm:w-7 mysm:h-7 p-1 mysm:mr-2 lg:mr-0">
       <svg
         data-slot="icon"
         fill="none"
         strokeWidth="1.5"
-        stroke="#efefef"
+        stroke={`${color}`}
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
@@ -74,7 +89,7 @@ const GithubBtn = styled.a`
   }
 `;
 
-const XMark = ({ color }: { color: string }) => {
+export const XMark = ({ color }: { color: string }) => {
   return (
     <svg
       data-slot="icon"

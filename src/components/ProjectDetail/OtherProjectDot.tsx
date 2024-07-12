@@ -19,7 +19,7 @@ export const OtherProjectDot = () => {
     <DotWrapper
       color={colorConcept ? colorConcept : null}
       value={false}
-      className={`absolute top-0 left-0 z-10  mysm:p-3 flex m-1 flex-col  items-start   brightness-95`}
+      className={`lg:absolute top-0 left-0 z-10  mysm:p-3 flex lg:m-1 flex-col  items-start   brightness-95`}
     >
       <div>
         {ProjectIdList.map((item, index) => (
@@ -54,5 +54,5 @@ const Dot = styled.span<DotProps>`
 `;
 
 const DotWrapper = styled.div<DotProps>`
-  background-color: ${(props) => props.color && props.color};
+  /* background-color: ${(props) => props.color && props.color}; */
 `;
