@@ -46,7 +46,7 @@ export const Main = () => {
         </div>
         <Header scrollRef={scrollRef} nav={nav}></Header>
       </div>
-      <div className="min-h-[100dvh] flex flex-col items-center">
+      <div className="min-h-[100dvh] flex flex-col items-center overflow-hidden">
         <IntroduceTwo value={nav[0]}></IntroduceTwo>
         <AboutMe value={nav[1]}></AboutMe>
         {/* <Introduce></Introduce> */}
