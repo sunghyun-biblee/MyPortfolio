@@ -64,7 +64,7 @@ export const ClassHubData = {
     {
       title: "질답 및 스터디모집을 위한 커뮤니티 구현",
       description:
-        "게시물 상세페이지의 로딩속도를 줄이기 위해 `React-Query의 prefetch` 를 사용하여  ",
+        "게시물 상세페이지의 로딩속도를 줄이기 위해 `React-Query의 prefetch` 를 사용하여 리스트에 출력되는 데이터의 정보를 미리 가져옵니다 ",
     },
     {
       title: "PortOne을 활용하여 강의 결제 및 결제내역 조회 구현",
