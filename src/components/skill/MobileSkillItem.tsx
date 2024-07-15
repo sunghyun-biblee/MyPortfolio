@@ -16,7 +16,7 @@ export const MobileSkillItem = ({
 }: SkillItemProps) => {
   return (
     <li className="md:p-5 mysm:p-3 rounded-xl bg-white/90 w-[100%] md:text-base mysm:text-sm">
-      <div className={`flex  w-[100%] h-[100%]  justify-start `}>
+      <div className={`flex  w-[100%] h-[100%]  ${"justify-start"} `}>
         <div className="image-container ">
           <img
             src={icon}
