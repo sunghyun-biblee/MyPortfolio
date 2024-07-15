@@ -19,6 +19,8 @@ import {
   skillGridSecond,
   SkillViewToggle,
 } from "recoil/portfolioAtoms";
+import { MobileSkillItem } from "./MobileSkillItem";
+import { useScrollAnimatePade } from "hooks/useScrollAnimatePade";
 
 const skillArray = [
   "React",
@@ -71,8 +73,8 @@ const SkillArray = [
     title: "Typescript",
     icon: TsIcon,
     text: [
-      "기본 자료형과 인덱스 시그니처, unknown 타입에 대해 알고 있습니다.",
-      "type, interface를 사용하여 타입을 분리할 수 있습니다.",
+      "props를 전달할때 타입을 지정하여 사용할 수 있습니다.",
+      "type, interface의 차이점을 이해하고 있습니다",
     ],
   },
   {
@@ -87,6 +89,7 @@ export const SkillPart = ({ value }: ISkill) => {
   const FirstGridTemplate = useRecoilValue(skillGridFirst);
   const SecondGridTemplate = useRecoilValue(skillGridSecond);
   const [viewToggle, setViewToggle] = useRecoilState(SkillViewToggle);
+  const Animate = useScrollAnimatePade(1, 0, "up");
 
   return (
     <div
@@ -97,7 +100,7 @@ export const SkillPart = ({ value }: ISkill) => {
     >
       <div
         className="max-w-[1400px] min-h-[100vh] flex flex-col w-[100vw] lg:pt-[100px] mysm:pt-[50px]
-      px-3"
+      px-3 overflow-hidden"
       >
         <div className="pb-5 flex lg:justify-between lg:flex-row mysm:flex-col mysm:items-start lg:items-center">
           <h1
@@ -107,7 +110,7 @@ export const SkillPart = ({ value }: ISkill) => {
             Skill Stack
           </h1>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 lg:flex mysm:hidden">
             <span className="text-xl font-semibold ">전체보기</span>
             <ToggleBtn
               onClick={() => setViewToggle((prev) => !prev)}
@@ -118,34 +121,80 @@ export const SkillPart = ({ value }: ISkill) => {
           </div>
         </div>
 
-        <div className="flex justify-between items-center flex-col h-[60%]">
-          <span className="text-center  font-medium text-gray-900 text-xl  ">
+        <div
+          className="flex justify-between items-center flex-col h-[60%]"
+          {...Animate}
+        >
+          <span
+            className={`text-center  font-medium text-gray-900 text-xl   ${
+              viewToggle ? "hidden" : " lg:block mysm:hidden"
+            }`}
+          >
             아이콘에 마우스를 올리면 자세한 설명이 나옵니다.
           </span>
-          <SkillContainerUl grid={FirstGridTemplate}>
-            {SkillArray.slice(0, 3).map((item, index) => (
-              <SkillItemTwo
-                title={item.title}
-                icon={item.icon}
-                key={item.title + index}
-                PlusSkillIcon={item.PlusSkillIcon}
-                index={index}
-                text={item.text}
-              ></SkillItemTwo>
-            ))}
-          </SkillContainerUl>
-          <SkillContainerUl grid={SecondGridTemplate}>
-            {SkillArray.slice(3, 6).map((item, index) => (
-              <SkillItemTwo
+
+          <ul className="flex-col w-[100%] gap-5 mt-5 lg:hidden mysm:flex">
+            {SkillArray.map((item, index) => (
+              <MobileSkillItem
                 title={item.title}
                 icon={item.icon}
                 key={index + item.text[0]}
                 PlusSkillIcon={item.PlusSkillIcon}
                 index={index + 3}
                 text={item.text}
-              ></SkillItemTwo>
+              ></MobileSkillItem>
             ))}
-          </SkillContainerUl>
+          </ul>
+
+          <div className="mysm:hidden lg:block w-[100%]">
+            {viewToggle ? (
+              <ul className="flex flex-col w-[100%] gap-5 mt-5 animate-Modal-on">
+                {SkillArray.map((item, index) => (
+                  <MobileSkillItem
+                    title={item.title}
+                    icon={item.icon}
+                    key={index + item.text[0]}
+                    PlusSkillIcon={item.PlusSkillIcon}
+                    index={index + 3}
+                    text={item.text}
+                  ></MobileSkillItem>
+                ))}
+              </ul>
+            ) : (
+              <>
+                <SkillContainerUl
+                  grid={FirstGridTemplate}
+                  className="animate-Modal-on"
+                >
+                  {SkillArray.slice(0, 3).map((item, index) => (
+                    <SkillItemTwo
+                      title={item.title}
+                      icon={item.icon}
+                      key={item.title + index}
+                      PlusSkillIcon={item.PlusSkillIcon}
+                      index={index}
+                      text={item.text}
+                    ></SkillItemTwo>
+                  ))}
+                </SkillContainerUl>
+                <SkillContainerUl
+                  grid={SecondGridTemplate}
+                  className="animate-Modal-on"
+                >
+                  {SkillArray.slice(3, 6).map((item, index) => (
+                    <SkillItemTwo
+                      title={item.title}
+                      icon={item.icon}
+                      key={index + item.text[0]}
+                      PlusSkillIcon={item.PlusSkillIcon}
+                      index={index + 3}
+                      text={item.text}
+                    ></SkillItemTwo>
+                  ))}
+                </SkillContainerUl>
+              </>
+            )}
+          </div>
         </div>
         {/* <div
           className="lg:pb-[120px]

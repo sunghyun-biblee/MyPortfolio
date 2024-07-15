@@ -70,7 +70,7 @@ export const SkillItemTwo = ({
             className="object-cover min-w-[150px]"
           />
         </div>
-        <div id="detail" className="pl-5 h-full">
+        <div id="detail" className="pl-6 h-full">
           <div className="flex justify-between items-center pb-3">
             <span className="inline-block text-3xl">{title}</span>
             {PlusSkillIcon && (
@@ -123,6 +123,7 @@ const SkillLi = styled.li<{ value: boolean }>`
   #detail {
     display: none;
     height: 50px;
+    width: 100%;
     opacity: 0;
     transition: opacity 0.5s ease, height 0.5s ease;
     overflow: hidden;
