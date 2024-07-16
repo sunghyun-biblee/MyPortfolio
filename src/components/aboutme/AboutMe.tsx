@@ -54,7 +54,7 @@ export const AboutMe = ({ value }: IAboutMe) => {
           transfrom lg:-translate-y-[100px] mysm:-translate-y-[0px]
            lg:px-0 lg:py-0 mysm:px-3 
            font-pretendard 
-           font-medium 
+           
            
           md:tracking-wide
           mysm:tracking-normal
@@ -62,9 +62,8 @@ export const AboutMe = ({ value }: IAboutMe) => {
         "
           {...TextAnimate}
         >
-          {/* <span className="cursor-pointer ">renderSkill Animation</span> */}
           <div>
-            <h1 className="md:text-3xl mysm:text-xl font-semibold mb-5 ">
+            <h1 className="lg:text-3xl md:text-2xl mysm:text-xl md:mb-5 mysm:mb-3 ">
               꾸준히 우상향할{" "}
               <span
                 className="transition-all duration-500 lg:text-gray-800 mysm:text-gray-200 font-bold
@@ -84,7 +83,7 @@ export const AboutMe = ({ value }: IAboutMe) => {
                 이라는 신조를 항상 마음에 새기고 있습니다
               </span>
             </div> */}
-            <div className="transition-all lg:text-lg mysm:text-base leading-[1.9rem] break-keep">
+            <div className="transition-all lg:text-lg mysm:text-base break-keep">
               <p>
                 개발자로 성장하는 과정에서 React 와 같은 프론트엔드 프레임워크를
                 학습할 때, 단순한 암기보다는 컴포넌트 라이프사이클, 상태 관리와
@@ -125,6 +124,7 @@ export const AboutMe = ({ value }: IAboutMe) => {
     </div>
   );
 };
+
 const BestSpan = styled.span`
   &::after {
     content: "📋";

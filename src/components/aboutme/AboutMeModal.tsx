@@ -29,7 +29,7 @@ export const AboutMeModal = ({
       mysm:left-[4%] "
           onClick={() => setPage(page - 1)}
         >
-          {"<"}
+          <LeftArrow />
         </button>
       )}
       {page !== 1 && (
@@ -41,7 +41,7 @@ export const AboutMeModal = ({
       mysm:right-[4%] "
           onClick={() => setPage(page + 1)}
         >
-          {">"}
+          <RightArrow />
         </button>
       )}
       <div className={`flex relative overflow-hidden`}>
@@ -84,12 +84,55 @@ export const AboutMeModal = ({
           ></PageNationIcon>
         </ul>
         <button
-          className="text-black font-pretendard font-semibold p-2 mt-[2rem] rounded-lg bg-[#9fc7f6]"
+          className="text-black font-pretendard font-semibold p-2 mt-[2rem] rounded-lg bg-blue-200"
           onClick={() => setIsModal(false)}
         >
           닫기
         </button>
       </div>
+    </div>
+  );
+};
+
+const RightArrow = () => {
+  return (
+    <div className="w-12 h-12">
+      <svg
+        data-slot="icon"
+        fill="none"
+        strokeWidth="1.5"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="m8.25 4.5 7.5 7.5-7.5 7.5"
+        ></path>
+      </svg>
+    </div>
+  );
+};
+const LeftArrow = () => {
+  return (
+    <div className="w-12 h-12">
+      <svg
+        data-slot="icon"
+        fill="none"
+        strokeWidth="1.5"
+        stroke="white"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M15.75 19.5 8.25 12l7.5-7.5"
+        ></path>
+      </svg>
     </div>
   );
 };
