@@ -5,6 +5,7 @@ import ClassHub from "assets/img/ClassHub/Mainpage2.jpg";
 import TripFixied from "assets/img/TripFixied/mainpage2.jpg";
 import MyPortfolio from "assets/img/MyPortfolio/mainpage2.jpg";
 import styled from "styled-components";
+import { useScrollAnimatePade } from "hooks/useScrollAnimatePade";
 
 export interface ScrollMoveType {
   element: RefObject<HTMLDivElement>;
@@ -87,7 +88,7 @@ const projectArray = [
 // #96EBA0
 export const Projects = ({ value }: Itest) => {
   const [current, setCurrent] = useState<number>(0);
-
+  const Animate = useScrollAnimatePade(0.7, 0, "up");
   const handleLeftClick = () => {
     if (current === 0) {
       setCurrent(projectArray.length - 1);
@@ -169,46 +170,51 @@ export const Projects = ({ value }: Itest) => {
     >
       <div className="max-w-[1400px] w-[100vw] px-3 flex flex-col ">
         <h1
-          className="text-left lg:text-6xl md:text-6xl mysm:text-[40px] uppercase font-extrabold [text-shadow:_5px_3px_3px_#82b585] py-4 lg:mb-0 md:mb-5
+          className="text-left lg:text-6xl md:text-6xl mysm:text-[40px] uppercase font-extrabold [text-shadow:_5px_3px_3px_#82b585] py-4
     
         "
           // border-b-4 border-[#181F1B]
         >
           Project
         </h1>
-        <div className="h-[100%] flex flex-col items-center justify-center">
-          <section className="flex justify-around  md:min-h-[670px] mysm:min-h-[550px]">
-            <div className=" items-center mysm:hidden md:flex">
-              {LeftArrow("md")}
-            </div>
-            {projectArray.map((item, index) => (
-              <ProjectItemTwo
-                item={item}
-                current={current}
-                index={index}
-                key={item.date + index}
-              ></ProjectItemTwo>
-            ))}
-            {/* {projectArray.map((item, index) => (
+        <div className="overflow-hidden h-[100%]">
+          <div
+            className="lg:mt-[3rem] md:mt-[1rem] mysm:mt-[2rem] flex flex-col items-center justify-center "
+            {...Animate}
+          >
+            <section className="flex justify-around  md:min-h-[670px] mysm:min-h-[550px]">
+              <div className=" items-center mysm:hidden md:flex">
+                {LeftArrow("md")}
+              </div>
+              {projectArray.map((item, index) => (
+                <ProjectItemTwo
+                  item={item}
+                  current={current}
+                  index={index}
+                  key={item.date + index}
+                ></ProjectItemTwo>
+              ))}
+              {/* {projectArray.map((item, index) => (
               <ProjectsItem item={item} key={item.date + index}></ProjectsItem>
             ))}
             <TripFixedProejct></TripFixedProejct> */}
-            <div className="mysm:hidden md:flex items-center">
-              {RightArrow("md")}
-            </div>
-          </section>
-          <div className="flex  items-center gap-[1rem] my-[3rem]">
-            {LeftArrow("mysm")}
+              <div className="mysm:hidden md:flex items-center">
+                {RightArrow("md")}
+              </div>
+            </section>
+            <div className="flex  items-center gap-[1rem] my-[3rem]">
+              {LeftArrow("mysm")}
 
-            {projectArray.map((_, index) => (
-              <Dot
-                key={new Date().getHours() + index}
-                value={index === current}
-                className="transition-all duration-[600ms] ease-linear cursor-pointer"
-                onClick={() => setCurrent(index)}
-              />
-            ))}
-            {RightArrow("mysm")}
+              {projectArray.map((_, index) => (
+                <Dot
+                  key={new Date().getHours() + index}
+                  value={index === current}
+                  className="transition-all duration-[600ms] ease-linear cursor-pointer"
+                  onClick={() => setCurrent(index)}
+                />
+              ))}
+              {RightArrow("mysm")}
+            </div>
           </div>
         </div>
       </div>

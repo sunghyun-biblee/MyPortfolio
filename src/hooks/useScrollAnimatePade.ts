@@ -45,7 +45,7 @@ export function useScrollAnimatePade(
     let observer: IntersectionObserver | undefined;
 
     if (element.current) {
-      observer = new IntersectionObserver(onScroll, { threshold: 0.7 });
+      observer = new IntersectionObserver(onScroll, { threshold: 0.6 });
       //   viewport에 0.7(70%)만큼 노출이 되면 onscroll 함수가 실행됨 이때 isIntersecting는 true가 됨
       observer.observe(element.current);
     }
