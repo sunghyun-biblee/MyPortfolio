@@ -88,7 +88,7 @@ const projectArray = [
 // #96EBA0
 export const Projects = ({ value }: Itest) => {
   const [current, setCurrent] = useState<number>(0);
-  const Animate = useScrollAnimatePade(0.7, 0, "up");
+  const Animate = useScrollAnimatePade(0.7, 0, "up", 0.3);
   const handleLeftClick = () => {
     if (current === 0) {
       setCurrent(projectArray.length - 1);

@@ -1,11 +1,45 @@
 import { ScrollMoveType } from "components/projects/Projects";
-import React from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import styled from "styled-components";
 
 interface FooterProps {
   value: ScrollMoveType;
 }
 export const Footer = ({ value }: FooterProps) => {
+  const ContactRef = useRef<HTMLDivElement>(null);
+
+  const onFadeIn = useCallback(([entry]: IntersectionObserverEntry[]) => {
+    const { current } = ContactRef;
+    if (current && entry.isIntersecting) {
+      current.style.transitionProperty = "all";
+      current.style.transitionDuration = `1s`;
+      current.style.scale = "1";
+      current.style.opacity = "1";
+    } else if (current) {
+      current.style.opacity = "0";
+      current.style.scale = "0";
+    }
+  }, []);
+  useEffect(() => {
+    let observer: IntersectionObserver | undefined;
+
+    if (ContactRef.current) {
+      observer = new IntersectionObserver(onFadeIn, { threshold: 0.7 });
+      observer.observe(ContactRef.current);
+    }
+
+    return () => observer && observer.disconnect();
+  }, [onFadeIn]);
+
+  const handleCopy = (mail: string) => {
+    try {
+      navigator.clipboard.writeText(mail);
+      alert("클릭보드에 복사되었습니다");
+    } catch (error) {
+      alert("복사에 실패하였습니다");
+    }
+  };
+
   return (
     <footer
       className="  min-h-[100vh] w-[100%] flex justify-center items-center overflow-hidden bg-gradient-to-b to-[#7493BC] from-[#efefef] font-pretendard"
@@ -13,14 +47,18 @@ export const Footer = ({ value }: FooterProps) => {
     >
       <div
         className="max-w-[1400px] w-[100vw] px-3 flex flex-col items-center
-      
       "
+        ref={ContactRef}
+        style={{ opacity: 0 }}
       >
-        <h1 className="text-center lg:text-6xl md:text-6xl mysm:text-[40px] uppercase font-extrabold [text-shadow:_4px_2px_3px_#8098b2] py-5 mb-10 mt-[3.5rem]">
+        <h1 className="text-center lg:text-7xl md:text-6xl mysm:text-[40px] uppercase font-extrabold [text-shadow:_4px_2px_3px_#8098b2] py-5 mb-10 mt-[3.5rem]">
           Thank You!
         </h1>
-        <FooterUl className="list-disc md:min-w-[500px] mysm:min-w-[400px] mx-[auto] my-0 text-2xl ">
-          <FooterLi className="py-3 mysm:text-lg">
+        <FooterUl className="list-disc md:min-w-[500px] mysm:min-w-[400px] mx-[auto] my-0  lg:text-2xl mysm:text-lg">
+          <FooterLi
+            className="py-3 "
+            onClick={() => handleCopy("sunghyun543@gmail.com")}
+          >
             <div>
               <h2 className="md:min-w-[75px] mysm:min-w-[45px]">Email</h2>:
               <span className="hover:text-blue-500 transition-all duration-300 ">
@@ -29,7 +67,7 @@ export const Footer = ({ value }: FooterProps) => {
               <span className="text-xs block mb-1">클릭시 복사</span>
             </div>
           </FooterLi>
-          <FooterLi className="py-3 mysm:text-lg">
+          <FooterLi className="py-3">
             <div>
               <h2 className="md:min-w-[75px] mysm:min-w-[45px]">Phone</h2>:
               <span className="hover:text-blue-500 transition-all duration-300">
@@ -37,7 +75,7 @@ export const Footer = ({ value }: FooterProps) => {
               </span>
             </div>
           </FooterLi>
-          <FooterLi className="py-3 mysm:text-lg ">
+          <FooterLi className="py-3 ">
             <div>
               <h2 className="md:min-w-[75px] mysm:min-w-[45px]">github</h2>:
               <a
