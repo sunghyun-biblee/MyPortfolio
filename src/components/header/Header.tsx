@@ -67,7 +67,7 @@ export const Header = ({ scrollRef, nav }: IHeader) => {
         `}
           onClick={nav[0].onMove}
         >
-          biblee Portfolio
+          sungHyun's Portfolio
         </span>
         <ul
           className={` lg:text-xl md:text-lg mysm:text-sm 

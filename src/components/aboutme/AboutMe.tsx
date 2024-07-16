@@ -101,7 +101,7 @@ export const AboutMe = ({ value }: IAboutMe) => {
                 기반으로 <br />
                 멀티캠퍼스 수료과정에서
                 <BestSpan
-                  className="text-yellow-300 hover:cursor-pointer"
+                  className="text-yellow-300 hover:cursor-pointer px-1"
                   onClick={() => setIsModal(true)}
                 >
                   개인 최우수상
@@ -110,30 +110,10 @@ export const AboutMe = ({ value }: IAboutMe) => {
               </p>
             </div>
           </div>
-          <div className="pt-[2rem] md:pb-0 mysm:pb-[0.1rem] text-base relative">
-            P.S 인터랙티브한 웹과
-            <JaKobSpan onClick={() => setIsDescript((prev) => !prev)}>
-              제이콥의 법칙
-            </JaKobSpan>
-            을 활용하여 UI/UX 디자인을 구현하는걸 좋아합니다
-            <div
-              className={`  -left-[0%] transition-width duration-1000 overflow-hidden  text-[#BEFBFF]
-                md:-bottom-[50%]
-                mysm:-bottom-[65%]
-                max-w-[600px] 
-               
-                mysm:min-h-[24px] 
-                
-              ${
-                isDescript
-                  ? "w-[100%] mysm:max-h-[48px] "
-                  : "w-[0%] max-h-[1px]  md:max-h-[24px]"
-              }`}
-            >
-              사용자는 익숙해진 기존의 경험을 바탕으로 기대치를 형성하는 경향을
-              보인다는 내용의 법칙
-            </div>
-          </div>
+          <p className="pt-[2rem] md:pb-0 mysm:pb-[0.1rem] text-base relative break-keep">
+            사용자들의 시선을 집중시키고, 매력적인 인상을 남기기 위해
+            애니메이션과 트랜지션을 <br /> 활용한 웹 디자인을 좋아합니다
+          </p>
         </div>
         <AboutMeModal
           isModal={isModal}

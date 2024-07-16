@@ -63,7 +63,7 @@ const SkillArray = [
     icon: ReactIcon,
     text: [
       "React의 작동원리와 라이프사이클을 이해하고 있습니다.",
-      "styled-components ,React-Query,React-router-Dom 활용할 수 있습니다",
+      "styled-components ,React-Query,React-router-dom 활용할 수 있습니다",
       "테스트 관련 라이브러리의 필요성을 느끼고 학습중 입니다",
       "재사용 가능한 컴포넌트를 설계하기위해 노력합니다",
     ],
@@ -81,7 +81,8 @@ const SkillArray = [
     title: "Git",
     icon: GitIcon,
     text: [
-      "get,post,delete 요청을 하여 응답하는지 확인하고 디버깅할 수 있습니다",
+      "commit,push,clone,pull을 사용하여 레파지토리를 관리합니다",
+      "코드 리뷰 문화를 이해하기 위해 Pull Request 생성과 branch에 대해 공부 중입니다.",
     ],
   },
 ];
@@ -99,10 +100,10 @@ export const SkillPart = ({ value }: ISkill) => {
       ref={value.element}
     >
       <div
-        className="max-w-[1400px] min-h-[100vh] flex flex-col w-[100vw] lg:pt-[100px] mysm:pt-[50px]
+        className="max-w-[1400px] min-h-[100vh] flex flex-col w-[100vw] lg:pt-10 mysm:pt-2
       px-3 overflow-hidden"
       >
-        <div className="pb-5 flex lg:justify-between lg:flex-row mysm:flex-col mysm:items-start lg:items-center">
+        <div className="lg:pb-14 flex lg:justify-between lg:flex-row mysm:flex-col mysm:items-start lg:items-center">
           <h1
             className="text-left lg:text-6xl md:text-6xl mysm:text-[40px]  text-[#181f1b] font-extrabold
         [text-shadow:_5px_3px_3px_#3d9ca4]"
@@ -122,7 +123,7 @@ export const SkillPart = ({ value }: ISkill) => {
         </div>
 
         <div
-          className="flex justify-between items-center flex-col h-[60%]"
+          className="flex justify-between items-center flex-col h-[55%]"
           {...Animate}
         >
           <span
@@ -130,7 +131,7 @@ export const SkillPart = ({ value }: ISkill) => {
               viewToggle ? "hidden" : " lg:block mysm:hidden"
             }`}
           >
-            아이콘에 마우스를 올리면 자세한 설명이 나옵니다.
+            아이콘에 마우스를 올리면 설명이 나옵니다.
           </span>
 
           <ul className="flex-col w-[100%] gap-5 mt-5 lg:hidden mysm:flex">
