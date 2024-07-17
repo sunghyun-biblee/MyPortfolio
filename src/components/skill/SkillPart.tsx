@@ -1,7 +1,7 @@
 import { ScrollMoveType } from "components/projects/Projects";
-import React, { forwardRef, useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { SkillItem } from "./SkillItem";
+
 import { SkillItemTwo } from "./SkillItemTwo";
 import HtmlIcon from "assets/icons/Skill_Icons/HTML.svg";
 import CssIcon from "assets/icons/Skill_Icons/CSS.svg";
@@ -11,8 +11,6 @@ import StyledIcon from "assets/icons/Skill_Icons/StyledComponents.svg";
 import TsIcon from "assets/icons/Skill_Icons/TypeScript.svg";
 import GitIcon from "assets/icons/Skill_Icons/Git.svg";
 import TwIcon from "assets/icons/Skill_Icons/TailwindCSS-Dark.svg";
-import VcIcon from "assets/icons/Skill_Icons/Vercel-Dark.svg";
-import DiscordIcon from "assets/icons/Skill_Icons/Discord.svg";
 import { useRecoilState, useRecoilValue } from "recoil";
 import {
   skillGridFirst,
@@ -22,13 +20,6 @@ import {
 import { MobileSkillItem } from "./MobileSkillItem";
 import { useScrollAnimatePade } from "hooks/useScrollAnimatePade";
 
-const skillArray = [
-  "React",
-  "Javascript",
-  "Typescript",
-  "React-Query",
-  "TailwindCSS",
-];
 interface ISkill {
   value: ScrollMoveType;
 }
@@ -90,7 +81,7 @@ export const SkillPart = ({ value }: ISkill) => {
   const FirstGridTemplate = useRecoilValue(skillGridFirst);
   const SecondGridTemplate = useRecoilValue(skillGridSecond);
   const [viewToggle, setViewToggle] = useRecoilState(SkillViewToggle);
-  const Animate = useScrollAnimatePade(1, 0, "up");
+  const Animate = useScrollAnimatePade(1, 0, "up", 0.3);
 
   return (
     <div
