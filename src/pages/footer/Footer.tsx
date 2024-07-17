@@ -90,12 +90,15 @@ export const Footer = ({ value }: FooterProps) => {
           </FooterLi>
         </FooterUl>
         <div className="mt-10 mb-5">
-          <FeedBackBtn
+          <a
+            href="https://forms.gle/kF1aDYxNdzUGmNqHA"
+            target="_blank"
+            rel="noreferrer"
             className=" border-2 border-blue-900 hover:border-2 py-5 px-10  transition-all rounded-none hover:rounded-xl text-lg
           text-blue-900 font-semibold shadow-lg bg-transparent hover:bg-white/40"
           >
             피드백 보내기
-          </FeedBackBtn>
+          </a>
         </div>
       </div>
     </footer>
@@ -127,5 +130,3 @@ const FooterUl = styled.ul`
   padding: 0.5rem 1.1rem;
   word-break: keep-all;
 `;
-
-const FeedBackBtn = styled.button``;
