@@ -5,14 +5,14 @@ import styled from "styled-components";
 interface FooterProps {
   value: ScrollMoveType;
 }
-export const Footer = ({ value }: FooterProps) => {
+export const Contact = ({ value }: FooterProps) => {
   const ContactRef = useRef<HTMLDivElement>(null);
 
   const onFadeIn = useCallback(([entry]: IntersectionObserverEntry[]) => {
     const { current } = ContactRef;
     if (current && entry.isIntersecting) {
       current.style.transitionProperty = "all";
-      current.style.transitionDuration = `1s`;
+      current.style.transitionDuration = `0.5s`;
       current.style.scale = "1";
       current.style.opacity = "1";
     } else if (current) {
