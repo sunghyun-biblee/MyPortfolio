@@ -1,13 +1,13 @@
-import { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect } from "react";
+import { RefObject } from "react";
 import { useRecoilState } from "recoil";
 import { NavState } from "recoil/portfolioAtoms";
 
-export function useScrollMove(value: string) {
-  const name = value;
-  const element = useRef<HTMLDivElement>(null);
-  const onMove = () => {
-    element.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
+export function useNavStateChange(
+  TargetElement: RefObject<HTMLDivElement>,
+  name: string
+) {
+  const element = TargetElement;
   const [navState, setNavState] = useRecoilState(NavState);
   const ChangeState = useCallback(
     ([entry]: IntersectionObserverEntry[]) => {
@@ -22,11 +22,12 @@ export function useScrollMove(value: string) {
     let observer: IntersectionObserver | undefined;
     if (element.current) {
       observer = new IntersectionObserver(ChangeState, {
-        threshold: 0.8,
+        threshold: 0.5,
       });
       observer.observe(element.current);
     }
     return () => observer?.disconnect();
   }, [ChangeState, element]);
-  return { element, onMove, name, navState };
+
+  return navState;
 }
