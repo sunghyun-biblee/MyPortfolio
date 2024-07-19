@@ -11,6 +11,7 @@ export interface ScrollMoveType {
   element: RefObject<HTMLDivElement>;
   onMove: () => void;
   name: string;
+  navState: string;
 }
 interface Itest {
   value: ScrollMoveType;

@@ -148,7 +148,7 @@ export const ProjectDetail = () => {
     <>
       <DetailContainer
         id="Container"
-        className="fixed top-0 w-[100vw] bg-transparent backdrop-blur-md md:p-9 mysm:p-0
+        className="fixed top-0 w-[100vw] bg-transparent backdrop-blur-md lg:p-9 md:p-4 mysm:p-0
      left-0 opacity-0
      z-20 max-h-[100vh] overflow-scroll font-pretendard  animate-Modal-on
       "
@@ -280,7 +280,7 @@ export const ProjectDetail = () => {
       </DetailContainer>
       {Data && (
         <>
-          <div className=" mysm:flex lg:hidden justify-between fixed top-0 z-50 md:px-9 mysm:mx-0 w-[100vw]">
+          <div className=" mysm:flex lg:hidden justify-between fixed top-0 z-50 lg:px-9 md:px-4 mysm:mx-0 w-[100vw]">
             <BtnWrapper
               className="w-[100%] flex justify-between"
               color={Data.colorConcept}
