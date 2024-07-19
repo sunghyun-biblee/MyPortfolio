@@ -188,37 +188,6 @@ export const SkillPart = ({ value }: ISkill) => {
             )}
           </div>
         </div>
-        {/* <div
-          className="lg:pb-[120px]
-        mysm:pb-[100px]"
-        >
-           <ul
-            className="md:flex md:flex-row 
-        lg:px-2 md:px-1 mysm:grid mysm:grid-cols-3 md:gap-0 mysm:gap-3"
-          >
-            {skillArray.map((item, index) => (
-              <Li
-                className="px-3 py-[5px] shadow-lg  lg:mr-5 md:mr-2 lg:text-[22px]"
-                key={item + index}
-              >
-                <span>{item}</span>
-              </Li>
-            ))}
-            <Li className="px-3 py-[5px] shadow-lg lg:text-[22px] md:text-base ">
-              <span className="mysm:hidden md:block">styled-components</span>
-              <span className="mysm:block md:hidden">styled</span>
-            </Li>
-          </ul> *
-        </div> */}
-        {/* <section
-          className="md:grid md:grid-cols-2 md:gap-y-20 md:gap-x-10 mysm:flex mysm:flex-col gap-16
-        mysm:px-4
-        "
-        >
-          {SkillArray.map((item, index) => (
-            <SkillItem item={item} key={item.title + index}></SkillItem>
-          ))}
-        </section> */}
       </div>
     </div>
   );

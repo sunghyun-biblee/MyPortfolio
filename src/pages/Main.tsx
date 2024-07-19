@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AboutMe } from "components/aboutme/AboutMe";
 import { IntroduceTwo } from "components/aboutme/IntroduceTwo";
 import { Header } from "components/header/Header";
@@ -6,7 +6,7 @@ import { Projects } from "components/projects/Projects";
 import { SkillPart } from "components/skill/SkillPart";
 import { useScrollMove } from "hooks/useScrollMove";
 import { Outlet } from "react-router-dom";
-import { Footer } from "./footer/Footer";
+import { Contact } from "./Contact/Contact";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export const Main = () => {
@@ -18,7 +18,6 @@ export const Main = () => {
     useScrollMove("Contact"),
   ];
 
-  const scrollRef = useRef<HTMLDivElement[]>([]);
   const [scrollProgress, setScrollProgress] = useState<number>(0);
 
   useEffect(() => {
@@ -44,7 +43,7 @@ export const Main = () => {
             id="progress-bar"
           ></div>
         </div>
-        <Header scrollRef={scrollRef} nav={nav}></Header>
+        <Header nav={nav}></Header>
       </div>
       <div className="min-h-[100dvh] flex flex-col items-center">
         <IntroduceTwo value={nav[0]}></IntroduceTwo>
@@ -52,7 +51,7 @@ export const Main = () => {
         {/* <Introduce></Introduce> */}
         <SkillPart value={nav[2]}></SkillPart>
         <Projects value={nav[3]}></Projects>
-        <Footer value={nav[4]}></Footer>
+        <Contact value={nav[4]}></Contact>
       </div>
       <Outlet />
       <SpeedInsights />

@@ -1,22 +1,15 @@
-import React, {
-  MutableRefObject,
-  RefObject,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import styled from "styled-components";
-
-type ScrollRefType = MutableRefObject<HTMLDivElement[]>;
+import React, { RefObject, useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
+import { NavState } from "recoil/portfolioAtoms";
 
 interface ItemType {
   element: RefObject<HTMLDivElement>;
   onMove: () => void;
   name: string;
+  navState: string;
 }
 
 interface IHeader {
-  scrollRef: ScrollRefType;
   nav: ItemType[];
 }
 
@@ -24,10 +17,10 @@ interface MenuBarProps {
   isScroll: boolean;
 }
 
-export const Header = ({ scrollRef, nav }: IHeader) => {
+export const Header = ({ nav }: IHeader) => {
   const [isScroll, setIsScroll] = useState<boolean>(false);
   const [isMenu, setIsMenu] = useState<boolean>(false);
-  const [navIndex, setNavIndex] = useState<number | null>(null);
+  const [navState, setNavState] = useRecoilState(NavState);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       // window의 인터페이스인 scrollY 속성은, 문서가 수직으로 몇 픽셀 만큼 스크롤 되었는지를 반환
@@ -40,8 +33,31 @@ export const Header = ({ scrollRef, nav }: IHeader) => {
   }, []);
 
   const handleClick = (item: ItemType) => {
+    setNavState(item.name);
     item.onMove();
     setIsMenu(false);
+  };
+  const getTitleTextColor = () => {
+    if (isScroll && navState === nav[0].name) {
+      return "text-gray-100";
+    } else if (!isScroll && navState === nav[0].name) {
+      return "text-blue-950";
+    } else {
+      return isScroll
+        ? "text-blue-950 hover:text-gray-100"
+        : "text-gray-100 hover:text-blue-950";
+    }
+  };
+  const getSubTitleTextColor = (name: string) => {
+    if (isScroll && navState === name) {
+      return "text-gray-100 border-gray-100";
+    } else if (!isScroll && navState === name) {
+      return "text-blue-950 border-blue-950";
+    } else {
+      return isScroll
+        ? "border-blue-950 hover:border-gray-100 hover:text-gray-100"
+        : "border-gray-100 hover:border-blue-950 hover:text-blue-950";
+    }
   };
   return (
     <header
@@ -49,7 +65,7 @@ export const Header = ({ scrollRef, nav }: IHeader) => {
         w-[100%]
     font-pretendard  
     backdrop-blur-[5px]
-      ${isScroll ? "bg-[#AED1F5]/80 " : "bg-[#5ea3ec]/80"}
+      ${isScroll ? "bg-[#7dbdfe]/80 " : "bg-[#5ea3ec]/80"}
        
       `}
     >
@@ -59,11 +75,7 @@ export const Header = ({ scrollRef, nav }: IHeader) => {
         mysm:px-3"
       >
         <span
-          className={`text-2xl font-bold cursor-pointer ${
-            isScroll
-              ? "text-blue-950 hover:text-white"
-              : "text-[#f2f2f2] hover:text-blue-950"
-          }
+          className={`text-2xl font-bold cursor-pointer ${getTitleTextColor()}
         `}
           onClick={nav[0].onMove}
         >
@@ -86,11 +98,7 @@ export const Header = ({ scrollRef, nav }: IHeader) => {
                 <span
                   className={` border-b-2 pb-[1px] font-semibold transition-colors 
                     
-                    ${
-                      isScroll
-                        ? "border-blue-950 hover:border-[#efefef] hover:text-[#efefef]"
-                        : "border-[#f2f2f2] hover:border-blue-950 hover:text-blue-950"
-                    }
+                    ${getSubTitleTextColor(item.name)}
             `}
                 >
                   {item.name}
@@ -158,50 +166,3 @@ const MenuBar = ({ isScroll }: MenuBarProps) => {
     </svg>
   );
 };
-// {
-//   /* <li
-//             className=" cursor-pointer lg:px-5  mysm:px-3"
-//             onClick={() => setNavIndex(0)}
-//           >
-//             <span
-//               className={`mysm:text-sm lg:text-xl border-b-2 pb-[1px] font-semibold transition-colors ${
-//                 isScroll
-//                   ? "border-blue-950 hover:border-[#efefef] hover:text-[#efefef]"
-//                   : "border-[#f2f2f2] hover:border-blue-950 hover:text-blue-950"
-//               }
-//               `}
-//             >
-//               About me
-//             </span>
-//           </li>
-//           <li
-//             className=" cursor-pointer lg:px-5  mysm:px-3"
-//             onClick={() => setNavIndex(1)}
-//           >
-//             <span
-//               className={`mysm:text-sm lg:text-xl border-b-2 pb-[1px] font-semibold transition-colors ${
-//                 isScroll
-//                   ? "border-blue-950 hover:border-[#efefef] hover:text-[#efefef]"
-//                   : "border-[#f2f2f2] hover:border-blue-950 hover:text-blue-950"
-//               }
-//               `}
-//             >
-//               Skills
-//             </span>
-//           </li>
-//           <li
-//             className=" cursor-pointer lg:px-5  mysm:px-3"
-//             onClick={() => setNavIndex(2)}
-//           >
-//             <span
-//               className={`mysm:text-sm lg:text-xl border-b-2 pb-[1px] font-semibold  transition-colors ${
-//                 isScroll
-//                   ? "border-blue-950 hover:border-[#efefef] hover:text-[#efefef]"
-//                   : "border-[#f2f2f2] hover:border-blue-950 hover:text-blue-950"
-//               }
-//               `}
-//             >
-//               Projects
-//             </span>
-//           </li> */
-// }

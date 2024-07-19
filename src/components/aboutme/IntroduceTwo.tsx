@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { ScrollMoveType } from "components/projects/Projects";
 import MyQR from "assets/img/profile/myQR.webp";
 import Arrow from "assets/icons/ClickArrow.svg";
+
 interface IIntroduce {
   value: ScrollMoveType;
 }
@@ -11,6 +12,7 @@ interface IIntroduce {
 export const IntroduceTwo = ({ value }: IIntroduce) => {
   const [isFlip, setIsFlip] = useState<boolean>(false);
   const [isClick, setIsClick] = useState<boolean>(false);
+
   useEffect(() => {
     if (isClick && isFlip) {
       return;

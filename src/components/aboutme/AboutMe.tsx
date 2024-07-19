@@ -15,7 +15,7 @@ interface BackGroundProps {
 export const AboutMe = ({ value }: IAboutMe) => {
   const TitleAnimate = useTextFadeIn(1, 0, "down");
   const TextAnimate = useTextFadeIn(1, 0.4);
-  const [isDescript, setIsDescript] = useState<boolean>(false);
+
   const [isModal, setIsModal] = useState<boolean>(false);
   const [page, setPage] = useState<number>(0);
 
@@ -75,14 +75,6 @@ export const AboutMe = ({ value }: IAboutMe) => {
               입니다
             </h1>
 
-            {/* <div className=" md:block mysm:flex flex-col mt-[1rem] md:mb-[0.5rem] mysm:mb-[1rem]">
-              <span className="lg:text-[black] mysm:text-[#ee4949]  font-extrabold text-xl tracking-wide transition-colors duration-700">
-                ' 중요한건 꺽이지 않는 마음 '
-              </span>
-              <span className="text-sm md:pl-3 mysm:pl-1 pt-2 tracking-wider lg:text-inherit mysm:text-gray-300">
-                이라는 신조를 항상 마음에 새기고 있습니다
-              </span>
-            </div> */}
             <div className="transition-all lg:text-lg mysm:text-base break-keep">
               <p>
                 개발자로 성장하는 과정에서 React 와 같은 프론트엔드 프레임워크를
