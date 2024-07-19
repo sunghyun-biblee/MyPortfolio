@@ -13,3 +13,8 @@ export const SkillViewToggle = atom({
   key: "skillView",
   default: false,
 });
+
+export const NavState = atom({
+  key: "navState",
+  default: "",
+});
