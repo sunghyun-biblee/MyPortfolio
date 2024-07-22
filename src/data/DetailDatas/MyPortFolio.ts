@@ -10,7 +10,7 @@ export const MyPortfolioData = {
   colorConcept: "#5ea3ec",
   mainImage: MainImg,
   personnel: [1],
-  date: "2024.05.01~ 2024.06.18",
+  date: "2024.06.04 ~ 2024.07",
   Contribution: "100%",
   role: "프론트엔드 담당",
   skills: [

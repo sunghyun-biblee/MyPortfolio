@@ -10,7 +10,7 @@ export const TripFixiedData = {
   colorConcept: "#74c4cc",
   mainImage: MainImg,
   personnel: [1, 1, 2],
-  date: "2024.05.01~ 2024.06.18",
+  date: "2023.12.05~2024.02.02",
   Contribution: "55%",
   role: "프론트엔드 담당",
   skills: [

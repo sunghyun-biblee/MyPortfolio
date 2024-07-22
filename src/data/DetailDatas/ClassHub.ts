@@ -110,7 +110,7 @@ export const ClassHubData = {
     { img: PaymentedPage, imgDescrip: "결제완료 페이지" },
     { img: MyPageDashBoard, imgDescrip: "마이페이지 대시보드" },
   ],
-  deploy: "https://devproject.store",
+  deploy: null,
   github: "github.com/sunghyun-biblee/ClassHub",
   category: "팀 프로젝트",
 };
