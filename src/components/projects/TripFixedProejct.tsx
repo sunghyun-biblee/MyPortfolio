@@ -1,4 +1,3 @@
-import React from "react";
 import preview from "assets/img/preview.jpg";
 
 export const TripFixedProejct = () => {

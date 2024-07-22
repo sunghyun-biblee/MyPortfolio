@@ -1,5 +1,5 @@
-import React from "react";
 import preview from "assets/img/profileImg.jpg";
+
 export const Introduce = () => {
   return (
     <div

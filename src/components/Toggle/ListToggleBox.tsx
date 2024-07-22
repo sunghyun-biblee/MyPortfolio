@@ -1,7 +1,7 @@
-import React, { useState } from "react";
 import { MarkDown } from "components/markdown/MarkDown";
-import styled from "styled-components";
+import { useState } from "react";
 import Markdown from "react-markdown";
+import styled from "styled-components";
 
 const MarkDwWrapper = styled.div`
   p {
@@ -44,9 +44,6 @@ export const ListToggleBox = ({
 }: IToogleProps) => {
   const [isToggle, setIsToggle] = useState<boolean>(false);
 
-  console.log(category);
-  console.log(img);
-  console.log(imgDescrip);
   const handleToggleClick = () => {
     setIsToggle((prev) => !prev);
   };

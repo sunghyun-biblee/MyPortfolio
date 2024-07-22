@@ -1,24 +1,26 @@
 import { ScrollMoveType } from "components/projects/Projects";
-import React from "react";
-import styled from "styled-components";
 
-import { SkillItemTwo } from "./SkillItemTwo";
-import HtmlIcon from "assets/icons/Skill_Icons/HTML.svg";
 import CssIcon from "assets/icons/Skill_Icons/CSS.svg";
+import GitIcon from "assets/icons/Skill_Icons/Git.svg";
+import HtmlIcon from "assets/icons/Skill_Icons/HTML.svg";
 import JsIcon from "assets/icons/Skill_Icons/JavaScript.svg";
 import ReactIcon from "assets/icons/Skill_Icons/React-Light.svg";
 import StyledIcon from "assets/icons/Skill_Icons/StyledComponents.svg";
-import TsIcon from "assets/icons/Skill_Icons/TypeScript.svg";
-import GitIcon from "assets/icons/Skill_Icons/Git.svg";
 import TwIcon from "assets/icons/Skill_Icons/TailwindCSS-Dark.svg";
+import TsIcon from "assets/icons/Skill_Icons/TypeScript.svg";
+
+import styled from "styled-components";
+
+import { useScrollAnimatePade } from "hooks/useScrollAnimatePade";
 import { useRecoilState, useRecoilValue } from "recoil";
 import {
   skillGridFirst,
   skillGridSecond,
   SkillViewToggle,
 } from "recoil/portfolioAtoms";
+
 import { MobileSkillItem } from "./MobileSkillItem";
-import { useScrollAnimatePade } from "hooks/useScrollAnimatePade";
+import { SkillItemTwo } from "./SkillItemTwo";
 
 interface ISkill {
   value: ScrollMoveType;

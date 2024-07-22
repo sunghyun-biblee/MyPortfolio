@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useSetRecoilState } from "recoil";
 import { skillGridFirst, skillGridSecond } from "recoil/portfolioAtoms";
 import styled from "styled-components";
@@ -51,6 +51,7 @@ export const SkillItemTwo = ({
     SecondGridTemplate("1fr 1fr 1fr");
     setIsHover(false);
   };
+
   return (
     <SkillLi
       onMouseEnter={() => handleMouseEnter(index)}

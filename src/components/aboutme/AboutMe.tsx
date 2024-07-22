@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import preview2 from "assets/img/profile/A1.webp";
 import { ScrollMoveType } from "components/projects/Projects";
-import styled from "styled-components";
 import { useTextFadeIn } from "hooks/useTextFadeIn";
+
+import styled from "styled-components";
 import { AboutMeModal } from "./AboutMeModal";
 
 interface IAboutMe {

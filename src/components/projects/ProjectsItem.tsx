@@ -1,6 +1,5 @@
-import React from "react";
-import { projectItemType } from "./Projects";
 import preview from "assets/img/preview.jpg";
+import { projectItemType } from "./Projects";
 interface IprojectItem {
   item: projectItemType;
 }

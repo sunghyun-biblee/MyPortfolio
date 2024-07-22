@@ -1,6 +1,5 @@
 import { useScrollSpin } from "hooks/useScrollSpin";
 
-import React from "react";
 import styled from "styled-components";
 
 type ISkillItem = {

@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
+
 import { AboutMe } from "components/aboutme/AboutMe";
 import { IntroduceTwo } from "components/aboutme/IntroduceTwo";
 import { Header } from "components/header/Header";
 import { Projects } from "components/projects/Projects";
 import { SkillPart } from "components/skill/SkillPart";
+
 import { useScrollMove } from "hooks/useScrollMove";
+import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Contact } from "./Contact/Contact";
-import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export const Main = () => {
   const nav = [

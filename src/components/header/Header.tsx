@@ -1,4 +1,4 @@
-import React, { RefObject, useEffect, useState } from "react";
+import { RefObject, useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { NavState } from "recoil/portfolioAtoms";
 
@@ -21,6 +21,7 @@ export const Header = ({ nav }: IHeader) => {
   const [isScroll, setIsScroll] = useState<boolean>(false);
   const [isMenu, setIsMenu] = useState<boolean>(false);
   const [navState, setNavState] = useRecoilState(NavState);
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       // window의 인터페이스인 scrollY 속성은, 문서가 수직으로 몇 픽셀 만큼 스크롤 되었는지를 반환
@@ -37,6 +38,7 @@ export const Header = ({ nav }: IHeader) => {
     item.onMove();
     setIsMenu(false);
   };
+
   const getTitleTextColor = () => {
     if (isScroll && navState === nav[0].name) {
       return "text-gray-100";
@@ -48,6 +50,7 @@ export const Header = ({ nav }: IHeader) => {
         : "text-gray-100 hover:text-blue-950";
     }
   };
+
   const getSubTitleTextColor = (name: string) => {
     if (isScroll && navState === name) {
       return "text-gray-100 border-gray-100";

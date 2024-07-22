@@ -1,13 +1,16 @@
 import { MarkDown } from "components/markdown/MarkDown";
 
+import githubIcon from "assets/icons/github-whitemark.svg";
 import { ListToggleBox } from "components/Toggle/ListToggleBox";
 import { ProjectDetailDatas } from "data/ProjectDetailDatas";
-import React, { useEffect, useState } from "react";
+
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
-import { ProjectModalBtnBox } from "./ProjectModalBtnBox";
+
 import { OtherProjectDot } from "./OtherProjectDot";
-import githubIcon from "assets/icons/github-whitemark.svg";
+import { ProjectModalBtnBox } from "./ProjectModalBtnBox";
+
 type Bgcolor = {
   color: string;
 };
@@ -16,14 +19,17 @@ const DetailContainer = styled.div`
     display: none;
   }
 `;
+
 const ItemList = styled.ul`
   width: 100%;
 `;
+
 const Item = styled.li`
   display: flex;
   width: 100%;
   padding-bottom: 0.5rem;
 `;
+
 const ListName = styled.h2`
   font-size: 1.5rem;
   line-height: 2rem;
@@ -42,6 +48,7 @@ const ListContainer = styled.div`
     width: 100%;
   }
 `;
+
 const DetailFirst = styled.article<Bgcolor>`
   display: flex;
   text-align: center;
@@ -74,6 +81,7 @@ const DetailFirst = styled.article<Bgcolor>`
     }
   }
 `;
+
 const DetailSecond = styled.article`
   z-index: 1;
   width: 100%;
@@ -84,31 +92,6 @@ const DetailSecond = styled.article`
   gap: 2.5rem;
 `;
 
-interface IProjectDetail {
-  title: string;
-  mainImage: string;
-  colorConcept: string;
-  personnel: number[];
-  date: string;
-  Contribution: string;
-  role: string;
-  skills: { name: string; description: string }[];
-  summary: string;
-  background: string;
-  mainFuntion: string[];
-  myActivities: { title: string; description: string }[];
-  troubleShooting: {
-    title: string;
-    trouble: string;
-    Resolution: string;
-    serach?: string;
-    myThink?: string;
-  }[];
-  ProjectIMG: string[];
-  deploy: string;
-  github: string;
-  category: string;
-}
 type BtnWrapperProps = {
   color?: string;
 };
@@ -127,22 +110,22 @@ export const ProjectDetail = () => {
     }
   };
 
-  useEffect(() => {
-    const Container = document.getElementById("Container");
-    const handleScroll = () => {
-      if (Container && Container.scrollTop > 240) {
-        setIsScroll(true);
-      } else {
-        setIsScroll(false);
-      }
-    };
+  // useEffect(() => {
+  //   const Container = document.getElementById("Container");
+  //   const handleScroll = () => {
+  //     if (Container && Container.scrollTop > 240) {
+  //       setIsScroll(true);
+  //     } else {
+  //       setIsScroll(false);
+  //     }
+  //   };
 
-    Container?.addEventListener("scroll", handleScroll);
-    // Cleanup function to remove the event listener
-    return () => {
-      Container?.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   Container?.addEventListener("scroll", handleScroll);
+  //   // Cleanup function to remove the event listener
+  //   return () => {
+  //     Container?.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
     <>
@@ -222,7 +205,7 @@ export const ProjectDetail = () => {
                   <ListName>✍ 프로젝트 기여도</ListName>
                   <ItemList>
                     {Data.myActivities.map((item, index) => (
-                      <Item>
+                      <Item key={item.description}>
                         <ListToggleBox
                           category="myActivities"
                           title={item.title}

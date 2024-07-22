@@ -1,5 +1,4 @@
 import { ProjectDetailDatas } from "data/ProjectDetailDatas";
-import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
@@ -9,12 +8,15 @@ type DotProps = {
 };
 export const OtherProjectDot = () => {
   const proejctId = useLocation().pathname.split("/")[1];
+
+  const ProjectIdList = ["My", "Class", "Trip"];
+
   const colorConcept = ProjectDetailDatas.find(
     (item) => item.id === proejctId
   )?.colorConcept;
 
   const nav = useNavigate();
-  const ProjectIdList = ["My", "Class", "Trip"];
+
   return (
     <DotWrapper
       color={colorConcept ? colorConcept : null}

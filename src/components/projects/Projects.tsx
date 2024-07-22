@@ -171,7 +171,7 @@ export const Projects = ({ value }: Itest) => {
     >
       <div className="max-w-[1400px] w-[100vw] px-3 flex flex-col ">
         <h1
-          className="text-left lg:text-6xl md:text-6xl mysm:text-[40px] uppercase font-extrabold [text-shadow:_5px_3px_3px_#82b585] py-4
+          className="text-left  md:text-6xl mysm:text-[40px] uppercase font-extrabold [text-shadow:_5px_3px_3px_#82b585] py-4
     
         "
           // border-b-4 border-[#181F1B]

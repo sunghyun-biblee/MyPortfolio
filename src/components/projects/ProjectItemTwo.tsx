@@ -1,13 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { projectItemType } from "./Projects";
 
-import styled from "styled-components";
-import url from "assets/icons/url.svg";
 import githubIcon from "assets/icons/github-mark.svg";
+import url from "assets/icons/url.svg";
 import { useLocation, useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
-import { MarkDown } from "components/markdown/MarkDown";
 import { ReadMeBtn } from "components/Button/ReadMeBtn";
+import { MarkDown } from "components/markdown/MarkDown";
 
 interface IprojectItem {
   item: projectItemType;
@@ -15,9 +15,8 @@ interface IprojectItem {
   index: number;
 }
 export const ProjectItemTwo = ({ item, current, index }: IprojectItem) => {
-  const location = useLocation();
   const ProejctRef = useRef<HTMLDivElement>(null);
-  const nav = useNavigate();
+
   useEffect(() => {
     if (ProejctRef.current && index === current) {
       setTimeout(() => {

@@ -1,5 +1,5 @@
 import { ScrollMoveType } from "components/projects/Projects";
-import React, { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import styled from "styled-components";
 
 interface FooterProps {
@@ -51,8 +51,8 @@ export const Contact = ({ value }: FooterProps) => {
         ref={ContactRef}
         style={{ opacity: 0 }}
       >
-        <h1 className="text-center lg:text-7xl md:text-6xl mysm:text-[40px] uppercase font-extrabold [text-shadow:_4px_2px_3px_#8098b2] py-5 mb-10 mt-[3.5rem]">
-          Thank You!
+        <h1 className="text-center lg:text-7xl md:text-6xl mysm:text-[40px] uppercase font-extrabold [text-shadow:_4px_2px_3px_#8098b2] py-5 mb-10 mt-[3.5rem] font-pretendard">
+          감사합니다
         </h1>
         <FooterUl className="list-disc md:min-w-[500px] mysm:min-w-[400px] mx-[auto] my-0  lg:text-2xl mysm:text-lg">
           <FooterLi

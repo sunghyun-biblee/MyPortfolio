@@ -1,4 +1,3 @@
-import React from "react";
 import Best from "assets/img/Award/Best.webp";
 import Completed from "assets/img/Award/Completed.webp";
 import styled from "styled-components";

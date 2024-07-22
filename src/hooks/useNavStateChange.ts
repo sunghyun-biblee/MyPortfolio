@@ -1,5 +1,4 @@
-import React, { useCallback, useEffect } from "react";
-import { RefObject } from "react";
+import { RefObject, useCallback, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { NavState } from "recoil/portfolioAtoms";
 

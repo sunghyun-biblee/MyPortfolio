@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import githubIcon from "assets/icons/github-whitemark.svg";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import githubIcon from "assets/icons/github-whitemark.svg";
-import url from "assets/icons/url.svg";
+
 type ModalBtnBoxPros = {
   github?: string;
   deploy?: string | null;
   scroll?: boolean;
   color?: string;
 };
+
 export const ProjectModalBtnBox = ({
   github,
   deploy,
@@ -19,6 +19,7 @@ export const ProjectModalBtnBox = ({
     document.body.style.overflowY = "auto";
     return nav("/");
   };
+
   return (
     <BtnWrapper
       className={`

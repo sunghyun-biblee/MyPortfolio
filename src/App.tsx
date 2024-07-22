@@ -1,8 +1,7 @@
-import React from "react";
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
-import { Main } from "pages/Main";
 import { ProjectDetail } from "components/ProjectDetail/ProjectDetail";
+import { Main } from "pages/Main";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
 
 function App() {
   return (

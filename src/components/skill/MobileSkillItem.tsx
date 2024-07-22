@@ -1,5 +1,3 @@
-import React from "react";
-
 type SkillItemProps = {
   title: string;
   icon?: string;
