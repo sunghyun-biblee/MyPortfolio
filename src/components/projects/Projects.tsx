@@ -56,7 +56,7 @@ const projectArray = [
       "tailwindCSS",
       "React-Query",
     ],
-    deploy: "https://devproject.store",
+    deploy: null,
     function: [
       "강의 결제 및 시청",
       "강의 등록",
