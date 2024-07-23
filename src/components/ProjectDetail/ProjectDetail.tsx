@@ -231,22 +231,20 @@ export const ProjectDetail = () => {
                   <ListContainer>
                     <ListName>💫 트러블 슈팅</ListName>
                     <ItemList>
-                      {Data.troubleShooting.map(
-                        (item: troubleShootingType, index) => (
-                          <Item>
-                            <ListToggleBox
-                              category="trouble"
-                              title={item.title}
-                              trouble={item.trouble}
-                              Resolution={item.Resolution}
-                              search={item.serach}
-                              myThink={item.myThink}
-                              tryProp={item.tryProp}
-                              tryResult={item.tryResult}
-                            ></ListToggleBox>
-                          </Item>
-                        )
-                      )}
+                      {Data.troubleShooting.map((item: troubleShootingType) => (
+                        <Item key={item.title}>
+                          <ListToggleBox
+                            category="trouble"
+                            title={item.title}
+                            trouble={item.trouble}
+                            Resolution={item.Resolution}
+                            search={item.serach}
+                            myThink={item.myThink}
+                            tryProp={item.tryProp}
+                            tryResult={item.tryResult}
+                          ></ListToggleBox>
+                        </Item>
+                      ))}
                     </ItemList>
                   </ListContainer>
                 )}
