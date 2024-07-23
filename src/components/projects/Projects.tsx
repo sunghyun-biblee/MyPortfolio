@@ -34,7 +34,7 @@ const projectArray = [
     id: "My",
     date: "2024.03~2024.05",
     mainImage: MyPortfolio,
-    category: "팀 프로젝트",
+    category: "개인 프로젝트",
     title: "My Portfolio",
     skillArray: ["Typescript", "React", "styled-components", "tailwindCSS"],
     deploy: "bibleeportfolio.vercel.app/",

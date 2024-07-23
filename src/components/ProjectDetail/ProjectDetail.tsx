@@ -11,6 +11,19 @@ import styled from "styled-components";
 import { OtherProjectDot } from "./OtherProjectDot";
 import { ProjectModalBtnBox } from "./ProjectModalBtnBox";
 
+export type ThroubleTryType = {
+  text: string;
+  trylist: string[];
+};
+type troubleShootingType = {
+  title?: string;
+  trouble?: string;
+  Resolution?: string;
+  serach?: string | null;
+  myThink?: string | null;
+  tryProp?: ThroubleTryType | null;
+  tryResult?: ThroubleTryType | null;
+};
 type Bgcolor = {
   color: string;
 };
@@ -98,7 +111,6 @@ type BtnWrapperProps = {
 export const ProjectDetail = () => {
   const ProjectId = useLocation().pathname.split("/")[1];
   const Data = ProjectDetailDatas.find((item) => item.id === ProjectId);
-  const [isScroll, setIsScroll] = useState<boolean>(false);
 
   const renderCategory = () => {
     if (Data && Data.personnel[2]) {
@@ -219,18 +231,22 @@ export const ProjectDetail = () => {
                   <ListContainer>
                     <ListName>💫 트러블 슈팅</ListName>
                     <ItemList>
-                      {Data.troubleShooting.map((item, index) => (
-                        <Item>
-                          <ListToggleBox
-                            category="trouble"
-                            title={item.title}
-                            trouble={item.trouble}
-                            Resolution={item.Resolution}
-                            search={item.serach}
-                            myThink={item.myThink}
-                          ></ListToggleBox>
-                        </Item>
-                      ))}
+                      {Data.troubleShooting.map(
+                        (item: troubleShootingType, index) => (
+                          <Item>
+                            <ListToggleBox
+                              category="trouble"
+                              title={item.title}
+                              trouble={item.trouble}
+                              Resolution={item.Resolution}
+                              search={item.serach}
+                              myThink={item.myThink}
+                              tryProp={item.tryProp}
+                              tryResult={item.tryResult}
+                            ></ListToggleBox>
+                          </Item>
+                        )
+                      )}
                     </ItemList>
                   </ListContainer>
                 )}

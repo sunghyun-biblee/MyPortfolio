@@ -1,4 +1,5 @@
 import { MarkDown } from "components/markdown/MarkDown";
+import { ThroubleTryType } from "components/ProjectDetail/ProjectDetail";
 import { useState } from "react";
 import Markdown from "react-markdown";
 import styled from "styled-components";
@@ -18,14 +19,17 @@ const MarkDwWrapper = styled.div`
     font-family: Pretendard;
   }
 `;
+
 interface IToogleProps {
   name?: string;
   description?: string;
   title?: string;
   trouble?: string;
   Resolution?: string;
-  search?: string | null | undefined;
-  myThink?: string | null | undefined;
+  search?: string | null;
+  myThink?: string | null;
+  tryResult?: ThroubleTryType | null;
+  tryProp?: ThroubleTryType | null;
   category: string;
   img?: string;
   imgDescrip?: string;
@@ -41,6 +45,8 @@ export const ListToggleBox = ({
   category,
   img,
   imgDescrip,
+  tryProp,
+  tryResult,
 }: IToogleProps) => {
   const [isToggle, setIsToggle] = useState<boolean>(false);
 
@@ -103,6 +109,22 @@ export const ListToggleBox = ({
             <MarkDwWrapper>
               <MarkDown>{trouble}</MarkDown>
             </MarkDwWrapper>
+            {tryProp && (
+              <MarkDwWrapper>
+                <hr />
+                <strong className="mt-2 inline-block px-1">
+                  {tryProp.text}
+                </strong>
+                <ol className="px-1">
+                  {tryProp.trylist.map((item, index) => (
+                    <li className="flex" key={item}>
+                      <span className=" pt-2 inline-block">{index + 1}.</span>
+                      <MarkDown>{item}</MarkDown>
+                    </li>
+                  ))}
+                </ol>
+              </MarkDwWrapper>
+            )}
             {search && (
               <>
                 <hr />
@@ -115,6 +137,24 @@ export const ListToggleBox = ({
             <MarkDwWrapper>
               <MarkDown>{Resolution}</MarkDown>
             </MarkDwWrapper>
+            {tryResult && (
+              <MarkDwWrapper>
+                <hr />
+                <strong className="mt-2 inline-block px-1">
+                  {tryResult.text}
+                </strong>
+                <ol className="px-1">
+                  {tryResult.trylist.map((item, index) => (
+                    <li className="flex" key={item}>
+                      <span className=" pt-2 inline-block text-blue-400">
+                        ✔
+                      </span>
+                      <MarkDown>{item}</MarkDown>
+                    </li>
+                  ))}
+                </ol>
+              </MarkDwWrapper>
+            )}
             {myThink && (
               <>
                 <hr />
