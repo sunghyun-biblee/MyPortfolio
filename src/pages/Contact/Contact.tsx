@@ -71,7 +71,7 @@ export const Contact = ({ value }: FooterProps) => {
             <div>
               <h2 className="md:min-w-[75px] mysm:min-w-[45px]">Phone</h2>:
               <span className="hover:text-blue-500 transition-all duration-300">
-                010-0000-0000
+                010-5097-3758
               </span>
             </div>
           </FooterLi>
