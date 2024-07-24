@@ -1,7 +1,7 @@
 import MainImg from "assets/img/MyPortfolio/mainpage2.jpg";
 import MainImgFront from "assets/img/MyPortfolio/Loot.jpg";
 import AboutMe from "assets/img/MyPortfolio/AboutMe.jpg";
-import skillImg from "assets/img/MyPortfolio/SkillPart.jpg";
+import skillImg from "assets/img/MyPortfolio/SkillPart2.png";
 import ProjectPart from "assets/img/MyPortfolio/ProjectPart.jpg";
 import PorjectDetailPart from "assets/img/MyPortfolio/ProjectDetail.jpg";
 export const MyPortfolioData = {
