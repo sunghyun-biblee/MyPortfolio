@@ -5,7 +5,7 @@ import { RecoilRoot } from "recoil";
 import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-
+import { Analytics } from "@vercel/analytics/react";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
@@ -14,6 +14,7 @@ root.render(
     <BrowserRouter>
       <RecoilRoot>
         <App />
+        <Analytics></Analytics>
       </RecoilRoot>
     </BrowserRouter>
   </React.StrictMode>
