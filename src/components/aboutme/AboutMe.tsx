@@ -88,7 +88,7 @@ export const AboutMe = ({ value }: IAboutMe) => {
                 전달한 후, 팀원들과 적극적으로 소통하여 문제해결에 도움이 될 수
                 있도록 기여합니다
               </p>
-              <p>
+              {/* <p>
                 이런 경험을 바탕으로 배움에 대한 열정을 잃지 않고 꾸준한 노력을
                 기반으로 <br />
                 멀티캠퍼스 수료과정에서
@@ -99,7 +99,7 @@ export const AboutMe = ({ value }: IAboutMe) => {
                   개인 최우수상
                 </BestSpan>
                 을 수상했습니다
-              </p>
+              </p> */}
             </div>
           </div>
           <p className="pt-[2rem] md:pb-0 mysm:pb-[0.1rem] text-base relative break-keep">

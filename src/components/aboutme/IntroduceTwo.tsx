@@ -72,7 +72,10 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
                   className="w-10 h-10 animate-bounce"
                 />
               </div>
-              <FlipBox value={isFlip} className=" relative  shadow-2xl ">
+              <FlipBox
+                value={isFlip}
+                className="relative shadow-2xl w-full h-full "
+              >
                 {/* <Edge className="w-[35px] h-[35px] absolute bg-[#158DC0] -bottom-5 right-12 z-[2] transform rotate-[45deg] "></Edge> */}
                 <FlipCardFront className="rounded-lg overflow-hidden relative">
                   <Edge />
@@ -97,7 +100,7 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
                       <GraySpan>2022.06</GraySpan>
                     </Li>
 
-                    <Li>
+                    {/* <Li>
                       <span className="inline-block pb-1 tracking-tight md:text-base mysm:text-sm">
                         멀티캠퍼스 웹 개발자 수료 &nbsp;
                         <span className="text-xs text-yellow-300">
@@ -105,7 +108,7 @@ export const IntroduceTwo = ({ value }: IIntroduce) => {
                         </span>
                       </span>
                       <GraySpan>2023.08~2024.02</GraySpan>
-                    </Li>
+                    </Li> */}
                     <Li>
                       <span className="inline-block pb-1">
                         계명문화대학교 컴퓨터학부
@@ -185,9 +188,6 @@ const Edge = styled.div`
 const FlipBox = styled.div<{ value: boolean }>`
   transition: 0.8s;
   transform-style: preserve-3d;
-  position: relative;
-  width: 100%;
-  height: 100%;
   transform: ${(props) => (props.value ? "rotateY(180deg)" : "rotateY(0deg)")};
 `;
 const FlipCardFront = styled.div`
