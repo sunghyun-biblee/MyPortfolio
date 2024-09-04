@@ -165,7 +165,7 @@ export const ListToggleBox = ({
               <MarkDwWrapper>
                 <hr />
                 {result.map((item) => (
-                  <MarkDown>{item}</MarkDown>
+                  <MarkDown key={item}>{item}</MarkDown>
                 ))}
               </MarkDwWrapper>
             )}
