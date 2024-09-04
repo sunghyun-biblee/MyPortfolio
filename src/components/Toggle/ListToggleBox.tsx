@@ -5,11 +5,12 @@ import Markdown from "react-markdown";
 import styled from "styled-components";
 
 const MarkDwWrapper = styled.div`
-  p {
-    padding: 0.5rem 0rem 0.5rem 0.25rem;
+  p,
+  span {
     white-space: pre-wrap;
     word-break: keep-all;
   }
+
   code {
     padding: 0.2rem 0.4rem;
     margin-right: 0.1rem;
@@ -22,7 +23,7 @@ const MarkDwWrapper = styled.div`
 
 interface IToogleProps {
   name?: string;
-  description?: string;
+  description?: string[];
   title?: string;
   trouble?: string;
   Resolution?: string;
@@ -33,6 +34,8 @@ interface IToogleProps {
   category: string;
   img?: string;
   imgDescrip?: string;
+  text?: string[];
+  result?: string[];
 }
 export const ListToggleBox = ({
   name,
@@ -47,6 +50,8 @@ export const ListToggleBox = ({
   imgDescrip,
   tryProp,
   tryResult,
+  text,
+  result,
 }: IToogleProps) => {
   const [isToggle, setIsToggle] = useState<boolean>(false);
 
@@ -69,11 +74,18 @@ export const ListToggleBox = ({
               >
                 ▶
               </span>
-              <span>{name}</span>
+              <span className="text-lg">{name}</span>
             </div>
             {isToggle && (
               <MarkDwWrapper>
-                <Markdown>{description}</Markdown>
+                <ul className="list-inside pl-1">
+                  {description?.map((item) => (
+                    <li className="list-disc py-1" key={item}>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                {/* <Markdown>{description}</Markdown> */}
               </MarkDwWrapper>
             )}
           </div>
@@ -81,29 +93,25 @@ export const ListToggleBox = ({
       case "myActivities":
         return (
           <div className="flex flex-col text-left p-1 mb-1">
-            <span className="p-1 mb-2 text-black bg-gray-200 w-[100%] break-keep">
+            <span className="p-1 mb-2 text-black bg-gray-200 w-[100%] break-keep font-medium text-lg">
               {title}
             </span>
-            <MarkDwWrapper
-              className="relative before:absolute last:break-keep last:whitespace-pre-wrap 
-              ml-1
-          last:pl-4
-  before:w-2 
-  before:h-2 
-  before:bg-[#3b82f6] 
-  before:block 
-  before:rounded-full 
-  before:left-0 
-  before:top-[0.5rem]"
-            >
-              <MarkDown>{description}</MarkDown>
+            <MarkDwWrapper className="relative before:absolute last:break-keep last:whitespace-pre-wrap last:pl-2">
+              <ol className="">
+                {description?.map((item, index) => (
+                  <li className="py-1 flex " key={item}>
+                    <span className="inline-block mr-1">{index + 1}.</span>{" "}
+                    <Markdown>{item}</Markdown>
+                  </li>
+                ))}
+              </ol>
             </MarkDwWrapper>
           </div>
         );
       case "trouble":
         return (
           <TroubleShootingBox className="flex flex-col text-left p-1 mb-1">
-            <span className="p-1 mb-2 text-black bg-gray-200 w-[100%]">
+            <span className="p-1 mb-2 text-black bg-gray-200 w-[100%] font-medium">
               {title}
             </span>
             <MarkDwWrapper>
@@ -126,44 +134,68 @@ export const ListToggleBox = ({
               </MarkDwWrapper>
             )}
             {search && (
-              <>
+              <MarkDwWrapper>
                 <hr />
-                <MarkDwWrapper>
-                  <MarkDown>{search}</MarkDown>
-                </MarkDwWrapper>
-              </>
+                <MarkDown>{search}</MarkDown>
+              </MarkDwWrapper>
             )}
-            <hr />
-            <MarkDwWrapper>
-              <MarkDown>{Resolution}</MarkDown>
-            </MarkDwWrapper>
+
+            {Resolution && (
+              <MarkDwWrapper>
+                <hr />
+                <MarkDown>{Resolution}</MarkDown>
+              </MarkDwWrapper>
+            )}
             {tryResult && (
               <MarkDwWrapper>
                 <hr />
                 <strong className="mt-2 inline-block px-1">
                   {tryResult.text}
                 </strong>
-                <ol className="px-1">
+                <ol>
                   {tryResult.trylist.map((item, index) => (
                     <li className="flex" key={item}>
-                      <span className=" pt-2 inline-block text-blue-400">
-                        ✔
-                      </span>
                       <MarkDown>{item}</MarkDown>
                     </li>
                   ))}
                 </ol>
               </MarkDwWrapper>
             )}
-            {myThink && (
-              <>
+            {result && (
+              <MarkDwWrapper>
                 <hr />
-                <MarkDwWrapper>
-                  <MarkDown>{myThink}</MarkDown>
-                </MarkDwWrapper>
-              </>
+                {result.map((item) => (
+                  <MarkDown>{item}</MarkDown>
+                ))}
+              </MarkDwWrapper>
+            )}
+            {myThink && (
+              <MarkDwWrapper>
+                <hr />
+                <MarkDown>{myThink}</MarkDown>
+              </MarkDwWrapper>
             )}
           </TroubleShootingBox>
+        );
+      case "experience":
+        return (
+          <div className="flex flex-col text-left p-1 mb-1">
+            <span className="p-1 mb-2 text-black bg-gray-200 w-[100%] break-keep font-medium text-lg">
+              {title}
+            </span>
+            <MarkDwWrapper className="relative before:absolute last:break-keep last:whitespace-pre-wrap last:pl-2">
+              <ol className="">
+                {text?.map((item, index) => (
+                  <li
+                    className="py-1 flex items-start before:content-['▪'] before:mr-1"
+                    key={item}
+                  >
+                    <Markdown>{item}</Markdown>
+                  </li>
+                ))}
+              </ol>
+            </MarkDwWrapper>
+          </div>
         );
       case "projectScreen":
         return (

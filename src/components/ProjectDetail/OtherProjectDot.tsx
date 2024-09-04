@@ -24,9 +24,9 @@ export const OtherProjectDot = () => {
       className={`lg:absolute top-0 left-0 z-10  mysm:p-3 flex lg:m-1 flex-col  items-start   brightness-95`}
     >
       <div>
-        {ProjectIdList.map((item, index) => (
+        {ProjectIdList.map((item) => (
           <Dot
-            key={new Date().getHours() + index}
+            key={item}
             value={item === proejctId}
             color={colorConcept ? colorConcept : null}
             className="transition-all duration-500 ease-linear cursor-pointer mr-4"

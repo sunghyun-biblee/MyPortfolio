@@ -23,6 +23,7 @@ type troubleShootingType = {
   myThink?: string | null;
   tryProp?: ThroubleTryType | null;
   tryResult?: ThroubleTryType | null;
+  result?: string[];
 };
 type Bgcolor = {
   color: string;
@@ -203,7 +204,7 @@ export const ProjectDetail = () => {
                   <ListName>🛠️ 사용 기술 스택</ListName>
                   <ItemList className="lg:ml-2">
                     {Data.skills.map((item, index) => (
-                      <Item key={item.description + index}>
+                      <Item key={item.name}>
                         <ListToggleBox
                           name={item.name}
                           description={item.description}
@@ -217,7 +218,7 @@ export const ProjectDetail = () => {
                   <ListName>✍ 프로젝트 기여도</ListName>
                   <ItemList>
                     {Data.myActivities.map((item, index) => (
-                      <Item key={item.description}>
+                      <Item key={item.title}>
                         <ListToggleBox
                           category="myActivities"
                           title={item.title}
@@ -242,12 +243,28 @@ export const ProjectDetail = () => {
                             myThink={item.myThink}
                             tryProp={item.tryProp}
                             tryResult={item.tryResult}
+                            result={item.result}
                           ></ListToggleBox>
                         </Item>
                       ))}
                     </ItemList>
                   </ListContainer>
                 )}
+                {Data.experience && (
+                  <ListContainer>
+                    <ListName>💡 성과</ListName>
+                    {Data.experience.map((item) => (
+                      <Item key={item.title}>
+                        <ListToggleBox
+                          category="experience"
+                          title={item.title}
+                          text={item.text}
+                        ></ListToggleBox>
+                      </Item>
+                    ))}
+                  </ListContainer>
+                )}
+
                 {Data.ProjectIMG && (
                   <ListContainer>
                     <ListName>📷 프로젝트 스크린샷</ListName>
